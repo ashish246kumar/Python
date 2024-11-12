@@ -6,6 +6,7 @@ python --version
 
 Python_Basics_Assignment\Scripts\activate:- command to activate vitual enviornment
 pip freeze-->to check what package is installed in your system
+************************************************************************************************************************************************************************************
 slicing in python 
 sequence[start:stop:step]
 sequence = [0, 1, 2, 3, 4, 5]
