@@ -31,3 +31,7 @@ pip install mypy-->
 In Python, using __all__ in __init__.py specifies which names should be imported when using from <module> import *.
  However, __all__ does not restrict direct imports in other ways. You can still access any function directly from the files within a module, regardless of __all__.
 ****************************************************************************************************************************************************
+self is used to bind the actual object with the value
+*******************************
+class allow to create there own data type with there own attribute and method
+*********************************
