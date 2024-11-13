@@ -27,3 +27,7 @@ sequence = [0, 1, 2, 3, 4, 5]
 print(sequence[::-1])  # Output: [5, 4, 3, 2, 1, 0]
 *****************************************************
 pip install mypy-->
+******************************************************************************************************************
+In Python, using __all__ in __init__.py specifies which names should be imported when using from <module> import *.
+ However, __all__ does not restrict direct imports in other ways. You can still access any function directly from the files within a module, regardless of __all__.
+****************************************************************************************************************************************************
