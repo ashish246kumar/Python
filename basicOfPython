@@ -26,4 +26,4 @@ Negative step (Reversing a Sequence)
 sequence = [0, 1, 2, 3, 4, 5]
 print(sequence[::-1])  # Output: [5, 4, 3, 2, 1, 0]
 *****************************************************
-
+pip install mypy-->
