@@ -35,3 +35,9 @@ self is used to bind the actual object with the value
 *******************************
 class allow to create there own data type with there own attribute and method
 *********************************
+The constructor is defined using the __init__ method
+**********************************************************************************************************
+What’s the difference between a class and an object? A class is a blueprint or template, 
+while an object is an instance created from that template, with specific attribute values.
+******************************************************************************************************************
+
