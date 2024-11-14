@@ -42,4 +42,8 @@ while an object is an instance created from that template, with specific attribu
 ******************************************************************************************************************
 Methods that don’t use the self parameter (work at class level)
 ********************************************************************************************************
+– Decorator: A decorator is a higher-order function that takes another function as an argument, adds some functionality, and returns a new function. 
+It allows modifying or extending behavior of functions or methods.
+******************************************************************************************************************************************************
+
 
