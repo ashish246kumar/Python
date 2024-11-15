@@ -45,5 +45,20 @@ Methods that don’t use the self parameter (work at class level)
 – Decorator: A decorator is a higher-order function that takes another function as an argument, adds some functionality, and returns a new function. 
 It allows modifying or extending behavior of functions or methods.
 ******************************************************************************************************************************************************
+An iterable is any object that can return an iterator, such as lists, tuples, strings, and dictionaries.
+********
+an iterator is an object that implements the iterator protocol, which consists of the methods __iter__() and __next__(). 
+It allows you to traverse through all the elements of a collection (like lists, tuples, or dictionaries) one at a time.
+********
+An iterator is an object that keeps state and produces the next value when you call next() on it.
+
+*********************************************************************************************************************
+The for loop starts by calling the iter() function on the object. This function:
+Looks for the __iter__() method in the object.
+Calls __iter__() and retrieves an iterator object.
+If the object itself is an iterator (like in the MyRange class), it simply returns itself.
+The for loop uses the next() built-in function internally, which in turn calls the __next__() method of the iterator
+**********************************************************************************************************
+
 
 
