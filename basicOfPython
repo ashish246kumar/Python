@@ -3,6 +3,8 @@ virtual enviornment help us to maintain different version of project in the same
 virtual enviornment do this by creating isolated enviornment for a project that does not interfere with your system enviornment.
 python -m venv Python_Basics_Assignment---->To create virtual enviornment
 python --version
+Python_Basics_Assignment) PS C:\Users\ashishkumar18\Downloads\python_project\Python_Basics_Assignment> pip freeze > requirements.txt
+PS C:\Users\ashishkumar18\Downloads\python_project\Python_Basics_Assignment> Scripts/activate      -->to activate virtual env                                                                                                               
 
 Scripts\activate:- command to activate vitual enviornment
 pip freeze-->to check what package is installed in your system
