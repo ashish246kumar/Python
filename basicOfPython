@@ -4,7 +4,7 @@ virtual enviornment do this by creating isolated enviornment for a project that 
 python -m venv Python_Basics_Assignment---->To create virtual enviornment
 python --version
 
-Python_Basics_Assignment\Scripts\activate:- command to activate vitual enviornment
+Scripts\activate:- command to activate vitual enviornment
 pip freeze-->to check what package is installed in your system
 ************************************************************************************************************************************************************************************
 slicing in python 
