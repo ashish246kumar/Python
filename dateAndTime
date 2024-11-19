@@ -1,0 +1,55 @@
+from datetime import date,datetime,time
+import pytz
+today=date.today()
+print("today is:",today)
+print(today.day)  
+# 19
+print(today.month)
+# 11
+print(today.year)
+# 2024
+
+print(today.strftime("%A %d %B %Y "))
+# Tuesday 19 November 2024
+print(today.strftime("%a %d %b %y "))
+# Tue 19 Nov 24
+next_year=today.replace(year=today.year+1)
+diff=abs(next_year-today)
+print(f"{format(diff.days)} days left")
+# 365 days left
+date1=date(2023,7,10)
+print(date1)
+# 2023-07-10
+print(date.fromisoformat("1856-08-01"))
+# 1856-08-01
+date2=date.fromisoformat("1856-08-01")
+print(date2.weekday())
+#4
+print(date.year)
+now=datetime.now()
+print(now.strftime("%Y-%m-%d %H:%M:%S"))
+# 2024-11-19 12:33:05
+print(f"{now.minute},{now.year},{now.month},{now.day},{now.hour}")
+# 40,2024,11,19,12
+print(now.strftime("%I:%M%p"))
+# 01:04:PM
+time_instance=time(15,45)
+formatted_time=time_instance.strftime("%I:%M%p")
+print(formatted_time)
+# 03:45PM
+utc_now=datetime.now(pytz.utc)
+print(utc_now)
+# 2024-11-19 08:05:49.488496+00:00
+india_timezone=pytz.timezone('Asia/Kolkata')
+india_time=utc_now.astimezone(india_timezone)
+print(india_time)
+# 2024-11-19 13:35:49.488496+05:30
+# print(dict(pytz.country_names))
+for value in pytz.country_names.values():
+    print(value)
+# Andorra
+# United Arab Emirates
+# Afghanistan
+# Antigua & Barbuda
+# Anguilla
+*******************************************************************************************************************
