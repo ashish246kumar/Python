@@ -8,3 +8,18 @@ print(sys.argv)-->these are written in date_time.py file
 
 PS C:\Users\ashishkumar18\Downloads\python_project\Python_Basics_Assignment\src> python date_time.py 10 20.3 'hello'
 ['date_time.py', '10', '20.3', 'hello']
+*******************************************************************************************************************************
+import sys
+print(sys.argv[0])
+output
+date_time.py
+*******************************************************************************************************************
+aur list jo hota hai woh pure value ko list of string me store karta hai  
+
+*******************************************************
+use:
+passing file name as command line argument instead of hardcoding in script
+passing database name
+remote ip to which we want to connect
+*************************************************************************************************************************************************
+
