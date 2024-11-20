@@ -1,0 +1,16 @@
+ Basic Meta Characters
+Meta Character	Meaning	Example
+.	Matches any single character except a newline (\n)	a.b matches acb, a1b, but not ab.|->In ab, there is no character between a and b.
+^	Matches the start of a string	^abc matches abc only at the start.
+$	Matches the end of a string	abc$ matches abc only at the end.
+*	Matches 0 or more occurrences of the preceding element	ab*c matches ac, abc, abbc, etc.|->Pattern: (ab)* It means "match 0 or more occurrences of ab."
+
++	Matches 1 or more occurrences of the preceding element	ab+c matches abc, abbc, but not ac.
+?	Matches 0 or 1 occurrence of the preceding element	ab?c matches ac or abc.
+\	Escapes the following character, turning it into a literal	\. matches . instead of any character.|->Regex Without Escaping: 1+1=2
+
+Matches strings like 111=2 because + means "one or more 1s."
+Regex With Escaping: 1\+1=2
+
+Matches the exact string 1+1=2, because \+ treats the + as a literal plus sign
+*****************************************************
