@@ -22,4 +22,20 @@ passing file name as command line argument instead of hardcoding in script
 passing database name
 remote ip to which we want to connect
 *************************************************************************************************************************************************
+import sys
+n = len(sys.argv)
+for i in range(1,n):
+    print(sys.argv[i])
+# 10
+# 20.3
+# hello    
+****************
+import sys
+f1=open(sys.argv[1],mode='r')
+f2=open(sys.argv[2],mode='a')
+data=f1.read()
+f2.write(data)
+f1.close()
+f2.close()
+***************************************
 
