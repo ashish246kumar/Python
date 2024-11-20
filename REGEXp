@@ -30,4 +30,39 @@ findAll()
 ******************
 r"(a|b)yz"-->start with a or b
 *******************************************************
+import re
+text='Hello, my phone number is'
+result=re.findall(r'\d+',text)
+result1=re.search(r'\d+',text)
+print(result)
+print(result1)
+# []
+# None
+text1='Hello, my phone number is 123-456-7890'
+result2=re.findall(r'\d+',text1)
+result3=re.search(r'\d+',text1)
+print(result2)
+print(result3)
+# ['123', '456', '7890']
+# <re.Match object; span=(26, 29), match='123'>
+pattern=r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
+text3='Hello, my email is test@example.com'
+result4=re.findall(pattern,text3)
+print(result4)
+# ['test@example.com']
+pattern2=r'\s'
+text3='Hello, my email is test@example.com  '
+result4=re.findall(pattern2,text3)
+print(result4)
+# [' ', ' ', ' ', ' ', ' ', ' ']
+
+text6='Hello, my phone number is 1-456-7890'
+result6=re.findall(r'\d{2,4}+',text6)
+print(result6)
+# ['456', '7890']
+text7='Hello, my phone number is a1-456-7890'
+result7=re.findall(r'\w+\d+',text7)
+print(result7)
+# ['a1', '456', '7890']
+****************************************************************************************************************************************************************
 
