@@ -21,3 +21,7 @@ Matches the exact string 1+1=2, because \+ treats the + as a literal plus sign
 [a-zA-Z]	Matches any letter (lowercase or uppercase)	"a", "B", "X"
 [^0-9]	Matches anything that is not a digit	"a", "!", " ", but not "1", "2"
 ************************************************************************************************************************************************************
+{n}	Matches exactly n occurrences	a{3} matches aaa.
+{n,}	Matches n or more occurrences	a{2,} matches aa, aaa, etc.
+{n,m}	Matches between n and m occurrences	a{2,4} matches aa, aaa, or aaaa.
+*******************************************************
