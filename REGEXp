@@ -25,3 +25,9 @@ Matches the exact string 1+1=2, because \+ treats the + as a literal plus sign
 {n,}	Matches n or more occurrences	a{2,} matches aa, aaa, etc.
 {n,m}	Matches between n and m occurrences	a{2,4} matches aa, aaa, or aaaa.
 *******************************************************
+search()
+findAll()
+******************
+r"(a|b)yz"-->start with a or b
+*******************************************************
+
