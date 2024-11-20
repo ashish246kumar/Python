@@ -14,3 +14,10 @@ Regex With Escaping: 1\+1=2
 
 Matches the exact string 1+1=2, because \+ treats the + as a literal plus sign
 *****************************************************
+[abc]	Matches a, b, or c	"a", "b", "c"
+[^abc]	Matches any character except a, b, c	"d", "e", "1", but not "a", "b", "c"
+[a-z]	Matches any lowercase letter	"b", "m", "z", but not "A", "9"
+[0-9]	Matches any digit	"0", "5", "9", but not "a", "B"
+[a-zA-Z]	Matches any letter (lowercase or uppercase)	"a", "B", "X"
+[^0-9]	Matches anything that is not a digit	"a", "!", " ", but not "1", "2"
+************************************************************************************************************************************************************
