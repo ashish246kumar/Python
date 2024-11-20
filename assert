@@ -1,0 +1,17 @@
+assert is a statement used to test whether a condition is true. 
+If the condition evaluates to True, the program continues executing as usual. However, if the condition evaluates to False, an AssertionError is raised, and the program stops execution.
+def is_positive(number):
+    assert number>0,"Number must be positive"
+    print(f"The number {number} is positive")
+    
+is_positive(8)
+is_positive(-1)
+*************************
+# Input Validation
+def calculate(length,width):
+    assert isinstance(length,(int,float)), "length must be a number"
+    assert isinstance(width,(int,float)), "width must be a number"
+    assert length>0 and width>0,"length and width must be positive"
+    return length*width
+calculate(2,"a")
+******************************************
