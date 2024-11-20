@@ -1,0 +1,10 @@
+command line argument-->these are the argument passed when you run python program or script on command line
+python filename.py args1 args2 args3
+These argument are saved in a list name 'argv' inside sys module 
+you can use this argument using indexing just like this sys.args[0]
+**************************************************************
+import sys
+print(sys.argv)-->these are written in date_time.py file
+
+PS C:\Users\ashishkumar18\Downloads\python_project\Python_Basics_Assignment\src> python date_time.py 10 20.3 'hello'
+['date_time.py', '10', '20.3', 'hello']
