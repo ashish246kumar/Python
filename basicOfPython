@@ -70,7 +70,38 @@ at once and storing them in memory. This makes generators memory-efficient, espe
  Metaclass create Classes and Classes creates objects 
 **********************************************************************************************************************************************************
 Class as Decorator in Python
+class DoubleReturnDecorator:
+    def __init__(self, func):
+        self.func = func
 
+    def __call__(self, *args, **kwargs):
+        result = self.func(*args, **kwargs)
+        return result * 2
 
+@DoubleReturnDecorator
+def add(a, b):
+    return a + b
+
+# Usage
+print(add(3, 5))  
+print(add(10, 20))
+***********
+step-1  DoubleReturnDecorator class is instantiated with the add function as an argument
+decorator_instance = DoubleReturnDecorator(add)
+The add function is replaced by the decorator_instance.
+Now, whenever add is called, it triggers the __call__ method of the decorator_instance.
+
+step-2  
+Step 2: Calling add(3, 5)
+The add function is now replaced by the __call__ method of DoubleReturnDecorator.
+result = decorator_instance.__call__(3, 5)
+Inside __call__:
+self.func refers to the original add function.
+The original add function is executed with the arguments (3, 5).
+result = add(3, 5)  # Original function logic
+The original add function calculates the sum:
+return 3 + 5  # Result: 8
+return 8 * 2  # Result: 16
+************************************************************************************
 
 
