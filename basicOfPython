@@ -67,6 +67,9 @@ it will help in not creating __pycache__ file
  a generator is a type of function that allows you to generate values one at a time, instead of producing all values 
 at once and storing them in memory. This makes generators memory-efficient, especially when dealing with large datasets
 *********************************
+ Metaclass create Classes and Classes creates objects 
+**********************************************************************************************************************************************************
+Class as Decorator in Python
 
 
 
