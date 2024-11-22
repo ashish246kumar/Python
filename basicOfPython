@@ -104,5 +104,55 @@ The original add function calculates the sum:
 return 3 + 5  # Result: 8
 return 8 * 2  # Result: 16
 ************************************************************************************
+some practical use cases from an industry perspective of class as decorator
+1. Logging and Monitoring
+Automatically log method calls, arguments, and execution times.
+import time
+
+class LogDecorator:
+    def __init__(self, func):
+        self.func = func
+
+    def __call__(self, *args, **kwargs):
+        start_time = time.time()
+        result = self.func(*args, **kwargs)
+        end_time = time.time()
+        print(f"Method {self.func.__name__} called with {args} {kwargs}. Execution time: {end_time - start_time:.4f} seconds.")
+        return result
+
+@LogDecorator
+def process_transaction(transaction_id):
+    time.sleep(1)  # Simulate processing
+    return f"Transaction {transaction_id} processed"
+
+# Usage
+process_transaction(12345)
+
+2. Access Control and Security
+3. Input Validation
+Dynamic Feature Enabling
+
+class ValidateInputDecorator:
+    def __init__(self, func):
+        self.func = func
+
+    def __call__(self, *args, **kwargs):
+        if not all(isinstance(arg, int) and arg > 0 for arg in args):
+            raise ValueError("All inputs must be positive integers.")
+        return self.func(*args, **kwargs)
+
+@ValidateInputDecorator
+def calculate_area(length, width):
+    return length * width
+
+# Usage
+try:
+    print(calculate_area(5, 10))  # Success
+    print(calculate_area(-5, 10))  # ValueError
+except ValueError as e:
+    print(e)
+
+
+
 
 
