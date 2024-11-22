@@ -50,3 +50,5 @@ dbhelper.get_user()
 # dbhelper.delete_user(2)
 dbhelper.update_user(1,"Rahul2")
 ************************************************************************************************
+query1="select u.userId,u.name,d.department_name from user u INNER JOIN department d on u.department_id=d.department_id"
+alterQuery='ALTER TABLE USER ADD COLUMN department_id int'
