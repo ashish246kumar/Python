@@ -1,0 +1,8 @@
+difference between module and package?
+                       Module                                                                         package
+                 single file with  python code                                      directory with multiple module and __init__.py
+File Extension   .py file                                                           directory contaning __init__.py
+Usage            Group releated code                                                 Structured organization for large code base
+Example          math_operations.py                                                  'mypackage/' with __init__.py, math_operations.py, string_operation.py
+import example    import math_operations                                              from mypackage  import math_operations
+initilazation     not required                                                       Requires __init__.py
