@@ -22,4 +22,10 @@ what is pandas
 pandas is open source python library which support data strcture for data  based operation associated with data analyzing and data manupulation . pandas with reacch set of feature fits in every role of data operation
 whether it is related to implementing a diffefrent algo or solving complex problem
 **************************************************************************************************************************
+How exception handling is done in python
+The main keyword for handling exception are try, except, finnaly .
+*******************************************************************************************************************************
+what is the use of self in python
+self is used to represent instance of the class. with this keyword you can access the attribute and method of class in python binding the attribute with provided argument
 
+ 
