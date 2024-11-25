@@ -11,4 +11,11 @@ is python compiled language or interpreted language?
 python is interpreted language.That means python code is executed line by line by an interpreter at runtime . rather than being compiled into machine code beforehand like in compile language
 **********
 what are the benefit of using python lanuage as a tool in present scenario?
-simplicity|portability|open source|strong community support|development speed|dynamic typing
+simplicity|portability|open source|strong community support|development speed|dynamic typing|Extensive library and framework like django,numpy,pandas
+***********************************************************************************************************************************
+what are the global protected and private attribute in python?
+Global variable are the public variable defined in the global scope . to use global variable inside a function global keyword is used
+protected attribute are marked with single _underscore while they can still be accessed and modified from outside the class responsible developer should avoid doing so
+private variable are marked with double underscore (__ansh) . these can not be modified or accessed directly from outside the class and any such event will result an attribute error
+*****************************************************************************************************************************************
+
