@@ -18,4 +18,8 @@ Global variable are the public variable defined in the global scope . to use glo
 protected attribute are marked with single _underscore while they can still be accessed and modified from outside the class responsible developer should avoid doing so
 private variable are marked with double underscore (__ansh) . these can not be modified or accessed directly from outside the class and any such event will result an attribute error
 *****************************************************************************************************************************************
+what is pandas
+pandas is open source python library which support data strcture for data  based operation associated with data analyzing and data manupulation . pandas with reacch set of feature fits in every role of data operation
+whether it is related to implementing a diffefrent algo or solving complex problem
+**************************************************************************************************************************
 
