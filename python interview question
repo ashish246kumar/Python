@@ -6,3 +6,9 @@ Usage            Group releated code                                            
 Example          math_operations.py                                                  'mypackage/' with __init__.py, math_operations.py, string_operation.py
 import example    import math_operations                                              from mypackage  import math_operations
 initilazation     not required                                                       Requires __init__.py
+**************
+is python compiled language or interpreted language?
+python is interpreted language.That means python code is executed line by line by an interpreter at runtime . rather than being compiled into machine code beforehand like in compile language
+**********
+what are the benefit of using python lanuage as a tool in present scenario?
+simplicity|portability|open source|strong community support|development speed|dynamic typing
