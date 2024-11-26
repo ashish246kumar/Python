@@ -46,5 +46,9 @@ less efficient, hashability-> not hashable
 tuple-> syntax->(),mutability->Immutable,Modification-> can not change, methods-count(), index(), Access->[index], usage->constannt data , memory efficiecy->
 more efficient, hashability->  hashable
 *******************************************************************************************************************************************************
+What is slicing in Python?
+python slicig is a operation used to extract a portion of the string or list. by  specifying start, end and step you can determine the exact segment to extract
+slicing a list result in a new list created from specified portion of the original list
+***************************************************************************************
 
  
