@@ -50,5 +50,8 @@ What is slicing in Python?
 python slicig is a operation used to extract a portion of the string or list. by  specifying start, end and step you can determine the exact segment to extract
 slicing a list result in a new list created from specified portion of the original list
 ***************************************************************************************
+8. How is multithreading achieved in Python?
+Multithreading i python is achieved using the threadig module which enable the concurrent execution of multiple thread withi a single process. Each thread can run its own code
+and perform task simoltaneously
 
  
