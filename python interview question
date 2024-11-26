@@ -27,5 +27,10 @@ The main keyword for handling exception are try, except, finnaly .
 *******************************************************************************************************************************
 what is the use of self in python
 self is used to represent instance of the class. with this keyword you can access the attribute and method of class in python binding the attribute with provided argument
+***************************************************************************************************************************
+How is memory management done in Python?
+python manages memory using a private heap space where all objects and datastrcture stored . Programmers can not directly access this private heap . it is managed by python inter
+preter. Aditionally python has built in grabage collector that automatically recycles unused memory , freeing it up and making it available for future use
+*************************************************************************************************************************************************************
 
  
