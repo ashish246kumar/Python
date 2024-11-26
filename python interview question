@@ -32,5 +32,19 @@ How is memory management done in Python?
 python manages memory using a private heap space where all objects and datastrcture stored . Programmers can not directly access this private heap . it is managed by python inter
 preter. Aditionally python has built in grabage collector that automatically recycles unused memory , freeing it up and making it available for future use
 *************************************************************************************************************************************************************
+How to delete a file using Python?
+we can delete a file using python by the following approach 
+os.remove(),os.unlink()
+**********************************************************************************************************************************
+Which sorting technique is used by sort() and sorted() functions of python?
+python uses Tim sort algorithm for sortig which is stable sorting method with worst case time complexity of O(NlogN). Time sort is a hybrid algorithm derived from merged 
+sort and insertion sort designed to perform efficienty on various type of real data
+***************************************************
+Differentiate between List and Tuple?
+list-> syntax->[],mutability->mutable,Modification-> can change, add,remove, methods->append(),remove(), Access->indexing, usage-> mutuable collection , memory efficiecy->
+less efficient, hashability-> not hashable
+tuple-> syntax->(),mutability->Immutable,Modification-> can not change, methods-count(), index(), Access->[index], usage->constannt data , memory efficiecy->
+more efficient, hashability->  hashable
+*******************************************************************************************************************************************************
 
  
