@@ -151,7 +151,16 @@ try:
     print(calculate_area(-5, 10))  # ValueError
 except ValueError as e:
     print(e)
+************************************************************************************************************************************************************
+Different type of logging in python?
 
+# Example log messages
+logging.debug("This is a debug message")
+logging.info("This is an info message")
+logging.warning("This is a warning message")
+logging.error("This is an error message")
+logging.critical("This is a critical message")
+****************************************************************************************************************************************************************
 
 
 
