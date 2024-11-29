@@ -161,6 +161,8 @@ logging.warning("This is a warning message")
 logging.error("This is an error message")
 logging.critical("This is a critical message")
 ****************************************************************************************************************************************************************
+logging.error(): Logs an error message but does not include the exception traceback unless exc_info=True is explicitly passed.
+logging.exception(): Always logs the current exception traceback automatically (you don't need to pass exc_info=True).
 
 
 
