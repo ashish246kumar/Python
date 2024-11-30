@@ -163,6 +163,27 @@ logging.critical("This is a critical message")
 ****************************************************************************************************************************************************************
 logging.error(): Logs an error message but does not include the exception traceback unless exc_info=True is explicitly passed.
 logging.exception(): Always logs the current exception traceback automatically (you don't need to pass exc_info=True).
+**********************************************************************
+from flask import Flask
+import logging
+app=Flask(__name__)
+log_level=logging.DEBUG
+log_file='app.log'
+log_file_mode='a'
+log_format='%(asctime)s-%(levelname)s-%(message)s'
+logging.basicConfig(filename=log_file,filemode=log_file_mode)
+logging.basicConfig(level=log_level,filename=log_file,filemode=log_file_mode,format=log_format)
+logger=logging.getLogger()
+@app.route('/')
+def index():
+    logger.info('This is a debug message')
+    return "hello"
+
+
+if __name__=='__main__':
+    app.run(debug=True)
+
+*********************************************************************************************************************************
 
 
 
