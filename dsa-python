@@ -30,6 +30,19 @@ class Solution:
             elif i>sm and i<max:
                 sm=i
         return sm
+
+or
+class Solution:
+    def getSecondLargest(self, arr):
+        
+        # Code Here
+      
+       lar=max(arr)
+       arr2=[i for i in arr if i!=lar]
+       if not arr2:
+           return -1
+       sl=max(arr2)
+       return sl
 ************************************************************************************************************************************************************************************************************
 
 
