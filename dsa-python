@@ -1,0 +1,20 @@
+Find the largest elem in list 
+************
+class Solution:
+    def largest(self, arr : List[int]) -> int:
+        # code here
+        max=0;
+        for i in arr:
+            if i>max:
+                max=i
+        return max        
+        **********
+Or
+class Solution:
+    def largest(self, arr : List[int]) -> int:
+        # code here
+       a=max(arr)
+       return a
+************************************************************************************************************************************************************************************************************
+        
+        
