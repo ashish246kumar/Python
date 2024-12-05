@@ -150,6 +150,13 @@ the curly braces
 differece between apped and extend property of list?
 append--> appeds() adds an element to the list | the length of the list will increase by one
 extend--> extend() concatenates the first list with another list/iterable| The length of the list will increase by hoever many element were in the iterable argument
+eg 
+list1=[1,2,3]
+list2=[4,5,6]
+list1.append("AB")-->print(list1)--->[1,2,3,"AB"]-->in case append "AB" is treated as object
+list2.extend("AB")-->print(list2)-->[4,5,6,"A","B"]-->
+list1.append(list2)-->[1,2,3,[4,5,6]]
+list1.append(list2)-->[1,2,3,4,5,6]
 *****************************************************************************************
  
 
