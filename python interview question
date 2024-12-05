@@ -113,4 +113,46 @@ Tuple consumes less memory as compared to the list
 A Tuple data type is appropriate for accessing the elements
 The implication of iterations is comparatively Faster
 ********************************************************************************************************************************************************
+ow do you debug a Python program?
+By using this command we can debug a Python program:
+
+$ python -m pdb python-script.py
+**************************
+34. Does Python supports multiple Inheritance?
+Python does support multiple inheritances, unlike Java. Multiple inheritances mean that a class can be derived from more than one parent class.
+
+*************************************************************
+ How do you do data abstraction in Python?
+Data Abstraction is providing only the required details and hides the implementation from the world. It can be achieved in Python by using interfaces and abstract classes.
+***************
+38. How is memory management done in Python?
+Python uses its private heap space to manage the memory. Basically, all the objects and data structures are stored in the private heap space. 
+Even the programmer can not access this private space as the interpreter takes care of this space. Python also has an inbuilt garbage collector, 
+which recycles all the unused memory and frees the memory and makes it available to the heap space.
+********************************************************************************
+48. What are Access Specifiers in Python?
+Python uses the ‘_’ symbol to determine the access control for a specific data member or a member function of a class.
+ A Class in Python has three types of Python access modifiers:
+Public Access Modifier,Private Access Modifier,Protected Access Modifier
+**************************************************************************************
+51. What are Function Annotations in Python?
+
+Function Annotation is a feature that allows you to add metadata to function parameters and return values.
+ This way you can specify the input type of the function parameters and the return type of the value the function returns.
+
+*************************************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
