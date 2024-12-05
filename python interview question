@@ -162,6 +162,11 @@ list1.extend(4)-->it will throw error since 4 is not iterable object
 *****************************************************************************************
  can we use list/tuple or list inside a tuple as a key in dictionary?
 no list can not be used as a key in dictionary| tuple can be used as key in dictionary|no tuple contaning list can not be used as a key in dictionary
+Dictionaries are indexed by keys.
+Those Keys can be any immutable type i.e strings and numbers can always be keys. 
+You can’t use lists as keys, since lists can be modified in place using index assignments
+*****************************************************
+
 
 
 
