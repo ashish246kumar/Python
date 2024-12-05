@@ -74,4 +74,27 @@ print(a(7, 19))
 . What is a pass in Python?
 Pass means performing no operation or in other words, it is a placeholder in the compound statement, where there should be a blank left and nothing has to be written there.
 **********************
+15. Can we Pass a function as an argument in Python?
+
+Yes, Several arguments can be passed to a function, including objects, variables (of the same or distinct data types), and functions
+ Higher-order functions are functions that can take other functions as arguments.
+
+*********************************************************************************************************************************************
+19. What is docstring in Python?
+documentation strings (or docstrings) provide a convenient way of associating documentation with Python modules, functions, classes, and methods.
+
+
+Declaring Docstrings: The docstrings are declared using ”’triple single quotes”’ or “””triple double quotes””” just below the class, method, or function declaration.
+ All functions should have a docstring
+Accessing Docstrings: The docstrings can be accessed using the __doc__ method of the object or using the help function
+*********************************************************************************************************************************************************
+Dictionary Comprehension? 
+For Example: my_dict = {i:i+7 for i in range(1, 10)}
+*******************************************
+24. What is the difference between xrange and range functions?
+
+range() and xrange() are two functions that could be used to iterate a certain number of times in for loops in Python. 
+
+In Python 3, there is no xrange, but the range function behaves like xrange
+**************************************************************************************
 
