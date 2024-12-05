@@ -141,6 +141,11 @@ Function Annotation is a feature that allows you to add metadata to function par
  This way you can specify the input type of the function parameters and the return type of the value the function returns.
 
 *************************************************************************************
+differece between list and dict
+list--> list object are created using list() function| The default order of element is always maintained| we can access the element using the index value
+|placeing all the element inside the square bracket seperated by comma| List are collection of various element (Hetrogeneous)
+dict-->dictionary object are created using dict() function| No gurantee of maintaning the order| we can access the element using the key| placing all the key value inside 
+the curly braces
 
 
 
