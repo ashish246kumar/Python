@@ -166,6 +166,45 @@ Dictionaries are indexed by keys.
 Those Keys can be any immutable type i.e strings and numbers can always be keys. 
 You can’t use lists as keys, since lists can be modified in place using index assignments
 *****************************************************
+Why Python Is Called As Dynamic Typed Programming  Language OR What Is Duck Typing?
+Python don't have any problem even if we don't declare the type of variable. 
+It states the kind of variable in the runtime of the program. 
+Python also take cares of the memory management which is crucial in programming. So, Python is a dynamically typed language.
+*********************************************************************
+6. What If We Don't Use “With” Statement
+If We Don't use "WITH" Statement, We need to close the opened file manually but using close().
+In Case Of open():
+file = open("hello.txt", "w")
+file.write("Hello, World!")
+file.close()
+# Safely open the file
+file = open("hello.txt", "w")
+try:
+    file.write("Hello, World!")
+finally:
+    file.close()
+****
+with open("hello.txt", "w") as file:
+    file.write("Hello, World!")
+************
+ Internal functions called in "WITH" Statement
+
+.__enter__() is called by the with statement to enter the runtime context.
+.__exit__() is called when the execution leaves the with code block
+****************************************************************************************************************************
+  Q)What is Abstraction And How To Define Abstract Classes and Functions Using Abstraction.
+An abstract base class is the common application program of the interface for a set of subclasses. 
+It can be used by the third-party, which will provide the implementations such as with plugins.
+
+Working of the Abstract Classes:
+Unlike the other high-level language, Python doesn't provide the abstract class itself. We need to import the abc module, which provides the base for 
+defining Abstract Base classes (ABC). The ABC works by decorating methods of the base class as abstract. It registers concrete classes as the implementation of
+ the abstract base. We use the @abstractmethod decorator to define an abstract method or if we don't provide the definition to the method, it automatically
+becomes the abstract method. Let's understand the following example.
+
+
+*****************************************************************************************
+
 
 
 
