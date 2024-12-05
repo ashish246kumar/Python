@@ -146,6 +146,13 @@ list--> list object are created using list() function| The default order of elem
 |placeing all the element inside the square bracket seperated by comma| List are collection of various element (Hetrogeneous)
 dict-->dictionary object are created using dict() function| No gurantee of maintaning the order| we can access the element using the key| placing all the key value inside 
 the curly braces
+****************************************************************************************************************************
+differece between apped and extend property of list?
+append--> appeds() adds an element to the list | the length of the list will increase by one
+extend--> extend() concatenates the first list with another list/iterable| The length of the list will increase by hoever many element were in the iterable argument
+*****************************************************************************************
+ 
+
 
 
 
