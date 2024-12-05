@@ -51,7 +51,25 @@ python slicig is a operation used to extract a portion of the string or list. by
 slicing a list result in a new list created from specified portion of the original list
 ***************************************************************************************
 8. How is multithreading achieved in Python?
-Multithreading i python is achieved using the threadig module which enable the concurrent execution of multiple thread withi a single process. Each thread can run its own code
+Multithreading in python is achieved using the threadig module which enable the concurrent execution of multiple thread within a single process. Each thread can run its own code
 and perform task simoltaneously
-
- 
+**************************************************************************************************
+‘#’ is used to comment on everything that comes after on the line
+***********
+Mutable data types can be edited i.e., they can change at runtime. Eg – List, Dictionary, etc.
+Immutable data types can not be edited i.e., they can not change at runtime. Eg – String, Tuple, etc.
+*************************************************************
+The set is unordered collection of unique items that is iterable and mutable. A dictionary in Python is an ordered collection of data values, 
+used to store data values like a map.
+ *******************************************************************************************
+List comprehension is a syntax construction to ease the creation of a list based on existing iterable.
+For Example:
+my_list = [i for i in range(1, 10)]
+***************************************************************************
+## Lambda
+A lambda function is an anonymous function. This function can have any number of parameters but, can have just one statement. For Example:
+a = lambda x, y : x*y
+print(a(7, 19))
+**********************************************************************************
+. What is a pass in Python?
+Pass means performing no operation or in other words, it is a placeholder in the compound statement, where there should be a blank left and nothing has to be written there.
