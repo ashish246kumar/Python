@@ -288,6 +288,21 @@ a = {}
 Empty Set:
 a = set()
 *************************************************************************
+33. Difference Between .py and .pyc
+.py files contain the source code of a program. Whereas, .pyc file contains the bytecode of your program.
+Python compiles the .py files and saves it as .pyc files , so it can reference them in subsequent invocations. 
+The .pyc contain the compiled bytecode of Python source files. This code is then executed by Python's virtual machine .
+**********************************************************************************************************************************
+ Can You Concatenate Two Tuples. If Yes, How Is It Possible?        Since it is Immutable
+How To Concatenate Two Tuple:
+
+t1 = (1,2,3)
+t2 = (7,9,10)
+t1 = t1 + t2
+print("After concatenation is : ", t1 )
+
+Output:
+After concatenation is :  (1, 2, 3, 7, 9, 10)
 
 
 
