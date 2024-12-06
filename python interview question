@@ -211,6 +211,29 @@ This allows you to import modules from directories not in Python's default locat
 export PYTHONPATH=/path/to/my/modules:/another/path
 
 **********
+Try: This block will test the exceptional error to occur.
+
+Except: Here you can handle the error.
+
+Else: If there is no exception then this block will be executed.
+
+********************************************************************************************************************************
+PIP
+pip is the package manager for Python packages. We can use pip to install packages that do not come with Python
+******************************************************
+28. How to use F String and Format or Replacement Operator?
+name = 'Nitin'
+role = 'Python Developer'
+print(f"Hello, My name is {name} and I'm {role}")
+#How To Use format Operator
+
+name = 'Nitin'
+role = 'Python Developer'
+print(("Hello, My name is {} and I'm {}").format(name,role))
+
+Output:
+Hello, My name is Nitin and I'm Python Developer
+********************************************************************************************************************
 
 
 
