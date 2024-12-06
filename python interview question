@@ -234,6 +234,61 @@ print(("Hello, My name is {} and I'm {}").format(name,role))
 Output:
 Hello, My name is Nitin and I'm Python Developer
 ********************************************************************************************************************
+29. How to Get List of all keys in a Dictionary?
+Using List:
+dct = {'A': 1, 'B': 2, 'C': 3}
+all_keys = list(dct.keys())
+print(all_keys)  # ['A', 'B', 'C']
+
+Shortcut for Above Code:
+dct = {'A': 1, 'B': 2, 'C': 3}
+all_keys = list(dct)
+print(all_keys)  # ['A', 'B', 'C']
+***********************************************************************
+30. Difference Between Abstraction and Encapsulation.
+Abstraction------> Abstraction works on the design level.|Abstraction is implemented to hide unnecessary data and withdrawing relevant data.|
+
+
+Encapsulation----->Encapsulation works on the application level.| Encapsulation is the mechanism of hiding the code and the data 
+together from the outside world or misus | Encapsulation is supported using, e.g. public, private and secure 
+access modification systems.
+************************************************************
+31. Does Python Support Multiple Inheritance. (Diamond Problem)
+Yes, Python Supports Multiple Inheritance.
+ultiple Inheritance In Python:
+
+
+class A:
+	def abc(self):
+		print("a")
+
+class B(A):
+	def abc(self):
+		print("b")
+
+class C(A):
+	def abc(self):
+		print("c")
+
+class D(B,C):
+	pass
+
+d = D()
+d.abc()
+**********************************************************************************
+Empty List:
+a = []
+
+Empty Tuple:
+a = ()
+
+Empty Dict:
+a = {}
+
+Empty Set:
+a = set()
+*************************************************************************
+
 
 
 
