@@ -303,6 +303,18 @@ print("After concatenation is : ", t1 )
 
 Output:
 After concatenation is :  (1, 2, 3, 7, 9, 10)
+*****************************************************************
+38. How To Read Multiple Values From Single Input?
+By Using Split()
+x = list(map(int, input("Enter a multiple value: ").split()))
+print("List of Values: ", x)
+
+x = [int(x) for x in input("Enter multiple value: ").split()]
+print("Number of list is: ", x)
+
+x = [int(x) for x in input("Enter multiple value: ").split(",")]
+print("Number of list is: ", x)
+************************************************************************************************************************************
 
 
 
