@@ -206,6 +206,8 @@ becomes the abstract method. Let's understand the following example.
 *****************************************************************************************
 what is PYTHON PATH?
 PYTHONPATH is an environment variable in Python that specifies a list of directories the Python interpreter should add to its module search path
+This allows you to import modules from directories not in Python's default locations.
+
 export PYTHONPATH=/path/to/my/modules:/another/path
 
 **********
