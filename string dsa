@@ -90,8 +90,18 @@ class Solution:
        return -1          
 
 or
+class Solution:
+    def strStr(self, haystack: str, needle: str) -> int:
+       n=len(haystack)
+       n1=len(needle)
+       for i in range(n-n1+1):
+        if haystack[i:i+n1]==needle:
+            return i
+       return -1     
 
-   class Solution:
+
+(or)
+clss Solution:
     def strStr(self, haystack: str, needle: str) -> int:
        return haystack.find(needle)
 **********************************************************************************************************************************************************
