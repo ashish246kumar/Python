@@ -161,7 +161,11 @@ class Solution:
             sum=str(incr)+sum   
         return sum    
 
-
+or 
+class Solution:
+    def addStrings(self, num1: str, num2: str) -> str:
+       return str(int(num1)+int(num2))
+4to 5 test case fail for large string
                
                            
         
