@@ -230,7 +230,70 @@ class Solution:
             return True
         return False                        
 ******************************************************************************************************************************
+Longest substring without repeating character
 
+"qrsvbspk"
+5
+Example 2:
+
+Input: s = "abcabcbb"
+Output: 3
+Explanation: The answer is "abc", with the length of 3.
+Example 3:
+
+Input: s = "bbbbb"
+Output: 1
+Explanation: The answer is "b", with the length of 1.
+
+
+
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        l1=[]
+        left=right=0
+        max1=0
+        while(right<len(s)):
+            if s[right] in l1:
+                while(s[right] in l1):
+                    l1.remove(s[left])
+                    left=left+1
+                l1.append(s[right])
+            else:
+                l1.append(s[right]) 
+                max1=max(max1,len(l1))
+            right=right+1    
+        return max1           
+***************************************************************************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+            
 
         
                
