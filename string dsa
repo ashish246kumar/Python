@@ -166,6 +166,52 @@ class Solution:
     def addStrings(self, num1: str, num2: str) -> str:
        return str(int(num1)+int(num2))
 4to 5 test case fail for large string
+***************************************************************************************************************************
+valid anagram
+Example 1:
+
+Input: s = "anagram", t = "nagaram"
+
+Output: true
+
+Example 2:
+
+Input: s = "rat", t = "car"
+
+Output: false
+*********************************************
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        s1= ''.join(sorted(s))
+        s2=''.join(sorted(t))
+        if s1==s2:
+            return True
+        return False  
+***********************************************************************************************************************************
+valid parenthesis 
+
+class Solution:
+    def isValid(self, s: str) -> bool:
+        n=len(s)
+        stack=[]
+        for i in range(n):
+            if s[i]=='(' or s[i]=='{' or s[i]=='[':
+                stack.append(s[i])
+            elif s[i]==')' and len(stack)!=0 and stack[-1]=='(':
+                stack.pop()
+            elif s[i]=='}' and len(stack)!=0 and stack[-1]=='{':
+                stack.pop()
+            elif s[i]==']' and len(stack)!=0 and stack[-1]=='[':
+                stack.pop()
+            else:
+                return False
+        if len(stack)==0:
+            return True
+        return False                        
+******************************************************************************************************************************
+
+
+        
                
                            
         
