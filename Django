@@ -28,3 +28,23 @@ Then check each URL patterns in urls.py file, and it stops at the first match of
  
 Django responds back to the user and sends a template as a response.
 ***********************************************************************************************************
+What Is The Command For Migrations In Django?
+ 
+Command to create a migration file inside the migration folder: 
+python manage.py makemigrations 
+
+After creating a migration, to reflect changes in the database permanently execute migrate command: 
+python manage.py migrate 
+
+To see raw SQL query executing behind applied migration execute the command:
+ python manage.py sqlmigrate app_name migration_name 
+python manage.py sqlmigrate nitapp 0001 
+
+To see all migrations, execute the command:
+ python manage.py showmigrations 
+
+To see app-specific migrations by specifying app-name, execute the command:
+
+ python manage.py showmigrations nitapp
+*******************************************************************************************************************
+
