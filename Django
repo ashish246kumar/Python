@@ -48,3 +48,31 @@ To see app-specific migrations by specifying app-name, execute the command:
  python manage.py showmigrations nitapp
 *******************************************************************************************************************
 
+What Is The Command To Create A Superuser In Django? 
+Command To Create A SuperUser: python manage.py createsuperuser
+ Enter your desired username and press enter.
+ Username: admin 
+
+You will then be prompted for your desired email address: 
+Email address: admin@example.com
+ 
+The final step is to enter your password twice, the second time as a confirmation of the first.
+ Password: ********** 
+Password (again): ********* 
+Superuser created successfully.
+******************************************************************************************************************
+How To View All Items In The Model Using Django QuerySet?
+
+Django Command To View All Items In A Model: Users.objects.all() 
+where "User" is a model name.
+*****************************************************************************
+What Is Context In Django?
+  
+A context in Django is a dictionary, in which keys represent variable names and values represent their values. This dictionary (context) is passed to the template which then uses the variables to output the dynamic content. 
+
+A context is a variable name -> variable value mapping that is passed to a template.
+
+ Context processors let you specify a number of variables that get set in each context automatically - without you having to specify the variables in each render() call.
+************************************************
+
+
