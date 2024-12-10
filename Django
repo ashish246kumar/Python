@@ -1,0 +1,8 @@
+what is the difference between a app project and a app in django ?
+command to create a project  django-admin startproject nitman  here nitman is a project name
+command to create an app python manage.py startapp nitapp here nitapp is a app name
+****************************************************************************************************************************************************************************************************************
+command to run a project 
+python manage.py runserver
+it will run the application in 8000 port
+*****************************************************
