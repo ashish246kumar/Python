@@ -330,6 +330,35 @@ class Solution:
         return True        
 
 *************************************************************
+Longest Common Prefix
+Example 1:
+
+Input: strs = ["flower","flow","flight"]
+Output: "fl"
+Example 2:
+
+Input: strs = ["dog","racecar","car"]
+Output: ""
+Explanation: There is no common prefix among the input string
+*******************
+        class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        n=len(strs)
+        n1=len(strs[0])
+        a=True
+        for i in range(n1):
+            s1=strs[0][0:n1-i]
+            a=True
+            for j in range(1,n):
+                if strs[j].startswith(s1)==False:
+                    a=False
+                    break
+            if a==True:
+                return s1
+        return ""                
+**********************************************************************************************************
+
+
         
 
 
