@@ -356,11 +356,47 @@ Explanation: There is no common prefix among the input string
             if a==True:
                 return s1
         return ""                
+
+or
+class Solution:
+    def longestCommonPrefix(self, v: List[str]) -> str:
+        ans=""
+        v=sorted(v)
+        first=v[0]
+        last=v[-1]
+        for i in range(min(len(first),len(last))):
+            if(first[i]!=last[i]):
+                return ans
+            ans+=first[i]
+        return ans 
 **********************************************************************************************************
 
+Largest odd no in the String
+Example 1:
 
+Input: num = "52"
+Output: "5"
+Explanation: The only non-empty substrings are "5", "2", and "52". "5" is the only odd number.
+Example 2:
+
+Input: num = "4206"
+Output: ""
+Explanation: There are no odd numbers in "4206".
+****************************************************
         
-
+class Solution:
+    def largestOddNumber(self, num: str) -> str:
+        n=len(num)
+        j=-1
+        for i in range(n-1,-1,-1):
+            if(int(num[i])%2==1):
+                j=i
+                break
+        if j==-1:
+            return ""        
+        return num[:j+1]        
+*********************************************************************************************************************************
+        
 
 
 
