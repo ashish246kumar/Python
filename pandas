@@ -189,6 +189,126 @@ def concatenateTables(df1: pd.DataFrame, df2: pd.DataFrame) -> pd.DataFrame:
     df_concatenated=pd.concat([df1,df2],axis=0,ignore_index=True)
     return df_concatenated
   *************************************************************************************
+  RESHAPE DATA:PIVOT
+Write a solution to pivot the data so that each row represents temperatures for a specific month, and each city is a separate column.
+The result format is in the following example.
+Example 1:
+Input:
++--------------+----------+-------------+
+| city         | month    | temperature |
++--------------+----------+-------------+
+| Jacksonville | January  | 13          |
+| Jacksonville | February | 23          |
+| Jacksonville | March    | 38          |
+| Jacksonville | April    | 5           |
+| Jacksonville | May      | 34          |
+| ElPaso       | January  | 20          |
+| ElPaso       | February | 6           |
+| ElPaso       | March    | 26          |
+| ElPaso       | April    | 2           |
+| ElPaso       | May      | 43          |
++--------------+----------+-------------+
+Output:
++----------+--------+--------------+
+| month    | ElPaso | Jacksonville |
++----------+--------+--------------+
+| April    | 2      | 5            |
+| February | 6      | 23           |
+| January  | 20     | 13           |
+| March    | 26     | 38           |
+| May      | 43     | 34           |
++----------+--------+--------------+
+**********
+import pandas as pd
+
+def pivotTable(weather: pd.DataFrame) -> pd.DataFrame:
+    pivoted_df=weather.pivot(index='month',columns='city',values='temperature')
+    return pivoted_df
+*****************************************************************************************************************************************************
+Reshape Data:Melt
+ Write a solution to reshape the data so that each row represents sales data for a product in a specific quarter.
+The result format is in the following example.
+Example 1:
+
+Input:
++-------------+-----------+-----------+-----------+-----------+
+| product     | quarter_1 | quarter_2 | quarter_3 | quarter_4 |
++-------------+-----------+-----------+-----------+-----------+
+| Umbrella    | 417       | 224       | 379       | 611       |
+| SleepingBag | 800       | 936       | 93        | 875       |
++-------------+-----------+-----------+-----------+-----------+
+Output:
++-------------+-----------+-------+
+| product     | quarter   | sales |
++-------------+-----------+-------+
+| Umbrella    | quarter_1 | 417   |
+| SleepingBag | quarter_1 | 800   |
+| Umbrella    | quarter_2 | 224   |
+| SleepingBag | quarter_2 | 936   |
+| Umbrella    | quarter_3 | 379   |
+| SleepingBag | quarter_3 | 93    |
+| Umbrella    | quarter_4 | 611   |
+| SleepingBag | quarter_4 | 875   |
++-------------+-----------+-------+
+import pandas as pd
+
+def meltTable(report: pd.DataFrame) -> pd.DataFrame:
+    df1=pd.melt(report,id_vars=['product'],var_name='quarter',value_name='sales')
+    return df1
+**************************************************************************************************
+Method Chaning
+
+DataFrame animals
++-------------+--------+
+| Column Name | Type   |
++-------------+--------+
+| name        | object |
+| species     | object |
+| age         | int    |
+| weight      | int    |
++-------------+--------+
+Write a solution to list the names of animals that weigh strictly more than 100 kilograms.
+
+Return the animals sorted by weight in descending order.
+
+The result format is in the following example.
+
+ 
+
+Example 1:
+
+Input: 
+DataFrame animals:
++----------+---------+-----+--------+
+| name     | species | age | weight |
++----------+---------+-----+--------+
+| Tatiana  | Snake   | 98  | 464    |
+| Khaled   | Giraffe | 50  | 41     |
+| Alex     | Leopard | 6   | 328    |
+| Jonathan | Monkey  | 45  | 463    |
+| Stefan   | Bear    | 100 | 50     |
+| Tommy    | Panda   | 26  | 349    |
++----------+---------+-----+--------+
+Output: 
++----------+
+| name     |
++----------+
+| Tatiana  |
+| Jonathan |
+| Tommy    |
+| Alex     |
++----------+
+Explanation: 
+All animals weighing more than 100 should be included in the results table.
+Tatiana's weight is 464, Jonathan's weight is 463, Tommy's weight is 349, and Alex's weight is 328.
+The results should be sorted in descending order of weight.
+
+
+import pandas as pd
+
+def findHeavyAnimals(animals: pd.DataFrame) -> pd.DataFrame:
+    return animals[animals['weight']>100].sort_values(by='weight',ascending=False)[['name']]
+*******************************************************************************************************************************************************************************    
   
 
 
