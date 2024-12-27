@@ -1,0 +1,37 @@
+Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.
+
+ 
+
+Example 1:
+
+Input: nums = [1,1,1,2,2,3], k = 2
+Output: [1,2]
+Example 2:
+
+Input: nums = [1], k = 1
+Output: [1]
+ 
+
+
+
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        frequency_dict = {}
+        
+        # Count the frequency of each number
+        for num in nums:
+            frequency_dict[num] = frequency_dict.get(num, 0) + 1
+        
+        # Sort the dictionary by frequency in descending order
+        sorted_frequency_dict = dict(sorted(frequency_dict.items(), key=lambda item: item[1], reverse=True))
+        
+        count = 1
+        l1=[]
+        # Find the kth most frequent element
+        for key, value in sorted_frequency_dict.items():
+            l1.append(key)
+            if count == k:
+                return l1
+            count += 1
+        
+        return l1
