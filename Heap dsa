@@ -65,6 +65,22 @@ class Solution:
                 maxdigit2=max(str(nums[j]))
                 if maxdigit==maxdigit2:
                     temp=max(temp,nums[i]+nums[j])
-        return -1 if temp==0 else temp            
+        return -1 if temp==0 else temp  
+
+or  
+class Solution:
+    def maxSum(self, nums: List[int]) -> int:
+        max_by_digit = defaultdict(int)
+        max_sum = -1
+
+        for num in nums:
+            digit = max(str(num))
+
+            if digit in max_by_digit:
+                max_sum = max(max_sum, max_by_digit[digit] + num)
+
+            max_by_digit[digit] = max(max_by_digit[digit], num)
+
+        return max_sum         
 *******************************************************        
 
