@@ -202,6 +202,55 @@ defining Abstract Base classes (ABC). The ABC works by decorating methods of the
  the abstract base. We use the @abstractmethod decorator to define an abstract method or if we don't provide the definition to the method, it automatically
 becomes the abstract method. Let's understand the following example.
 
+Steps to Create and Use Abstract Classes:
+Import the abc module.
+Create a base class that inherits from ABC.
+Use the @abstractmethod decorator to declare abstract methods.
+Implement the abstract methods in derived (concrete) classes.
+
+
+from abc import ABC, abstractmethod
+
+# Abstract Base Class
+class Plugin(ABC):
+    @abstractmethod
+    def execute(self):
+        """Run the plugin's main functionality."""
+        pass
+
+    @abstractmethod
+    def configure(self, settings):
+        """Configure the plugin with specific settings."""
+        pass
+
+# Concrete Class implementing the Abstract Base Class
+class VideoPlugin(Plugin):
+    def execute(self):
+        print("Executing Video Plugin functionality.")
+
+    def configure(self, settings):
+        print(f"Configuring Video Plugin with settings: {settings}")
+
+# Another Concrete Class
+class AudioPlugin(Plugin):
+    def execute(self):
+        print("Executing Audio Plugin functionality.")
+
+    def configure(self, settings):
+        print(f"Configuring Audio Plugin with settings: {settings}")
+
+
+# Client Code
+def run_plugin(plugin: Plugin):
+    plugin.configure({"quality": "high"})
+    plugin.execute()
+
+# Test the plugins
+video_plugin = VideoPlugin()
+audio_plugin = AudioPlugin()
+
+run_plugin(video_plugin)
+run_plugin(audio_plugin)
 
 *****************************************************************************************
 what is PYTHON PATH?
@@ -303,6 +352,17 @@ print("After concatenation is : ", t1 )
 
 Output:
 After concatenation is :  (1, 2, 3, 7, 9, 10)
+
+
+
+The expression t1 + t2 creates a new tuple by concatenating the elements of t1 and t2.
+This new tuple is then assigned back to the variable t1.
+The original t1 tuple is not modified; instead, the variable t1 now points to the new tuple created by concatenation.
+The immutability of tuples means that the original t1 object remains unchanged, but since t1 is just a variable name (a reference), it can be reassigned to point to
+a new object
+print("ID of t1 before:", id(t1))  # ID of the original t1
+t1 = t1 + t2
+print("ID of t1 after:", id(t1))   # ID of the new t1
 *****************************************************************
 38. How To Read Multiple Values From Single Input?
 By Using Split()
