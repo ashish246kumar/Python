@@ -189,6 +189,22 @@ Input: cost = [5,5]
 Output: 10
 Explanation: Since there are only 2 candies, we buy both of them. There is not a third candy we can take for free.
 Hence, the minimum cost to buy all candies is 5 + 5 = 10.
+
+
+class Solution:
+    def minimumCost(self, cost: List[int]) -> int:
+        
+        cost.sort()
+        i=len(cost)-1
+        if i==0:
+            return cost[i]
+        sum=0
+        while(i>=0):
+            prev=cost[i-1] if i-1>=0 else 0
+            sum=sum+cost[i]+prev
+            i=i-3
+        return sum    
+        
  *****************************************************************************************************************
 
         
