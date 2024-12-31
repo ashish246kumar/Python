@@ -40,11 +40,12 @@ c=np.arange(10).reshape(2,5)
 np.vstack([b,c])
 ********************************************
 Exercise 9. How to stack two arrays horizontally?¶
-
-
 b=np.repeat(1,10).reshape(2,-1)
 a=np.arange(10).reshape(2,-1)
 np.hstack([b,a])
 ***************************************************************************
+sequeence=np.tile([1,2,3],3)
+
+
 
 
