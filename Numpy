@@ -31,6 +31,14 @@ a=np.arange(10)
 a.reshape(2,5)
 
 *********************************************
+Exercise 8. How to stack two arrays vertically?¶
+
+a=np.arange(10)
+
+b=a.reshape(2,5)
+c=np.arange(10).reshape(2,5)
+np.vstack([b,c])
+********************************************
 
 
 
