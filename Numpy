@@ -1,0 +1,14 @@
+import numpy as np
+print(np.__version__)
+*****************
+Exercise 2. How to create a 1D array?¶
+a=np.arange(10)
+print(a)
+***************************
+Exercise 3. How to create a boolean array?¶
+np.full((3,3), True, dtype=bool)
+or 
+np.ones((3,3), dtype=bool)
+*************************************
+
+
