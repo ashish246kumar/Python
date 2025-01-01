@@ -45,7 +45,54 @@ a=np.arange(10).reshape(2,-1)
 np.hstack([b,a])
 ***************************************************************************
 sequeence=np.tile([1,2,3],3)
+******************************************************************
+11
+How to get the common items between two python numpy arrays?
+a = np.array([1,2,3,2,3,4,3,4,5,6])
+b = np.array([7,2,10,2,7,4,9,4,9,8])
+np.intersect1d(a,b)
+*************************************************************************************
+Exercise 12. How to remove from one array those items that exist in another?
 
+arr1=np.array([1,2,3,4,5,6,7])
+arr2=np.array([6,7,8,9,10])
+np.setdiff1d(arr1,arr2)
+array([1, 2, 3, 4, 5])
+**************************************************************************
+Exercise 13. How to get the positions where elements of two arrays match?
+
+arr1=np.array([1,2,3,4,5,6,7])
+arr2=np.array([6,7,8,9,10,11,7])
+np.where(arr1==arr2)
+(array([6]),)
+************************************************************************************
+Exercise 14. How to extract all numbers between a given range from a numpy array?
+
+arr1=np.array([1,2,3,4,5,6,7])
+arr1[(arr1>=5) & (arr1<=7)]
+************************************************************************************
+Exercise 20. How to create a 2D array containing random floats between 5 and 10?
+rand_arr=np.random.uniform(5,10,size=(5,3))
+print(rand_arr)
+
+[[6.70653313 7.96788831 8.56662457]
+ [7.08400869 8.34726681 6.13647252]
+ [7.61925505 7.84261547 6.35828375]
+ [7.90083509 7.00350732 9.76487474]
+ [8.82846849 9.85714092 8.56958507]]
+**************************************************************************************
+Exercise 19. How to reverse the columns of a 2D array?
+arr=np.arange(9).reshape(3,3)
+arr[:,::-1]
+*********************************************************
+Exercise 18. How to reverse the rows of a 2D array?
+
+arr=np.arange(9).reshape(3,3)
+arr[::-1,:]
+array([[6, 7, 8],
+       [3, 4, 5],
+       [0, 1, 2]])
+*************************************
 
 
 
