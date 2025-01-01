@@ -5,7 +5,7 @@ Write a solution to create a DataFrame from a 2D list called student_data. This 
 The DataFrame should have two columns, student_id and age, and be in the same order as the original 2D list.
 
 The result format is in the following example.
-
+1)
  
 
 Example 1:
@@ -36,6 +36,7 @@ def createDataframe(student_data: List[List[int]]) -> pd.DataFrame:
     print(df)
     return df
 *************************************************************************************************************************************************
+2)
 Size of the dataFrame
 import pandas as pd
 
@@ -44,6 +45,7 @@ def getDataframeSize(players: pd.DataFrame) -> List[int]:
     a=[rows,column]
     return a
     ****************************************************************************
+3)
     Display first three rows
 import pandas as pd
 
@@ -51,6 +53,7 @@ def selectFirstRows(employees: pd.DataFrame) -> pd.DataFrame:
     return employees.head(3)
     
 **************************************************************************************************
+4)
 Write a solution to select the name and age of the student with student_id = 101.
 import pandas as pd
 
@@ -62,7 +65,15 @@ import pandas as pd
 arr=np.arange(20).reshape(5,4)
 df=pd.DataFrame(arr,index=['a','b','c','d','e'])
 print(df.loc[df[0]>5])
+
+practice
+import pandas as pd
+import numpy as np
+arr=np.arange(10).reshape(5,2)
+df=pd.DataFrame(arr,index=['a','b','c','d','e'])
+df.loc[['a']]
 ********************************************************************************************************************************
+5)
 Write a solution to create a new column name bonus that contains the doubled values of the salary column.
 
 import pandas as pd
@@ -72,6 +83,7 @@ def createBonusColumn(employees: pd.DataFrame) -> pd.DataFrame:
     return employees
     
 ************************************************************************************************
+6)
 Drop  a missing data
 There are some rows having missing values in the name column.
 
@@ -85,6 +97,7 @@ import pandas as pd
 def dropMissingData(students: pd.DataFrame) -> pd.DataFrame:
     return students.dropna(subset=['name'])
 ********************************************************************************************************
+7)
  There are some duplicate rows in the DataFrame based on the email column.
 
 Write a solution to remove these duplicate rows and keep only the first occurrence.
@@ -121,6 +134,7 @@ def dropDuplicateEmails(customers: pd.DataFrame) -> pd.DataFrame:
     return customers.drop_duplicates(subset=['email'],keep='first')
 
 **************************************************************************************************************************************
+8)
 A company intends to give its employees a pay rise.
 
 Write a solution to modify the salary column by multiplying each salary by 2.
@@ -134,6 +148,7 @@ def modifySalaryColumn(employees: pd.DataFrame) -> pd.DataFrame:
     employees['salary']=employees['salary']*2
     return employees
 *************************************************************************************************************************************************
+9)
 Rename Column
 Write a solution to rename the columns as follows:
 
@@ -148,6 +163,7 @@ def renameColumns(students: pd.DataFrame) -> pd.DataFrame:
     students.rename(columns={'id':'student_id','first':'first_name','last':'last_name','age':'age_in_years'},inplace=True)
     return students
 ****************************************************************************************************************************************************
+10)
 Change Data Type
 import pandas as pd
 Write a solution to correct the errors:
@@ -158,6 +174,7 @@ def changeDatatype(students: pd.DataFrame) -> pd.DataFrame:
     return students
 
 *************************************************************************************************************************************************************
+11)
 Fill missing Data
 Write a solution to fill in the missing value as 0 in the quantity column.
 The result format is in the following example.
@@ -168,6 +185,7 @@ def fillMissingValues(products: pd.DataFrame) -> pd.DataFrame:
     products['quantity']=products['quantity'].fillna(0)
     return products
 *********************************************************
+12)
 Reshape Data:Concatenate
 Write a solution to concatenate these two DataFrames vertically into one DataFrame.
 DataFrame df1
