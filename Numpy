@@ -93,6 +93,34 @@ array([[6, 7, 8],
        [3, 4, 5],
        [0, 1, 2]])
 *************************************
+Exercise 17. How to swap two rows in a 2d numpy array?
+
+arr=np.arange(9).reshape(3,3)
+arr[[1,0,2],:]
+arr[[1, 0, 2]]: This tells numpy to reorder the rows in the array.
+1 means "put Row 1 first".
+0 means "put Row 0 next".
+2 means "keep Row 2 as it is
+
+*************************************************
+Exercise 16. How to swap two columns in a 2d numpy array?¶
+arr=np.arange(9).reshape(3,3)
+arr[:,[1,0,2]]
+************************************************************
+The zip function in Python is used to combine two or more iterables (e.g., lists, tuples, arrays, etc.) into a single iterable of tuples.
+list1 = [1, 2, 3]
+list2 = ['a', 'b', 'c']
+result = zip(list1, list2)
+print(list(result))
+[(1, 'a'), (2, 'b'), (3, 'c')]
+***********************************************************************************************
+Exercise 15. How to make a python function that handles scalars to work on numpy arrays?¶
+
+a=np.arange(10,19).reshape(3,3)
+b=np.arange(9).reshape(3,3)
+arr1=[max(a1,b1) for a1,b1 in zip(a.flatten(),b.flatten())]
+arr1
+*******************************************************************
 
 
 
