@@ -27,6 +27,7 @@ The main keyword for handling exception are try, except, finnaly .
 *******************************************************************************************************************************
 what is the use of self in python
 self is used to represent instance of the class. with this keyword you can access the attribute and method of class in python binding the attribute with provided argument
+
 ***************************************************************************************************************************
 How is memory management done in Python?
 python manages memory using a private heap space where all objects and datastrcture stored . Programmers can not directly access this private heap . it is managed by python inter
@@ -49,6 +50,7 @@ more efficient, hashability->  hashable
 What is slicing in Python?
 python slicig is a operation used to extract a portion of the string or list. by  specifying start, end and step you can determine the exact segment to extract
 slicing a list result in a new list created from specified portion of the original list
+
 ***************************************************************************************
 8. How is multithreading achieved in Python?
 Multithreading in python is achieved using the threadig module which enable the concurrent execution of multiple thread within a single process. Each thread can run its own code
@@ -113,7 +115,7 @@ Tuple consumes less memory as compared to the list
 A Tuple data type is appropriate for accessing the elements
 The implication of iterations is comparatively Faster
 ********************************************************************************************************************************************************
-ow do you debug a Python program?
+how do you debug a Python program?
 By using this command we can debug a Python program:
 
 $ python -m pdb python-script.py
@@ -124,6 +126,46 @@ Python does support multiple inheritances, unlike Java. Multiple inheritances me
 *************************************************************
  How do you do data abstraction in Python?
 Data Abstraction is providing only the required details and hides the implementation from the world. It can be achieved in Python by using interfaces and abstract classes.
+from abc import ABC, abstractmethod
+
+# Abstract base class
+class Animal(ABC):
+    @abstractmethod
+    def sound(self):
+        pass
+
+    @abstractmethod
+    def move(self):
+        pass
+
+# Subclass that implements the abstract methods
+class Dog(Animal):
+    def sound(self):
+        return "Bark"
+    
+    def move(self):
+        return "Run"
+
+# Subclass that implements the abstract methods
+class Bird(Animal):
+    def sound(self):
+        return "Chirp"
+    
+    def move(self):
+        return "Fly"
+
+# This will raise an error because Animal is an abstract class
+# animal = Animal()  # TypeError: Can't instantiate abstract class Animal with abstract methods sound, move
+
+# Correct usage
+dog = Dog()
+print(dog.sound())  # Output: Bark
+print(dog.move())   # Output: Run
+
+bird = Bird()
+print(bird.sound())  # Output: Chirp
+print(bird.move())   # Output: Fly
+
 ***************
 38. How is memory management done in Python?
 Python uses its private heap space to manage the memory. Basically, all the objects and data structures are stored in the private heap space. 
