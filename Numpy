@@ -121,6 +121,45 @@ b=np.arange(9).reshape(3,3)
 arr1=[max(a1,b1) for a1,b1 in zip(a.flatten(),b.flatten())]
 arr1
 *******************************************************************
+Exercise 21. How to print only 3 decimal places in python numpy array?
+import numpy as np 
+arr=np.random.random((5,3))
+np.set_printoptions(precision=3)
+print(arr)
+
+**************************************************************************
+23. How to limit the number of items printed in output of numpy array
+a = np.arange(15)
+np.set_printoptions(threshold=6)
+******************************************************************************
+Exercise 25. How to import a dataset with numbers and texts keeping the text intact in python numpy?
+file_path = './Nike.csv'  # Update path if necessary
+data = np.genfromtxt(file_path, delimiter='|', dtype=str, skip_header=1)
+print(data)
+
+Check the File Header If you want to include the header, skip skip_header=1 in the code.
+
+
+*********************************************************************************
+data = np.genfromtxt(file_path, delimiter='|', dtype=str,usecols=[0,1])
+*****************
+26
+
+How to compute the mean, median, standard deviation of a numpy array?
+
+file_path = './Nike.csv'  # Update path if necessary
+data = np.genfromtxt(file_path, delimiter='|', dtype=str,usecols=[-3],skip_header=1)
+print(data)
+print(np.mean(data.astype(float)))
+print(np.median(data.astype(float)))
+print(np.std(data.astype(float)))
+
+*************************************
+27
+. How to normalize an array so the values range exactly between 0 and 1?
+normalized_value=value-min/max-min
+
+
 
 
 
