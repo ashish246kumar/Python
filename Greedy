@@ -549,8 +549,38 @@ class Solution:
         return countJobs, jobProfit
 
 ************************************************************************************************************************************************************
+N meetings in one room
+Problem Statement: There is one meeting room in a firm. You are given two arrays, start and end each of size N.For an index ‘i’, start[i]
+denotes the starting time of the ith meeting while end[i]  will denote the ending time of the ith meeting. Find the maximum number of meetings that
+can be accommodated if only one meeting can happen in the room at a  particular time. Print the order in which these meetings will be performed.
+Example:
+Input:  N = 6,  start[] = {1,3,0,5,8,5}, end[] =  {2,4,5,7,9,9}
+Output: 1 2 4 5
+*******************************************************************************************************************************************************
 
+class Metting:
+    def __init__(self,start,end,pos):
+        self.start=start
+        self.end=end
+        self.pos=pos
+class Solution:
+    
+    #Function to find the maximum number of meetings that can
+    #be performed in a meeting room.
+    def maximumMeetings(self,start,end):
+        n=len(start)
+        meet=[Metting(start[i],end[i],i) for i in range(n)]
+        meet.sort(key=lambda x:x.end)
+        
+        limit=meet[0].end
+        answer=[]
+        answer.append(meet[0].pos)
+        for i in range(1,n):
+            if limit<meet[i].start:
+                limit=meet[i].end
+                answer.append(meet[i].pos)
 
+        return len(answer)   
         
 
         
