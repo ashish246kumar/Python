@@ -200,6 +200,7 @@ b=array.argsort()
 n=5
 print(b[-n:])
 **********************************************************************************
-
+array = np.array([1, 3, 3, 4, 2, 3, 1, 1, 4, 4, 4,7]).reshape(3,4)
+flat_indices = np.argsort(array,axis=None)[-5:]  
 
 
