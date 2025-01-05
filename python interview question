@@ -416,9 +416,17 @@ print("Number of list is: ", x)
 
 x = [int(x) for x in input("Enter multiple value: ").split(",")]
 print("Number of list is: ", x)
-************************************************************************************************************************************
+**********************************************
+where to use module and where to use package
+
+Larger projects: If your application has multiple modules, group them into packages for better organization.
+Hierarchical structure: When you need to group related modules into logical units or categories.
+
+**********************************************************************************************************************************************
+*
 difference between class and static method and instance method
-**************************************
+
+*********************************************************************************************************************************************
 
 
 
