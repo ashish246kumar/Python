@@ -185,7 +185,32 @@ if __name__=='__main__':
 
 *********************************************************************************************************************************
 
+Error Type	Description
+ZeroDivisionError	Raised when a number is divided by zero.
 
+TypeError	Occurs when an operation is performed on incompatible types.
 
+NameError	Raised when a variable or function name is not defined.
+
+ValueError	Occurs when a function receives an argument of the right type but an invalid value.
+
+IndexError	Raised when trying to access an index that is out of range in a sequence (e.g., list).
+
+KeyError	Occurs when trying to access a non-existent key in a dictionary.
+
+AttributeError	Raised when an attribute reference or assignment fails.
+
+FileNotFoundError	Occurs when trying to open a file that does not exist.
+
+ImportError	Raised when an import statement fails to find the specified module or name.
+
+StopIteration	Raised when the next() function is called on an iterator that has no more items.
+
+# Correct type (string) but invalid value for int conversion
+number = int("abc")  # Raises ValueError
+# Trying to access an undefined variable
+print(my_variable)  # Raises NameError
+
+*****************************************************************************************************************
 
 
