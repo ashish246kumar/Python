@@ -439,10 +439,46 @@ python
 Copy code
 conn = sqlite3.connect("example.db")  # Creates or connects to 'example.db'
 *************************************************************************************
+wat is supper function in python and where it is used
+
+super is used to call parent class constructor from child class  or parent class method from child class
+**
+class Parent:
+    def __init__(self, name):
+        self.name = name
+
+class Child(Parent):
+    def __init__(self, name, age):
+        super().__init__(name)  # Calls Parent's constructor
+        self.age = age
+
+# Test
+child = Child("Ashish", 25)
+print(child.name)  # Output: Ashish
+print(child.age)   # Output: 25
+**
+class Parent:
+    def greet(self):
+        print("Hello from the Parent class!")
+
+class Child(Parent):
+    def greet(self):
+        super().greet()  # Calls the parent class method
+        print("Hello from the Child class!")
+
+# Test
+child = Child()
+child.greet()
 
 ****************************
+what is casting in python?
 
-
+type of casting
+implicit :
+Explicit:
+**************
+if we want to access the keys of dictonary how i can is there any method?
+yes we can using dict.keys()
 
 
 
