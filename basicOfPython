@@ -224,3 +224,24 @@ Mapping	dict
 Boolean	bool
 Binary	bytes, bytearray, memoryview
 Special	NoneType
+*************************
+Python also has reserved variables used for special purposes, such as:
+
+__name__: The name of the script/module being executed.
+
+__file__: The path of the script.
+
+__doc__: The docstring of a module or class.
+********************************************
+what is dictionary compharision in python
+dictionary comprehension is a concise way to create dictionaries
+
+squares = {x: x**2 for x in range(1, 6)}
+print(squares)
+# Output: {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+
+even_squares = {x: x**2 for x in range(1, 6) if x % 2 == 0}
+print(even_squares)
+# Output: {2: 4, 4: 16}
+
+*****************************************
