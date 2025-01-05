@@ -428,6 +428,20 @@ difference between class and static method and instance method
 
 *********************************************************************************************************************************************
 
+SQLite is a lightweight, self-contained, serverless SQL database engine that is built into Python via the sqlite3 module. 
+It is widely used for local database storage and testing due to its simplicity and ease of use.
+
+import sqlite3
+Connecting to a Database
+Use sqlite3.connect() to create a connection to an SQLite database.
+If the database file does not exist, it will be created.
+python
+Copy code
+conn = sqlite3.connect("example.db")  # Creates or connects to 'example.db'
+*************************************************************************************
+
+****************************
+
 
 
 
