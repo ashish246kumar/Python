@@ -212,5 +212,15 @@ number = int("abc")  # Raises ValueError
 print(my_variable)  # Raises NameError
 
 *****************************************************************************************************************
+what are the different type of datatype in python
 
+Python has several built-in data types, categorized into numeric, sequence, set, mapping, boolean, and special types.
 
+Category	Data Types
+Numeric	int, float, complex
+Sequence	str, list, tuple, range
+Set	set, frozenset
+Mapping	dict
+Boolean	bool
+Binary	bytes, bytearray, memoryview
+Special	NoneType
