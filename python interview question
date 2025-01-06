@@ -502,11 +502,29 @@ Key points about __main__:
 How it works:
 When you run a Python script, the special variable __name__ is set to "__main__" within that script. If you import the script as a module into another script, __name__ will be set to the module's name instead.
 ********************
+what is the purpose of self inside method can we replace with any other name
 
-
-
-
-
+***************************
+create a class that has attribute and method and try to access method outide the class
+****************************************
+what is the importance of indentation in python?
+**********
+what is difference between slicing and indexing
+*********
+what are the python string replacement
+****
+if we are using regular expression then any package i need to import
+*****
+if we want to play date and time how i can
+date is not actual python data type we need import a module datetime to work with date 
+***************
+different types of function in python
+********
+what is the difference between python list and array
+in python terminology we called list and in case odf java we called array
+*****************
+pass-->no action required
+*******
 
 
 
