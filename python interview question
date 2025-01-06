@@ -494,7 +494,14 @@ Namespace Resolution in Python (LEGB Rule)
 *****************
 what is the importance of writing __main__ method in python ?
 
+if __name__ == "__main__": construct is not strictly necessary to write code, but it's considered 
+a best practice because it allows you to organize your code so that certain parts only execute when the script is run directly, not when 
+it's imported as a module into another script. 
 
+Key points about __main__:
+How it works:
+When you run a Python script, the special variable __name__ is set to "__main__" within that script. If you import the script as a module into another script, __name__ will be set to the module's name instead.
+********************
 
 
 
