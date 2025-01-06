@@ -1,3 +1,8 @@
+Numpy is python library used for numerical computing especially for handling metrics and  arrays. we use it because it provide efficient operation on large dataset 
+and support mathmatical functions essential for scientific computing and data analysis.
+***************
+Ndarrays are multi dimensional array in numpy used for efcient numerical computing
+***********************************
 import numpy as np
 print(np.__version__)
 *****************
@@ -202,5 +207,11 @@ print(b[-n:])
 **********************************************************************************
 array = np.array([1, 3, 3, 4, 2, 3, 1, 1, 4, 4, 4,7]).reshape(3,4)
 flat_indices = np.argsort(array,axis=None)[-5:]  
+*********************************************************
+the var function calculate the varience of element within an array or accross a designated axis. varience is a measure of spread or dispersion of a set of data point.
+*****************
+NumPy is primarily focused on numerical computing, providing support for multi-dimensional arrays and matrices, along with a collection of mathematical functions to operate on these arrays efficiently.
 
+ On the other hand, Pandas is built on top of NumPy and provides higher-level data structures, notably the DataFrame, a tabular, spreadsheet-like data structure.
+***************************
 
