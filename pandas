@@ -394,8 +394,34 @@ b=pd.DataFrame(data)
 for index,rows in b.iterrows():
   print(f"{rows['SCORE']}{rows['AGE']}")
 ********************************************************************
+What Method Will You Use To Rename The Index Or Columns Of Pandas Dataframe.
 
+import pandas as pd
 
-    
-       
+# Create a DataFrame
+data = {'A': [1, 2], 'B': [3, 4], 'C': [5, 6]}
+df = pd.DataFrame(data)
+
+# Rename columns
+df_renamed = df.rename(columns={'A': 'Alpha', 'B': 'Beta'})
+print(df_renamed)
+********************************
+How To Create A Copy Of The Series In Pandas?
+
+import pandas as pd
+original_series=pd.Series([10,20,30,40])
+copied_series=original_series.copy()
+copied_series[0]=100
+print(original_series)
+print(copied_series)
+
+shallow copy
+
+import pandas as pd
+original_series=pd.Series([10,20,30,40])
+copied_series=original_series.copy(deep=False)
+copied_series[0]=100
+print(original_series)
+print(copied_series)
+*************************************************       
     
