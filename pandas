@@ -332,9 +332,68 @@ import pandas as pd
 def findHeavyAnimals(animals: pd.DataFrame) -> pd.DataFrame:
     return animals[animals['weight']>100].sort_values(by='weight',ascending=False)[['name']]
 *******************************************************************************************************************************************************************************    
-  
+What Is Groupby Function In Pandas?
 
 
+The groupby function in Pandas is used for grouping data based on certain columns and performing aggregate operations on those groups. 
+It allows you to split the data into groups, apply some operations (like sum, mean, count, etc.), and combine the results. 
+
+import pandas as pd
+
+data = {'Team': ['A', 'A', 'B', 'B', 'C'],
+        'Score': [10, 20, 15, 25, 30]}
+
+df = pd.DataFrame(data)
+
+# Group by 'Team' and calculate the sum of scores for each team
+result = df.groupby('Team').sum()
+
+print(result)
+*****
+data = {'Team': ['A', 'A', 'B', 'B', 'C'],
+        'Player': ['P1', 'P2', 'P3', 'P4', 'P5'],
+        'Score': [10, 20, 15, 25, 30]}
+
+df = pd.DataFrame(data)
+
+# Group by 'Team' and 'Player'
+result = df.groupby(['Team', 'Player']).sum()
+
+print(result)
+*********************************************
+Index column
+*******
+In context of to_excel() in Pandas, the parameter index=False means that the index column of the DataFrame will not be written to the Excel file.
+***********************
+How Can A Dataframe Be Converted To An Excel File?
+
+import pandas as pd
+data={'TEAMS':['A','B','C','D'],'SCORE':[10,15,10,20],'AGE':[16,18,20,22]}
+b=pd.DataFrame(data)
+c=b.to_excel('output.xlsx',index=False)
+print(c)
+**********************************************************************************************************
+What Is Pandas Numpy Array?
+
+ Pandas is built on top of NumPy, and its core data structures (Series and DataFrame) use NumPy arrays to store their data efficiently.
+
+data = pd.DataFrame({
+    'Name': ['Alice', 'Bob', 'Charlie'],
+    'Age': [25, 30, 35],
+    'Score': [90, 85, 88]
+})
+
+# Access the underlying NumPy array
+numpy_array = data.to_numpy()
+*****************************************************************************
+. How Can You Iterate Over Dataframe In Pandas?
+
+import pandas as pd
+data={'TEAMS':['A','B','C','D'],'SCORE':[10,15,10,20],'AGE':[16,18,20,22]}
+b=pd.DataFrame(data)
+for index,rows in b.iterrows():
+  print(f"{rows['SCORE']}{rows['AGE']}")
+********************************************************************
 
 
     
