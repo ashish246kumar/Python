@@ -244,7 +244,7 @@ Example 3:
 Input: s = "bbbbb"
 Output: 1
 Explanation: The answer is "b", with the length of 1.
-
+abcaabcbb---> itertion where it fail 
 
 
 class Solution:
@@ -283,18 +283,14 @@ Output: false
 
 class Solution:
     def rotateString(self, s: str, goal: str) -> bool:
-        n=len(s)
-        n1=len(goal)
-        if n!=n1:
-            return False
-        if s==goal:
-            return True    
-        for i in range(n-1):
-            s1=s[i+1:n]+s[0:i+1]
-            print(s1)
-            if s1==goal:
+      
+        n=len(s) 
+        for i in range(n):
+            a=s[i:n]+s[0:i] 
+            if a==goal:
                 return True
-        return False   
+        return False                
+        
 
 or
 class Solution:
