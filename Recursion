@@ -491,7 +491,24 @@ Output: [[],[1],[1,2],[1,2,2],[2],[2,2]]
 Example 2:
 Input: nums = [0]
 Output: [[],[0]]
- 
+
+
+class Solution:
+    def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
+        nums.sort()
+        result_set = set() 
+
+        def findSubset2(start, current_subset):
+            result_set.add(tuple(current_subset))
+            for i in range(start, len(nums)):
+              
+                findSubset2(i + 1, current_subset + [nums[i]])
+
+        findSubset2(0, [])
+        return [list(subset) for subset in result_set]
+        
+or
+
 class Solution:
     def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
         nums.sort()
