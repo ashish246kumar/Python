@@ -593,7 +593,12 @@ backtrack(0,"")
    backtrack(1, b)
 
 *************************************************************************************************
-       
+ To find all possible substring of string 
+for i in range(len(s)):
+            for j in range(i,len(s)):
+                print(s[i:j+1])
+
+*************************************
 
 
         
