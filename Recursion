@@ -641,7 +641,77 @@ class Solution:
         result=[]       
         findAllSubset(0,[])
         return result
-  *****************************************
+
+**********************************************************************************************************************************************************
+                                                                              debug
+************************************************************************************************************************************************************
+aab
+1)
+findAllSubset(0,[])
+for j in range(0,3)
+j=0
+subString=s[0:1]=a
+isPalindrome(a)
+[a]
+findAllSubset(1,[a])
+**************************
+2)
+findAllSubset(1,[a])
+for j in range(0,3)
+j=1
+subString=s[1:2]=a
+isPalindrome(a)
+[a,a]
+findAllSubset(2,[a,a])-->3)
+[a]
+****************
+3)
+findAllSubset(2,[a,a])
+for j in range(0,3)
+j=2
+subString=s[2:3]=b
+isPalindrome(b)
+[a,a,b]
+findAllSubset(3,[a,a,b])-->4)
+-----backtrack
+[a,a]
+*********
+4)
+findAllSubset(3,[a,a,b])
+[[a,a,b]]
+return
+**********
+2)5)
+findAllSubset(1,[a])
+for j in range(0,3)
+j=2
+subString=s[1:3]=ab
+isPalindrome(ab)->False
+*********
+1)6)
+findAllSubset(0,[])
+for j in range(0,3)
+j=1
+subString=s[0:2]=aa
+isPalindrome(a)
+[aa]
+findAllSubset(2,[aa])
+***************
+1)6.1)
+findAllSubset(2,[aa])
+for j in range(0,3)
+j=2
+subString=s[2:3]=b
+isPalindrome(b)
+[aa,b]
+findAllSubset(3,[aa,b])
+*******
+1)6.2)
+findAllSubset(3,[aa,b])
+[[a,a,b],[aa,b]]
+return
+********************
+****************************************************************************************************************
     
                    
 
