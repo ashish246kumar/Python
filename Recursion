@@ -594,6 +594,17 @@ backtrack(0,"")
 
 *************************************************************************************************
  To find all possible substring of string 
+class Solution:
+    def partition(self, s: str) -> List[List[str]]:
+        def findAllSubset(start,s1):
+            if s1:
+                result.append(s1)
+            for j in range(start,len(s)):
+                findAllSubset(j+1,s1+s[j])
+        result=[]       
+        findAllSubset(0,"")
+        return result
+     **************   
 for i in range(len(s)):
             for j in range(i,len(s)):
                 print(s[i:j+1])
