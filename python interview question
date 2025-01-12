@@ -495,23 +495,51 @@ Namespace Resolution in Python (LEGB Rule)
 what is the importance of writing __main__ method in python ?
 
 if __name__ == "__main__": construct is not strictly necessary to write code, but it's considered 
-a best practice because it allows you to organize your code so that certain parts only execute when the script is run directly, not when 
-it's imported as a module into another script. 
+a best practice  
+In Python, the "if name == 'main' " construct is used to control whether a piece of code should run when a script is executed directly as a program or when it is imported as a module into another script;
+essentially, it acts as a guard to ensure that certain code only runs when the script is the main entry point, preventing unintended execution when imported as a module.
 
 Key points about __main__:
 How it works:
 When you run a Python script, the special variable __name__ is set to "__main__" within that script. If you import the script as a module into another script, __name__ will be set to the module's name instead.
 ********************
 what is the purpose of self inside method can we replace with any other name
-
+In Python, self is a convention used to represent the instance of the class. It is used within instance methods to refer to the object that is calling the method.
+Yes, you can technically replace self with any other name.  but it is highly discouraged because it goes against Python conventions and may cause confusion
 ***************************
 create a class that has attribute and method and try to access method outide the class
+
 ****************************************
 what is the importance of indentation in python?
+
+Importance of Indentation in Python:
+1. Defines Code Blocks
+2. Improves Code Readability
+4. Shows Hierarchy and Logic
+
 **********
 what is difference between slicing and indexing
+
 *********
 what are the python string replacement
+
+str.replace(old, new, count)
+text = "hello world, hello Python"
+result = text.replace("hello", "hi")
+print(result)  # Output: "hi world, hi Python"
+
+# With `count`
+result = text.replace("hello", "hi", 1)
+print(result)  # Output: "hi world, hello Python"
+
+or 
+import re
+
+text = "hello 123 world 456"
+# Replace digits with 'X'
+result = re.sub(r"\d+", "X", text)
+print(result)  # Output: "hello X world X"
+
 ****
 if we are using regular expression then any package i need to import
 
