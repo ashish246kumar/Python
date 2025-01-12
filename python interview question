@@ -514,6 +514,12 @@ what is difference between slicing and indexing
 what are the python string replacement
 ****
 if we are using regular expression then any package i need to import
+
+you need to import the re module
+re.match(pattern, string)
+Checks for a match only at the beginning of the string
+re.search(pattern, string)
+Searches the entire string for the first occurrence of the pattern
 *****
 if we want to play date and time how i can
 date is not actual python data type we need import a module datetime to work with date 
@@ -526,11 +532,24 @@ in python terminology we called list and in case odf java we called array
 pass-->no action required
 *******
 what are the basic setuprequire before writing python progrm
-******
-what do you mean by suits in python
-*****
+****************************************************************************************************************************************************
+what do you mean by suits in python?
+
+suites refer to a block of code that is grouped together and intended to execute as a single unit under a control structure 
+such as an if statement, for/while loop, function definition, or class definition.
+*******************************************************
 how we can concenate two tuple
-****
+
+# Example of tuple concatenation
+tuple1 = (1, 2, 3)
+tuple2 = (4, 5, 6)
+
+# Concatenating tuples
+result = tuple1 + tuple2
+print(result)
+Tuples are immutable, so concatenation creates a new tuple rather than modifying the original ones.
+
+*************************************************
 self is used to refer to the instance of that particular object
 *************
 reg expression are used for matching pattern
