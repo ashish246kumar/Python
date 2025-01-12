@@ -188,7 +188,7 @@ if __name__=='__main__':
 Error Type	Description
 ZeroDivisionError	Raised when a number is divided by zero.
 
-TypeError	Occurs when an operation is performed on incompatible types.
+TypeError	Occurs when an operation is performed on incompatible types.   a="2"+2
 
 NameError	Raised when a variable or function name is not defined.
 
