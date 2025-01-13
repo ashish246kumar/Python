@@ -57,6 +57,8 @@ Multithreading in python is achieved using the threadig module which enable the 
 and perform task simoltaneously
 **************************************************************************************************
 ‘#’ is used to comment on everything that comes after on the line
+Use the # symbol for single-line comments.
+you can use triple quotes (''' or """) to write multi-line comments
 ***********
 Mutable data types can be edited i.e., they can change at runtime. Eg – List, Dictionary, etc.
 Immutable data types can not be edited i.e., they can not change at runtime. Eg – String, Tuple, etc.
@@ -122,6 +124,7 @@ $ python -m pdb python-script.py
 **************************
 34. Does Python supports multiple Inheritance?
 Python does support multiple inheritances, unlike Java. Multiple inheritances mean that a class can be derived from more than one parent class.
+Python uses the Method Resolution Order (MRO) to determine the order in which methods are inherited and executed. The MRO is based on the C3 linearization algorithm.
 
 *************************************************************
  How do you do data abstraction in Python?
