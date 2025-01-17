@@ -587,6 +587,43 @@ reg expression are used for matching pattern
 ********
 what do you mean by agaile methodology
 ******************************************************************
+@pytest.fixture is a decorator in Python's pytest testing framework. 
+It is used to define reusable setup code that can be shared across multiple test functions.
+ Fixtures help in preparing the test environment, such as creating necessary objects, setting up resources, or configuring dependencies.
+
+This is a decorator provided by pytest. It tells pytest that the following function is a fixture,
+ which means it is a reusable piece of code that sets up something needed for your tests 
+*******************************************************************************************************************************************************************
+app.test_client()
+
+test_client() is a Flask method that creates a test client.
+This client is used to simulate HTTP requests (like GET, POST, etc.) to your Flask app, without actually starting a server.
+For example, you can use this client to call your API endpoints in a test.
+**********************************************************************************************************************************************************
+What is an Application Context?
+Think of your Flask app as a big factory. Inside this factory, you have tools and resources (like a database, configuration settings, etc.) that your app uses.
+
+The application context is like a "toolbox" that contains these tools for your app. But here's the thing: you need to "open the toolbox" to actually use the tools.
+
+What Does with app.app_context() Do?
+When you write with app.app_context():, you are opening the toolbox temporarily so you can access the resources (like the database or app settings) for the work you're about to do.
+
+***********************
+@patch('app.models.maintenance_form.MaintenanceForm.query')
+The @patch decorator is used to "fake" the database query.
+It replaces the actual MaintenanceForm.query with a mock object (mock_query) during the test. This way, no real database calls are made, which makes the test faster and more isolated.
+
+mock_query.all.return_value = mock_tickets
+This line tells the mock query to return the mock_tickets list whenever .all() is called.
+*************************************************************************************************
+terms, mock_paginate = MagicMock() creates a fake object that can act like anything you want it to. Think of it as a blank slate or a "dummy helper" you can use to imitate something real.
+
+For example:
+
+Imagine you’re practicing how to serve a customer in a restaurant.
+Instead of practicing with real food, you use fake plastic food.
+The MagicMock is like that fake food—it stands in for something real (like a database object) so you can practice or test your process without involving the real thing.
+**************************
 
 
 
