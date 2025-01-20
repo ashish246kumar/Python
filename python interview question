@@ -624,6 +624,10 @@ Imagine you’re practicing how to serve a customer in a restaurant.
 Instead of practicing with real food, you use fake plastic food.
 The MagicMock is like that fake food—it stands in for something real (like a database object) so you can practice or test your process without involving the real thing.
 **************************
+from unittest.mock import patch
+import pytest
+*********************************************************************************************************************
+
 
 
 
