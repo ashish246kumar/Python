@@ -505,6 +505,27 @@ essentially, it acts as a guard to ensure that certain code only runs when the s
 Key points about __main__:
 How it works:
 When you run a Python script, the special variable __name__ is set to "__main__" within that script. If you import the script as a module into another script, __name__ will be set to the module's name instead.
+
+Example
+*****
+main_script.py
+
+def greet():
+    print("Hello from main_script!")
+
+if __name__ == "__main__":
+    print("main_script.py is being run directly!")
+    greet()
+
+*****
+another_script.py
+import main_script
+
+print("another_script.py is running!")
+main_script.greet()
+
+The if __name__ == "__main__" block in main_script.py does not execute because main_script is imported as a module (and __name__ in main_script is set to "main_script", not "__main__").
+
 ********************
 what is the purpose of self inside method can we replace with any other name
 In Python, self is a convention used to represent the instance of the class. It is used within instance methods to refer to the object that is calling the method.
@@ -542,7 +563,7 @@ text = "hello 123 world 456"
 # Replace digits with 'X'
 result = re.sub(r"\d+", "X", text)
 print(result)  # Output: "hello X world X"
-
+                  
 ****
 if we are using regular expression then any package i need to import
 
@@ -556,6 +577,18 @@ if we want to play date and time how i can
 date is not actual python data type we need import a module datetime to work with date 
 ***************
 different types of function in python
+ Higher-order Functions
+Description: Functions that take other functions as arguments or return them as results.
+Examples:
+map()
+filter()
+
+ Anonymous Functions (Lambda Functions)
+Description: Functions defined without a name using the lambda keyword.
+add = lambda x, y: x + y
+print(add(3, 5))  # Output: 8
+
+
 ********
 what is the difference between python list and array
 in python terminology we called list and in case odf java we called array
