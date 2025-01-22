@@ -249,7 +249,9 @@ def pivotTable(weather: pd.DataFrame) -> pd.DataFrame:
     return pivoted_df
 what do you want as x-axis and what do you want as column 
 
-
+pivot
+Purpose: Reshapes data from a long format to a wide format.
+Use Case: When you want to restructure a DataFrame so that values in one column become column headers
 *****************************************************************************************************************************************************
 Reshape Data:Melt
  Write a solution to reshape the data so that each row represents sales data for a product in a specific quarter.
@@ -283,7 +285,8 @@ def meltTable(report: pd.DataFrame) -> pd.DataFrame:
     return df1
 
 id_vars-->the column which you do not want to transform
-
+Purpose: Reshapes data from a wide format to a long format.
+Use Case: When you want to reverse the effect of pivot or unstack columns into rows
 **************************************************************************************************
 Method Chaning
 
