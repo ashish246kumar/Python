@@ -163,10 +163,48 @@ class Solution:
             [ans.append(x) for x in entry[1][::-1]]  
         return ans              
 *****************************************
+1329
+sort-the-matrix-diagonally
+
+class Solution:
+    def diagonalSort(self, mat: List[List[int]]) -> List[List[int]]:
+        d1={}
+        for i in range(len(mat)):
+            for j in range(len(mat[0])):
+                if i-j not in d1:
+                    d1[i-j]=[mat[i][j]]
+                else:
+                    d1[i-j].append(mat[i][j])
+        print(d1)
+        for k in d1.keys():
+            d1[k].sort()
+
+        for i in range(len(mat)):
+            for j in range(len(mat[0])):
+                mat[i][j]=d1[i-j].pop(0) 
+        return mat            
+
+*****************************************
+1572
+Matrix diagonal Sum
+************************
+     class Solution:
+    def diagonalSum(self, mat: List[List[int]]) -> int:
+        n=len(mat)
+        m=len(mat[0])
+        sum1=0
+        k1=0
+        k2=m-1
+        for i in range(n):
+            sum1=sum1+mat[i][k1]
+            if k2!=i:
+                sum1=sum1+mat[i][k2]
+            k2=k2-1
+            k1=k1+1
+        return sum1         
 
 
-
-                
+           
         
         
 
