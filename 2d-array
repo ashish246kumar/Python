@@ -88,7 +88,30 @@ class Solution:
             erow-=1                
         return l1
  
-
+******************************************
+Rotate-image
+**********************************
+class Solution:
+    def rotate(self, matrix: List[List[int]]) -> None:
+        n=len(matrix)
+        m=len(matrix[0])
+        for i in range(n):
+            for j in range(i+1,n):
+                temp=matrix[i][j]
+                matrix[i][j]=matrix[j][i]
+                matrix[j][i]=temp
+        l1=m//2
+        for i in range(n):
+            k=m-1 
+            for j in range(l1):
+                temp=matrix[i][j]
+                matrix[i][j]=matrix[i][k]
+                matrix[i][k]=temp
+                k=k-1       
+        """
+        Do not return anything, modify matrix in-place instead.
+        """
+        
         
         
 
