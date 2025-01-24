@@ -120,6 +120,10 @@ Example 2:
 
 Input: mat = [[1,2],[3,4]]
 Output: [1,2,3,4]
+ *******
+for up arrow (i+j) is same for same diagonal
+and for down array (i-j) is same for diagonal
+
 ****************************************************************************
 class Solution:
     def findDiagonalOrder(self, mat: List[List[int]]) -> List[int]:
