@@ -54,8 +54,42 @@ class Solution:
                 c=c-1
         return False            
 *******************************************************************************************
-                
+254 spiral-matrix                
+class Solution:
+    def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
+        m=len(matrix)
+        n=len(matrix[0])
+        srow=0
+        scol=0
+        erow=m-1
+        ecol=n-1
+        l1=[]
+        while srow<=erow and scol<=ecol:
+            # top
+            for i in range(scol,ecol+1):
+                l1.append(matrix[srow][i])
 
+            # right
+            for j in range(srow+1,erow+1): 
+                l1.append(matrix[j][ecol])
+            #bottom
+            if srow<erow:
+                for j in range(ecol-1,scol-1,-1): 
+                   
+                    l1.append(matrix[erow][j])
+            #left
+            if scol<ecol:
+                for j in range(erow-1,srow,-1): 
+                   
+                    l1.append(matrix[j][scol]) 
+            srow+=1
+            scol+=1
+            ecol-=1
+            erow-=1                
+        return l1
+ 
+
+        
         
 
 
