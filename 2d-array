@@ -204,6 +204,74 @@ Matrix diagonal Sum
         return sum1         
 
 **********************************************************
+class Solution:
+    def rotateGrid(self, grid: List[List[int]], k: int) -> List[List[int]]:
+        m, n = len(grid), len(grid[0])
+        t, b = 0, m - 1
+        l, r = 0, n - 1
+
+        result = [[0] * n for _ in range(m)]
+        while t < b and l < r:
+            index = []
+            index += [[i,l] for i in range(t, b)] # left side
+            index += [[b,j] for j in range(l, r)] # bottom side
+            index += [[i,r] for i in range(b, t, -1)] # right side
+            index += [[t,j] for j in range(r, l, -1)] # top side
+            
+            rotate = k % len(index)
+            for i, (x, y) in enumerate(index):
+                rx, ry = index[(i + rotate) % len(index)]
+                result[rx][ry] = grid[x][y]
+
+            t += 1
+            b -= 1
+            l += 1
+            r -= 1
+        
+        return result
+**********************
+Input: grid = [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]], k = 2
+m=4,n=4
+t=0
+b=3
+l=0
+r=3
+
+result = [[0, 0, 0, 0],
+          [0, 0, 0, 0],
+          [0, 0, 0, 0],
+          [0, 0, 0, 0]]
+
+while 0 < 3 and 0 < 3:
+(3,0,-1)
+
+index = [[0, 0], [1, 0], [2, 0],        # Left side
+         [3, 0], [3, 1], [3, 2],        # Bottom side
+         [3, 3], [2, 3], [1, 3],        # Right side
+         [0, 3], [0, 2], [0, 1]]        # Top side
+
+rotate = 2 % 12=2
+result[2][0]=grid[0][0]=1
+result[3][0]=grid[1][0]=5
+result[3][1]=grid[2][0]=9
+result[3][2]=grid[3][0]=13
+result[3][3]=grid[3][1]=14
+result[2][3]=grid[3][2]=15
+result[1][3]=grid[3][3]=16
+result[0][3]=grid[2][3]=12
+result[0][2]=grid[1][3]=8
+result[0][1]=grid[0][3]=4
+result[0][0]=grid[0][2]=3
+ result[1][0]=grid[0][1]=2
+
+t=1
+b=2
+l=1
+r=2
+**********************************************
+
+
+
 
            
         
