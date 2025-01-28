@@ -774,7 +774,41 @@ class Solution:
         nQueens(board,0,n)
         return ans        
 
-    
+    ******************************************************************************************************************************
+79 word search
+Given an m x n grid of characters board and a string word, return true if word exists in the grid.
+
+The word can be constructed from letters of sequentially adjacent cells, where adjacent cells are horizontally or vertically neighboring. The same letter cell may not be used more than once.
+Input: board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], word = "ABCCED"
+Output: true
+ 
+Input: board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], word = "ABCB"
+Output: false
+
+
+class Solution:
+    def exist(self, board: List[List[str]], word: str) -> bool:
+        n=len(board)
+        m=len(board[0])
+        visited=[[False]*m for i in range(n)]
+       
+        def solve(curr,board,visited,word,i,j):
+            if curr==len(word):
+                return True
+            if i<0 or i>=n or j<0 or j>=m or visited[i][j] or word[curr]!=board[i][j]:
+                return False
+            visited[i][j]=True
+            if (solve(curr+1,board,visited,word,i-1,j) or solve(curr+1,board,visited,word,i,j-1) or solve(curr+1,board,visited,word,i+1,j) or solve(curr+1,board,visited,word,i,j+1)):
+                return True
+
+            visited[i][j]=False
+            return False
+               
+        for i in range(n):
+            for j in range(m):
+                if(board[i][j]==word[0] and solve(0,board,visited,word,i,j)):
+                    return True
+        return False                         
                    
 
                 
