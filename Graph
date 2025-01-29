@@ -163,5 +163,30 @@ class Solution:
         bfs(adjlist,visited,0)
         return ans
 ***************************************************
-
+GFG
+Cycle in a undirected graph leetcode
+**********************
+from typing import List
+from collections import defaultdict
+class Solution:
+    #Function to detect cycle in an undirected graph.
+	def isCycle(self, V: int, adj: List[List[int]]) -> bool:
+	    visited=[False]*len(adj)
+	    def is_cycle_dfs(adj,visited,u,parent):
+	        visited[u]=True
+	        for v in adj[u]:
+	            if v==parent:
+	                continue
+	            if visited[v]==True:
+	                return True
+	            if is_cycle_dfs(adj,visited,v,u):
+	                return True
+	        return False       
+	                
+	        
+	    for i in range(V):
+	        if(not visited[i]):
+	            if(is_cycle_dfs(adj,visited,i,-1)):
+	                return True
+***************************************************************************************************************************************
 
