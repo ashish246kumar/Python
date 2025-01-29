@@ -221,4 +221,34 @@ class Solution:
 	            if(is_cycle_bfs(adj,visited,i)):
 	                return True
 	    return False
-	    
+**********************************************
+Detect a cycle in a directed graph
+********************************
+from typing import List
+
+class Solution:
+    
+    #Function to detect cycle in a directed graph.
+    def isCyclic(self, V : int , adj : List[List[int]]) -> bool :
+        # code here
+        visited=[False]*V
+        inRecursion=[False]*V
+        def detectCycle(visited,inRecursion,adj,u):
+            visited[u]=True
+            inRecursion[u]=True
+            for v in adj[u]:
+                if visited[v]==False and detectCycle(visited,inRecursion,adj,v):
+                    return True
+                elif(visited[v]==True and inRecursion[v]==True):
+                    return True
+                    
+            inRecursion[u]=False
+            return False
+                    
+                    
+        for i in range(V):
+            if visited[i]==False:
+                if detectCycle(visited,inRecursion,adj,i):
+                    return True
+        return False
+ ******************************************************************************           
