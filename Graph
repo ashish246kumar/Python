@@ -280,7 +280,7 @@ class Solution:
         return result    
 *********************************************************************************
 GRAPH
-Topological sort is in directed Acyclic graph----->bfs
+Topological sort is in directed Acyclic graph----->bfs| kahns algorithm
 
 from collections import deque
 
@@ -307,3 +307,30 @@ class Solution:
         # print(result)            
         return result            
 ******************************************************************************************************
+Detect cycle in a directed graph using------ bfs
+I have used here topological sort concept here since in topological sort graph should be directed and acyclic. if he graph is directed and cyclic then it must be not give the 
+topological sort
+def isCyclic(self, V : int , adj : List[List[int]]) -> bool :
+        # code here
+        indegree=[0]*V
+        queue=deque()
+        count=0
+        for u in range(V):
+            for v in adj[u]:
+                indegree[v]=indegree[v]+1
+                
+        for i in range(V):
+            if indegree[i]==0:
+                queue.append(i)
+                count=count+1
+                
+        while(queue):
+            u=queue.popleft()
+            for v in adj[u]:
+                indegree[v]=indegree[v]-1
+                if indegree[v]==0:
+                    count=count+1
+                    queue.append(v)
+        if count==V:
+            return False
+        return True  
