@@ -251,4 +251,32 @@ class Solution:
                 if detectCycle(visited,inRecursion,adj,i):
                     return True
         return False
- ******************************************************************************           
+ ******************************************************************************
+GRAPH
+Topological sort is in directed Acyclic graph
+
+class Solution:
+    
+    #Function to return list containing vertices in Topological order.
+    def topologicalSort(self,adj):
+        visited=[False]*len(adj)
+        stack=[]
+        def dfs(visited,adj,u):
+            visited[u]=True
+            for v in adj[u]:
+                if visited[v]==False:
+                    visited[v]=True
+                    dfs(visited,adj,v)
+                    
+            stack.append(u)        
+        for i in range(len(adj)):
+            if visited[i]==False:
+                
+                dfs(visited,adj,i)
+        result=[]
+        while(stack):
+            result.append(stack.pop())
+          
+        return result    
+*********************************************************************************
+
