@@ -1,4 +1,6 @@
-
+Note->if in the question it is given dividing a graph into two part or gruping a graph into tw part then it is a concept of bipartite graph.
+bipartite graph->adjacent  node should not be of same color. and with only two color we can color the graph. if there is a cycle in graph and if it is f ecven length then
+it must be of bipartite graph and if it is of odd length then then it is not.
 *****************
 graph
 directed graph and undirected graph
