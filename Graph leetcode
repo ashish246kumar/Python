@@ -29,6 +29,62 @@ Output: 3
                 count=count+1
         return count        
 ***********************************************************************************
+Course Schedule
 
+There are a total of numCourses courses you have to take, labeled from 0 to numCourses - 1. You are given an array prerequisites where prerequisites[i] = [ai, bi] indicates that you must take course bi first if you want to take course ai.
+
+For example, the pair [0, 1], indicates that to take course 0 you have to first take course 1.
+Return true if you can finish all courses. Otherwise, return false.
+
+ 
+
+Example 1:
+
+Input: numCourses = 2, prerequisites = [[1,0]]
+Output: true
+Explanation: There are a total of 2 courses to take. 
+To take course 1 you should have finished course 0. So it is possible.
+Example 2:
+
+Input: numCourses = 2, prerequisites = [[1,0],[0,1]]
+Output: false
+Explanation: There are a total of 2 courses to take. 
+To take course 1 you should have finished course 0, and to take course 0 you should also have finished course 1. So it is impossible.
+
+***********************
+here i have done this question throgh topological sort using bfs.  if we are able to find topological sort then we are able to cmplete the course other qwise not
+*********
+class Solution:
+    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
+        indegree=[0]*numCourses
+        n=len(prerequisites)
+        queue=deque()
+        count=0
+        adj=defaultdict(list)
+        for i in range(n):
+            a=prerequisites[i][0]
+            b=prerequisites[i][1]
+            adj[b].append(a)
+            indegree[a]=indegree[a]+1
+        for i in range(numCourses):
+            if indegree[i]==0:
+                queue.append(i)
+                count=count+1
+        while(queue):
+            u=queue.popleft()
+            for v in  adj[u]:
+                indegree[v]=indegree[v]-1
+                if indegree[v]==0:
+                    queue.append(v)
+                    count=count+1
+        if count==numCourses:
+            return True
+        return False                 
+                    
+
+
+
+
+        
 
         
