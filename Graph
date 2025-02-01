@@ -418,4 +418,12 @@ void union(int x,int y, parent):
      if x_parent!=y_parent:
         parent[x_parent]=y_parent
 ********************
+path compression
+improved version  that is every time not need to goto the parent
+
+int find(i,parent):
+    if parent[i]==i:
+        return i
+  return parent[i]=find(parent[i],i)
+
 
