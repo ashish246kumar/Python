@@ -404,3 +404,18 @@ def isCyclic(self, V : int , adj : List[List[int]]) -> bool :
         if count==V:
             return False
         return True  
+*****************************************************************************************************************************************************
+algrithm of find method in DSU
+**********
+int find(i,parent):
+    if parent[i]==i:
+        return i
+  return find(parent[i],i)
+************
+void union(int x,int y, parent):
+     int x_parent=find(x_parent)
+     int y_parent=find(y_parent)
+     if x_parent!=y_parent:
+        parent[x_parent]=y_parent
+********************
+
