@@ -136,7 +136,63 @@ class Solution:
                     return False       
         return True
                             
+**************************************************************************************************************************
 
+GRAPH-->DSU
+satisfiability-of-equality-equations
+**********************************************************************
+You are given an array of strings equations that represent relationships between variables where each string equations[i] is of length 4 and takes one of two different forms: "xi==yi" or "xi!=yi".Here, xi and yi are lowercase letters (not necessarily different) that represent one-letter variable names.
+
+Return true if it is possible to assign integers to variable names so as to satisfy all the given equations, or false otherwise.
+Example 1:
+
+Input: equations = ["a==b","b!=a"]
+Output: false
+Explanation: If we assign say, a = 1 and b = 1, then the first equation is satisfied, but not the second.
+There is no way to assign the variables to satisfy both equations.
+Example 2:
+
+Input: equations = ["b==a","a==b"]
+Output: true
+Explanation: We could assign a = 1 and b = 1 to satisfy both equations.
+
+******************************************************************
+class Solution:
+    def equationsPossible(self, equations: List[str]) -> bool:
+        parent=[i for i in range(26)]
+        rank=[0]*26
+        def find(u):
+            if parent[u]==u:
+                return u
+            parent[u]=find(parent[u]) 
+            return parent[u]
+        def union(x,y):
+            x_p=parent[x]
+            y_p=parent[y] 
+            if rank[x_p]>rank[y_p]:
+                parent[y_p]=x_p
+            elif rank[x_p]<rank[y_p]:
+                parent[x_p]=y_p
+            else:
+                parent[x_p]=y_p
+                rank[y_p]+=1
+        for s in equations:
+            x=ord(s[0])-ord('a')
+            y=ord(s[3])-ord('a')
+            if s[1] =='=':
+                
+                union(x,y)
+        
+        for s in equations:
+            x=ord(s[0])-ord('a')
+            y=ord(s[3])-ord('a')
+            if s[1] =='!':
+                print(find(x))
+                print(find(y))
+                if find(x)==find(y):
+                    return False
+        return True                
+************************************************************************************************
 
 
 
