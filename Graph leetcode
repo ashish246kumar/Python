@@ -231,8 +231,8 @@ class Solution:
             parent[u]=find(parent[u]) 
             return parent[u]
         def union(x,y):
-            x_p=parent[x]
-            y_p=parent[y] 
+            x_p=find(x)
+            y_p=find(y)
             if x_p==y_p:
                 return
             if rank[x_p]>rank[y_p]:
@@ -250,8 +250,48 @@ class Solution:
                    union(a,b)   
         return component-1             
 ****************************************************************************************************************************
+2316
+count-unreachable-pairs-of-nodes-in-an-undirected-graph
 
 *****************************************************************************************************************************
+class Solution:
+    def countPairs(self, n: int, edges: List[List[int]]) -> int:
+        parent=[i for i in range(n)]
+        rank=[0]*n
+        dict1={}
+        def find(u):
+            if parent[u]==u:
+                return u
+            parent[u]=find(parent[u]) 
+            return parent[u]
+        def union(x,y):
+            x_p=find(x)
+            y_p=find(y) 
+            if x_p==y_p:
+                return
+            if rank[x_p]>rank[y_p]:
+                parent[y_p]=x_p
+            elif rank[x_p]<rank[y_p]:
+                parent[x_p]=y_p
+            else:
+                parent[x_p]=y_p
+                rank[y_p]+=1
+        for v in edges:
+            union(v[0],v[1])  
+        for i in range(n):
+            papa=find(i)
+            dict1[papa]=dict1.get(papa,0)+1
+             
+          
+        result=0
+        remaning=n
+        for key in dict1:
+            size=dict1[key]
+            
+            result+=size*(remaning-size)
+            remaning=remaning-size
+        return result    
+***************************************************************************************************************************************************
 
         
 
