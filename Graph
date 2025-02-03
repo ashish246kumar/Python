@@ -468,8 +468,30 @@ class Solution:
         return False;   
 
 *******************************************************************************************************************************************************
-
-
+dijkstra  code
+***************************************
+import heapq
+import sys
+class Solution:
+    # Function to find the shortest distance of all the vertices
+    # from the source vertex src.
+    def dijkstra(self, adj: List[List[Tuple[int, int]]], src: int) -> List[int]:
+        
+        V=len(adj)
+        pq=[]
+        result=[sys.maxsize]*V
+        result[src]=0
+        heapq.heappush(pq,(0,src))
+        while(pq):
+            d,node=heapq.heappop(pq)
+            for v in adj[node]:
+                adjNode=v[0]
+                dist=v[1]
+                if d+dist<result[adjNode]:
+                    result[adjNode] = d + dist
+                    heapq.heappush(pq,(d+dist,adjNode))
+        return result        
+****************************************************************
 
 
 
