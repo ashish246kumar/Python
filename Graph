@@ -492,6 +492,68 @@ class Solution:
                     heapq.heappush(pq,(d+dist,adjNode))
         return result        
 ****************************************************************
+Shortest Path in Weighted undirected graph
+Through dijkstra
+*****************************************************************************************************************************************************************
+Input: n = 5, m= 6, edges = [[1, 2, 2], [2, 5, 5], [2, 3, 4], [1, 4, 1], [4, 3, 3], [3, 5, 1]]
+Explanation: Shortest path from 1 to n is by the path 1 4 3 5 whose weight is 5. 
+
+
+
+
+
+
+
+
+
+from typing import List
+from collections import defaultdict
+import heapq
+import sys
+class Solution:
+    def shortestPath(self,n:int, m:int, edges:List[List[int]] )->List[int]:
+        pq=[]
+        result=[sys.maxsize]*(n+1)
+        parent=[i for i in range(n+1)]
+        adj=defaultdict(list)
+        # code here
+        for v in edges:
+            s=v[0]
+            dest=v[1]
+            d=v[2]
+            adj[s].append((dest,d))
+            adj[dest].append((s,d))
+
+            
+        
+        heapq.heappush(pq,(0,1))
+        result[1]=0
+        while(pq):
+            d,node=heapq.heappop(pq)
+            for v in adj[node]:
+                adjNode,dist=v
+                if d+dist<result[adjNode]:
+                    result[adjNode]=d+dist
+                    heapq.heappush(pq,(d+dist,adjNode))
+                    parent[adjNode]=node
+                    
+        
+        path=[]
+        
+        if result[n]==sys.maxsize:
+            return [-1]
+            
+        node=n
+        while(parent[node]!=node):
+            
+            path.append(node)
+            node=parent[node]
+        path.append(1) 
+        path.reverse()
+        return path
+
+
+**************************************************************************************************************************************************
 
 
 
