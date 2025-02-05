@@ -7,6 +7,25 @@ waise set jiska intersectin null ho unk disjoint set khete hai malab koi chij cm
 operation
 combine two given set-->union
 Tell if two member belong to same set or not---->find
+
+
+	                         Bellman-Ford	                                             Dijkstra
+Type of Graph	Works for graphs with negative weights and positive weights	Works only for graphs with non-negative weights
+elaxation Process	Repeats V - 1 times for all edges	                Uses a priority queue (min-heap) for selecting the minimum distance node
+Cycle Detection	      Can detect negative weight cycles	                         Cannot detect negative weight cycles
+Use Case	When negative edges exist (e.g., currency exchange, road networks with toll refunds)	When the graph has only positive weights (e.g., routing protocols, navigation systems)
+
+
+
+Feature	                         Floyd-Warshall	                                      Bellman-Ford	                                                    Dijkstra
+Type of Problem	           All-pairs shortest path	                            Single-source shortest path	                                       Single-source shortest path
+Handles Negative Weights?	✅ Yes (but no negative cycles)			   ✅ Yes (detects negative cycles)	                                ❌ No
+Handles Negative Cycles?	❌ No (gives incorrect results)			  ✅ Yes (detects them)							❌ No
+Graph Type	              Works on dense graphs (adjacency matrix)	          Works for sparse graphs (list of edges)	                       Works best for graphs with non-negative weights
+Time Complexity	                   O(V³)	                                          O(V × E)	                                              O((V + E) log V) with a priority queue
+Best Use Case	           When all-pairs shortest paths are needed	         When the graph has negative weights	                              When the graph has only positive weights
+Algorithm Type	             Dynamic Programming	                         Dynamic Programming	                                                   Greedy Algorithm
+Data Structure Used	   2D adjacency matrix	                                    1D distance array	                                                Priority queue (min-heap)
 *****************
 graph
 directed graph and undirected graph
