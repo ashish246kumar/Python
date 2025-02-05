@@ -441,6 +441,126 @@ pop->x,y=2,2
 x_=2
 y_=2
 return step
-*******************************************************************
+*******************************************************************************************************************************************
+PATH WITH MINIMUM EFFORT(dijkastra)
+1631
+
+You are a hiker preparing for an upcoming hike. You are given heights, a 2D array of size rows x columns, where heights[row][col] represents the height of cell (row, col). You are situated in the top-left cell, (0, 0), and you hope to travel to the bottom-right cell, (rows-1, columns-1) (i.e., 0-indexed). You can move up, down, left, or right, and you wish to find a route that requires the minimum effort.
+A route's effort is the maximum absolute difference in heights between two consecutive cells of the route.
+Return the minimum effort required to travel from the top-left cell to the bottom-right cell.
+Example 1:
+Input: heights = [[1,2,2],[3,8,2],[5,3,5]]
+Output: 2
+Explanation: The route of [1,3,5,3,5] has a maximum absolute difference of 2 in consecutive cells.
+This is better than the route of [1,2,2,2,5], where the maximum absolute difference is 3.
+Example 2:
+Input: heights = [[1,2,3],[3,8,4],[5,3,5]]
+Output: 1
+Explanation: The route of [1,2,3,4,5] has a maximum absolute difference of 1 in consecutive cells, which is better than route [1,3,5,3,5].
+Example 3:
+Input: heights = [[1,2,1,1,1],[1,2,1,2,1],[1,2,1,2,1],[1,2,1,2,1],[1,1,1,2,1]]
+Output: 0
+Explanation: This route does not require any effort
+
+
+
+class Solution:
+    def minimumEffortPath(self, heights: List[List[int]]) -> int:
+        directions=[(1,0),(0,1),(-1,0),(0,-1)]
+        m=len(heights)
+        n=len(heights[0])
+        result=[[(sys.maxsize) for j in range(n)] for i in range(m)]
+        pq=[]
+        heapq.heappush(pq,(0,0,0))
+        result[0][0]=0
+        def isSafe(x,y):
+            return x>=0 and x<m and y>=0 and y<n
+
+        while(pq):
+            diff,x,y=heapq.heappop(pq)
+            if x==m-1 and y==n-1:
+                return diff
+            for dir in directions:
+                a,b=dir
+                x_=x+a
+                y_=y+b
+                if isSafe(x_,y_):
+                    maxdiff=max(diff,abs(heights[x][y]-heights[x_][y_]))
+                    if result[x_][y_]>maxdiff:
+                        result[x_][y_]=maxdiff
+                        heapq.heappush(pq,(maxdiff,x_,y_))
+        return result[m-1][n-1]                
+
+
+*****************************************************************************************************************************************************************
+                                                                          DRY RUN
+******************************************************************************************************************************************************************
+ Input: heights = [[1,2,2],[3,8,2],[5,3,5]]
+minheap=[]
+result=[sys.maxsize*n for i in range m]
+result[0][0]=0
+minheap=[(0,0,0)]
+************
+pop->diff->0 and pos(0,0)-->(kha ja sakte hai)(0,1),(1,0)
+(0,0)->(0,1)  abs diff=1  which is greater than diff that is 0  and result[0,1] has infinity and my diff value is 1 so I can replace it
+(0,0)->(1,0)  abs diff=2  which is greater than diff that is 0
+result[0,1]=1
+result[1,0]=2
+minheap=[(1,0,1),(2,1,0)]
+**********
+pop->diff->1 and pos(0,1)-->(kha ja sakte hai)(0,0),(0,2),(1,1)
+(0,1)->(0,0)  abs diff=1  and diff=1 and in result[0][0]=0 which is minimum so I can not go from (0,1) to (0,0)
+ (0,1)->(0,2)  abs diff=0  and diff=1  so I can go with diff=1   and result[0,2] has infinity and my diff value is 1 so I can replace it
+result[0,2]=1
+minheap=[(1,0,2),(2,1,0)]
+ (0,1)->(1,1)  abs diff=6  and diff=1  so I can go with abs diff=6   and result[1,1] has infinity and my diff value is 6 so I can replace it
+result[1,1]=6
+minheap=[(1,0,2),(2,1,0),(6,1,1)]
+**************************
+pop->diff->1 and pos(0,2)-->(kha ja sakte hai)(0,1),(1,2)
+(0,2)->(0,1)  abs diff=0  and diff=1 so I can go with diff=1 and in result[0][1]=1 which is already present so I am not going to update  so I can not go from (0,2) to (0,1)
+*
+(0,2)->(1,2)  abs diff=0  and diff=1  so I can go with diff=1   and result[1,2] has infinity and my diff value is 1 so I can replace it
+result[1,2]=1
+minheap=[(1,1,2),(2,1,0),(6,1,1)]
+
+***********
+pop->diff->1 and pos(1,2)-->(kha ja sakte hai)(0,2),(1,1),(2,2)
+(1,2)->(0,2)  abs diff=0  and diff=1 so I can go with diff=1 and in result[0][2]=1 which is already present so I am not going to update  so I can not go from (1,2) to (0,2)
+(1,2)->(1,1)  abs diff=6  and diff=1 so I can go with abs diff=6 and in result[1][1]=6 which is already present so I am not going to update  so I can not go from (1,2) to (1,1)
+(1,2)->(2,2)  abs diff=3  and diff=1  so I can go with abs diff=3   and result[2,2] has infinity and my abs diff value is 3 so I can replace it
+result[2,2]=3
+minheap=[(2,1,0),(3,2,2),(6,1,1)]
+**************************************
+pop->diff->2 and pos(1,0)-->(kha ja sakte hai)(0,0),(2,0),(1,1)
+(1,0)->(0,0)  abs diff=2  and diff=2 so I can go with diff=2 and in result[0][0]=0 which is less than diff so I am not going to update  so I can not go from (1,0) to (0,0)
+*************
+pop->diff->2 and pos(1,0)-->(kha ja sakte hai)(0,0),(2,0),(1,1)
+(1,0)->(0,0)  abs diff=2  and diff=2 so I can go with diff=2 and in result[0][0]=0 which is less than diff so I am not going to update  so I can not go from (1,0) to (0,0)
+(1,0)->(2,0)  abs diff=2  and diff=2 so I can go with diff=2 and in result[2][0]=infinity and my abs diff value is 2 so I can replace it
+result[2,0]=2
+minheap=[(2,2,0),(3,2,2),(6,1,1)]
+(1,0)->(1,1)  abs diff=5  and diff=2 so I can go with absdiff=5 and in result[1][1]=6 and my abs diff value is 5 so I can replace it
+result[1,1]=5
+minheap=[(2,2,0),(3,2,2),(5,1,1),(6,1,1)]
+************
+pop->diff->2 and pos(2,0)-->(kha ja sakte hai)(1,0),(2,1)
+(2,0)->(1,0)  abs diff=2  and diff=2 so I can go with diff=2 and in result[1][0]=2 which is already present  so I am not going to update  so I can not go from (2,0) to (1,0) 
+(2,0)->(2,1)  abs diff=2  and diff=2 so I can go with diff=2 and in result[2][1]=infinity and my  diff value is 2 so I can replace it
+result[2,1]=2
+minheap=[(2,2,1),(3,2,2),(5,1,1),(6,1,1)]
+**************
+pop->diff->2 and pos(2,1)-->(kha ja sakte hai)(1,1),(2,2),(2,0)
+(2,1)->(1,1)  abs diff=5  and diff=2 so I can go with absdiff=5 and in result[1][1]=5 which is same as absdiff so I am not going to update  so I can not go from (2,1) to (1,1) 
+(2,1)->(2,2)  abs diff=2  and diff=2 so I can go with diff=2 and in result[2][2]=3 which is greater than diff so I am  going to update  
+result[2,2]=2
+minheap=[(2,2,2),(3,2,2),(5,1,1),(6,1,1)]
+(2,1)->(2,0)  abs diff=2  and diff=2 so I can go with diff=2 and in result[2][0]=2 which is same as diff so I am not going to update  so I can not go from (2,1) to (2,0) 
+**********
+pop->diff->2 and pos(2,2)-->(kha ja sakte hai)(2,1),(1,2)
+(2,2)->(1,2)  abs diff=3  and diff=2 so I can go with absdiff=3 and in result[1][2]=1 which is less than absdiff so I am not going to update  so I can not go from (2,2) to (1,2)
+*******************************************************************************************************************************************************
+
+
         
 
