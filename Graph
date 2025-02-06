@@ -701,7 +701,85 @@ Input: mat = [[0, 1, 43],[1, 0, 6], [-1, -1, 0]]
 [2][1]=inf      2->0(inf)|0->1(1)=0 no change           |   
 [2][2]=0       2->0(inf)|0->2(43)=inf not better answer |
 ****************************************************************************************************************************************************
+MINIMUM SPANNING TREE
+Given a weighted, undirected, and connected graph with V vertices and E edges, your task is to find the sum of the weights of the edges in the Minimum Spanning Tree (MST) of the graph. The graph is represented by an adjacency list, where each element adj[i] is a vector containing vector of integers. Each vector represents an edge, 
+with the first integer denoting the endpoint of the edge and the second integer denoting the weight of the edge
+Input:
+3 3
+0 1 5
+1 2 3
+0 2 1
 
+Output: 4
+Explanation:
+
+The Spanning Tree resulting in a weight
+of 4 is shown above.
+Input: 
+2 1
+0 1 5
+
+  
+
+Output: 5 
+
+Explanation: Only one Spanning Tree is possible which has a weight of 5.
+
+**********************************************************************************
+
+
+class Solution:
+    
+    #Function to find sum of weights of edges of the Minimum Spanning Tree.
+    def spanningTree(self, V: int, adj: List[List[int]]) -> int:
+        #code here
+        pq=[]
+        heapq.heappush(pq,(0,0))
+        inMST=[False]*V
+        sum=0
+        while(pq):
+            wt,node=heapq.heappop(pq)
+            if inMST[node]==True:
+                continue
+            inMST[node]=True
+            sum=sum+wt
+            
+            for v in adj[node]:
+                neighbour=v[0]
+                neighbour_wt=v[1]
+                if inMST[neighbour]==False:
+                    heapq.heappush(pq,(neighbour_wt,neighbour))
+                    
+                    
+        return sum   
+
+****************************************************************************************************************************************
+3 3
+0 1 5
+1 2 3
+0 2 1
+***********
+inMST=[F,F,F]  F->False
+minheap=[(0,0,-1)]
+parent=[-1,-1,-1]
+****
+pop:-> wt=0, node=0, parent=-1| node 0 se kha kha ja sakte hai 2,1
+inMST=[T,F,F]
+minheap=[(1,2,0),(5,1,0)]
+sum=0+
+
+*********
+pop:-> wt=1, node=2, parent=0| node 2 se kha kha ja sakte hai 0,1  but since 0 visited hai inMST toh usko include nhi karna hai
+inMST=[T,F,T]
+minheap=[(3,1,2),(5,1,0)]
+sum=0+5
+******
+pop:-> wt=3, node=1, parent=2| node 1 se kha kha ja sakte hai 0,2  but since 0  aur 1 visited hai inMST toh usko include nhi karna hai
+inMST=[T,T,T]
+sum=0+5+3
+********
+pop:-> wt=5, node=1, parent=0| node 1 se kha kha ja sakte hai 0,2  but since 0 aur 2 visited hai inMST toh usko include nhi karna hai
+***********************************************************************************************************************************************************************
 
 
 
