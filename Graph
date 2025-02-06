@@ -648,6 +648,38 @@ dist[u]-1<dist[v]=dist[1]-1<dist[2]=4<4
 ***********************
 u=2,v=0,wt=1
 dist[u]+1<dist[v]=dist[2]+1<dist[0]=5<4
+*********************************************************************************************************************************************
+The problem is to find the shortest distances between every pair of vertices in a given edge-weighted directed graph. The graph is represented as an adjacency matrix. mat[i][j] denotes the weight of the edge from i to j. If mat[i][j] = -1, it means there is no edge from i to j.
+Note: Modify the distances for every pair in place.
+Input: mat = [[0, 25], [-1, 0]]
+Output: [[0, 25], [-1, 0]]
+Explanation: The shortest distance between every pair is already given(if it exists).
+Input: mat = [[0, 1, 43],[1, 0, 6], [-1, -1, 0]]
+Output: [[0, 1, 7], [1, 0, 6], [-1, -1, 0]]
+Explanation: We can reach 2 from 0 as 0->1->2 and the cost will be 1+6=7 which is less than 43.
+Constraints:
+**********
+
+class Solution:
+	def shortest_distance(self, matrix):
+	    row=len(matrix)
+	    col=len(matrix[0])
+	    for r in range(row):
+	        for c in range(col):
+	            if matrix[r][c]==-1:
+	                matrix[r][c]=100000
+	    for via in range(row):
+	        for r in range(row):
+	            for c in range(col):
+	                matrix[r][c]=min(matrix[r][c],matrix[r][via]+matrix[via][c])
+	                   
+        for r in range(row):
+            for c in range(col):
+                if matrix[r][c]==100000:
+                  matrix[r][c]=-1
+
+
+
 *************************************************************************************************************************************************
                                                              Floyd Warshall Algorithm  DEBUG
 ***********************************************************************************************************************************************************
@@ -665,9 +697,9 @@ Input: mat = [[0, 1, 43],[1, 0, 6], [-1, -1, 0]]
 [1][0]=1       1->0(1)|0->0(0)=1 no change            |
 [1][1]=0       1->0(1)|0->1(1)=2 not better answer    |
 [1][2]=6       1->0(1)|0->2(43)=44 not better answer  |
-[2][0]=-1      2->0(-1)|0->0(0)=-1 no change          |
-[2][1]=-1      2->0(-1)|0->1(1)=0 no change           |   
-[2][2]=0       2->0(-1)|0->2(43)=42 not better answer |
+[2][0]=inf      2->0(inf)|0->0(0)=inf no change          |
+[2][1]=inf      2->0(inf)|0->1(1)=0 no change           |   
+[2][2]=0       2->0(inf)|0->2(43)=inf not better answer |
 ****************************************************************************************************************************************************
 
 
