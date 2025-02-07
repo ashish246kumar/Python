@@ -781,7 +781,58 @@ sum=0+5+3
 ********
 pop:-> wt=5, node=1, parent=0| node 1 se kha kha ja sakte hai 0,2  but since 0 aur 2 visited hai inMST toh usko include nhi karna hai
 ***********************************************************************************************************************************************************************
+KRUSHKAL ALGORITHM
 
+*******************************************
+from typing import List
+import heapq
+class Solution:
+    
+    #Function to find sum of weights of edges of the Minimum Spanning Tree.
+    def spanningTree(self, V: int, adj: List[List[int]]) -> int:
+        adj=[]
+        for u in range(V):
+            for v in adj[u]:
+                src=i
+                v1,wt=v[0],v[1]
+                adj.append[(src,v1,wt)]
+                
+        adj.sort(key=lambda x:x[2])        
+        parent=[i for i in range(V)]    
+        rank=[0]*V        
+        def find(x):
+            if parent[x]==x:
+                return x
+            parent[x]=find(parent[x])
+            return parent[x]
+        def union(x1,x2):
+            a=parent[x1]
+            b=parent[x2]
+            if a==b:
+                return
+            if rank[a]>rank[b]:
+                parent[b]=a
+            elif rank[b]>rank[a]:
+                parent[a]=b
+            else:
+                parent[a]=b
+                rank[b]=rank[b]+1
+        
+        def krushkal(adj):
+            sum=0
+            for node in adj:
+                u,v,w=node[0],node[1],node[2]
+                parentU=find(u)
+                parentV=find(v)
+                if parentU!=parentV:
+                    union(u,v)
+                    sum+=w
+            
+            return sum        
+        
+        
+        return krushkal(adj)
+*********************************************************************************************        
         
 
 
