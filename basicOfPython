@@ -8,6 +8,7 @@ PS C:\Users\ashishkumar18\Downloads\python_project\Python_Basics_Assignment> Scr
 
 Scripts\activate:- command to activate vitual enviornment
 pip freeze-->to check what package is installed in your system
+
 ************************************************************************************************************************************************************************************
 slicing in python 
 sequence[start:stop:step]
