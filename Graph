@@ -8,6 +8,13 @@ operation
 combine two given set-->union
 Tell if two member belong to same set or not---->find
 
+*******************************
+eulerian path
+A path of edges that visit all the edges in graph exactly once.
+All the graph does not have necessarly eulerian path.
+A eulerian path which start and end on the same node is known as eulerian circuit  also known as eulerian cycle.
+
+********************************
 
 	                         Bellman-Ford	                                             Dijkstra
 Type of Graph	Works for graphs with negative weights and positive weights	Works only for graphs with non-negative weights
