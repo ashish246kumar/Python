@@ -16,6 +16,7 @@ A eulerian path which start and end on the same node is known as eulerian circui
 if in graph there is eulerian cycle then we can start from any node .
 all the vertices with non zero degree need to belong to a single connected comppnent.
 all the vertices with even degree have eulerian circuit
+semi eulerian graph:-graph which have euler path but does not have euler circuit
 ********************************
 
 	                         Bellman-Ford	                                             Dijkstra
@@ -842,7 +843,12 @@ class Solution:
         
         return krushkal(adj)
 *********************************************************************************************        
-        
+   odd degree>2->not euler path
+   odd degree=2->then euler path
+    odd degree=0 then euler circuit
+**********
+
+   
 
 
 
