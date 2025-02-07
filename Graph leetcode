@@ -560,6 +560,57 @@ minheap=[(2,2,2),(3,2,2),(5,1,1),(6,1,1)]
 pop->diff->2 and pos(2,2)-->(kha ja sakte hai)(2,1),(1,2)
 (2,2)->(1,2)  abs diff=3  and diff=2 so I can go with absdiff=3 and in result[1][2]=1 which is less than absdiff so I am not going to update  so I can not go from (2,2) to (1,2)
 *******************************************************************************************************************************************************
+1584
+min-cost-to-connect-all-points
+*********************************
+You are given an array points representing integer coordinates of some points on a 2D-plane, where points[i] = [xi, yi].
+The cost of connecting two points [xi, yi] and [xj, yj] is the manhattan distance between them: |xi - xj| + |yi - yj|, where |val| denotes the absolute value of val.
+Return the minimum cost to make all points connected. All points are connected if there is exactly one simple path between any two points.
+Example 1:
+Input: points = [[0,0],[2,2],[3,10],[5,2],[7,0]]
+Output: 20
+Explanation: 
+We can connect the points as shown above to get the minimum cost of 20.
+Notice that there is a unique path between every pair of points.
+***********************************
+
+class Solution:
+    def minCostConnectPoints(self, points: List[List[int]]) -> int:
+        n=len(points)
+        adj=defaultdict(list)
+        for i in range(n):
+            for j in range(i+1,n):
+                x1=points[i][0]
+                y1=points[i][1]
+                x2=points[j][0]
+                y2=points[j][1]
+                dist=abs(x1-x2)+abs(y1-y2)
+                adj[i].append((j,dist))
+                adj[j].append((i,dist))
+        def findMinimum(adj,n):
+            pq=[]
+            inMST=[False]*n
+            heapq.heappush(pq,(0,0))
+
+            sum=0
+            while(pq):
+                wt,node=heapq.heappop(pq)
+                if inMST[node]==True:
+                    continue
+
+                sum=sum+wt
+                inMST[node]=True
+                for v in adj[node]:
+                    neighbour,neighbour_wt=v
+                    if inMST[neighbour]==False:
+                        
+                        heapq.heappush(pq,(neighbour_wt,neighbour))
+            return sum            
+        
+       
+        return findMinimum(adj,n)
+***************************************************************************************************************************************************************                    
+
 
 
         
