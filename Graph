@@ -15,6 +15,7 @@ All the graph does not have necessarly eulerian path.
 A eulerian path which start and end on the same node is known as eulerian circuit  also known as eulerian cycle.
 if in graph there is eulerian cycle then we can start from any node .
 all the vertices with non zero degree need to belong to a single connected comppnent.
+all the vertices with even degree have eulerian circuit
 ********************************
 
 	                         Bellman-Ford	                                             Dijkstra
