@@ -726,7 +726,8 @@ Output: 5
 Explanation: Only one Spanning Tree is possible which has a weight of 5.
 
 **********************************************************************************
-
+PRIMS ALGORITHM
+*************
 
 class Solution:
     
@@ -781,6 +782,7 @@ sum=0+5+3
 pop:-> wt=5, node=1, parent=0| node 1 se kha kha ja sakte hai 0,2  but since 0 aur 2 visited hai inMST toh usko include nhi karna hai
 ***********************************************************************************************************************************************************************
 
+        
 
 
 
