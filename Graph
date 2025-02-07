@@ -8,6 +8,7 @@ operation
 combine two given set-->union
 Tell if two member belong to same set or not---->find
 
+
 *******************************
 eulerian path
 A path of edges that visit all the edges in graph exactly once.
@@ -17,6 +18,25 @@ if in graph there is eulerian cycle then we can start from any node .
 all the vertices with non zero degree need to belong to a single connected comppnent.
 all the vertices with even degree have eulerian circuit
 semi eulerian graph:-graph which have euler path but does not have euler circuit
+******
+*********************************************************************************************        
+   odd degree>2->not euler path
+   odd degree=2->then euler path
+    odd degree=0 then euler circuit
+**********
+For directed graph
+if 
+outdegree[node]-indegree[node]=1  then i will choose this as starting point of eulerian graph
+indegree[node]-outdegree[node]=1  then i will choose this is a destination of graph
+if indegree[node]==outdegree[node] then it is other node
+******************************
+finding euler path
+
+if outdegree[node]-indegree[node]=1:
+     startNode=node
+if all the  node have equal indegree and outdegree then graph  have  eulerian circuit.
+indegree[node]==outdegree[node]
+
 ********************************
 
 	                         Bellman-Ford	                                             Dijkstra
@@ -847,6 +867,20 @@ class Solution:
    odd degree=2->then euler path
     odd degree=0 then euler circuit
 **********
+For directed graph
+if 
+outdegree[node]-indegree[node]=1  then i will choose this as starting point of eulerian graph
+indegree[node]-outdegree[node]=1  then i will choose this is a destination of graph
+if indegree[node]==outdegree[node] then it is other node
+******************************
+finding euler path
+
+if outdegree[node]-indegree[node]=1:
+     startNode=node
+if all the  node have equal indegree and outdegree then graph  have  eulerian circuit.
+indegree[node]==outdegree[node]
+*********************************************************************
+
 
    
 
