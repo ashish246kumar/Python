@@ -429,6 +429,16 @@ Hierarchical structure: When you need to group related modules into logical unit
 *
 difference between class and static method and instance method
 
+
+Feature	                              Instance Method	                                            Class Method	                             Static Method
+Decorator	                       None (default)	                                             @classmethod	                             @staticmethod
+First Argument	                   self (instance reference)	                                   cls (class reference)	                  No mandatory argument
+Can Access Instance Variables?	          ✅ Yes	                                                  ❌ No	                                        ❌ No
+Can Access Class Variables?	          ✅ Yes	                                                  ✅ Yes	                                ❌ No
+Can Modify Class Variables?	          ✅ Yes	                                                  ✅ Yes	                                ❌ No
+Bound To	                          Object (instance)	                                          Class	                            Class (but doesn’t use cls)
+When to Use?	When the method needs to access instance attributes	When working with class-level data, not specific instances	When the method is independent of instance and class
+
 *********************************************************************************************************************************************
 
 SQLite is a lightweight, self-contained, serverless SQL database engine that is built into Python via the sqlite3 module. 
