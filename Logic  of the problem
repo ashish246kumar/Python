@@ -1,0 +1,56 @@
+*****************************************************************************************
+two sum brute force approach
+two loop 
+i=0 
+j=i+1 se
+hum target-i karenge aur iss j wale for loop me search  karenge 
+
+*********
+dusra approach hum map me rakhenge value aur index value key rahega aur index 
+2,7,11,15
+target=9
+remaning=9-7=2 kya 2 exist kar raha hai map me agar nhi toh hum i ko badha denge au 7 ko map me store kar lenge 
+i=3
+remaning=9-11=-2
+************
+if array is sorted then i will choose two pointer approach
+i aur j 
+
+i=0 se and  j=end-1 se
+agar arr[i]+arr[j]=tareget toh return
+agar arr[i]+arr[j]>target then j--
+else i++
+ye mai kyu kar pa raha kyu ki array sorted hai hum agae badhenge toh hume large element milega .aur hum agar piche badhe toh hume chota element milega
+*******
+Agar result me indexing maga hai toh hum sort nhi kar sakte 
+agar result me element maga hai toh hum sort kar paynge array ko.
+hum sort karke two pointer approach laga sakte hai
+
+************
+find no of elment jiska sum of 2 elem target ke barabar ho toh
+first sort array
+take two pointer
+removes duplicate
+******
+3 sum
+n1+n2+n3=0
+n2+n3=-(n1)
+isko hum kah sakte hai 2 element ka sum target ke barabar hai | iss trah yeh 2 sum problem ban jayga
+approach
+hum phela element ko n1 man lenge aur baki i=1 se n me mai  2 sum laga  doonga
+************************
+majority element  n//2 or n//3
+
+brute force
+map me frequency store kar lenge aur jiski frequency n//2 se Jayda hogi usko return kar dunga
+*****
+Boyer-Moore algo
+nums=[2,2,1,1,1,2,2]
+hum phela element ko man lenge n//2 se bada hai 
+candidate =2
+count=1
+i=1
+agar candiate ==arr[i] toh hum count++ kar denge
+agar candidate!=arr[i-1] toh hum count-- kar denge
+if count=0 ho jata hai toh hum candidate ko change kardenge aur naya candidate current element hoga
+ ********
