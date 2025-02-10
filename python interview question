@@ -676,6 +676,25 @@ Tuples are stored in contiguous memory blocks, making them cache-friendly. Lists
 
 
 **********************************************************
+Why Use Blueprints?
+Modularization – Helps break large applications into smaller, manageable components.
+Reusability – You can reuse blueprints across multiple applications.
+Scalability – Makes it easier to add new features without cluttering the main app.
+Better Code Organization – Keeps related functionality together (e.g., authentication, user management, etc.).
+**********************************************************************************************
+l1 = [1, 8, 2, 3, 4, 6]
+output = []
+
+for i in range(len(l1)):
+    if i + l1[i] > len(l1):  
+        output.append([0])  # If index goes out of bounds, append [0]
+    else:
+        output.append(l1[i:i + l1[i]])
+
+# Print the output in the desired format
+for item in output:
+    print(item)
+***************************************************************************************************
 
 
 
