@@ -670,7 +670,12 @@ The MagicMock is like that fake food—it stands in for something real (like a d
 from unittest.mock import patch
 import pytest
 *********************************************************************************************************************
+why tuples are memory efficient but list are not
+tuples are stored as fixed arrays, while lists have a more complex structure to support resizing and modifications.
+Tuples are stored in contiguous memory blocks, making them cache-friendly. Lists, due to their dynamic nature, may have elements scattered in memory.
 
+
+**********************************************************
 
 
 
