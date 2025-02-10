@@ -54,3 +54,68 @@ agar candiate ==arr[i] toh hum count++ kar denge
 agar candidate!=arr[i-1] toh hum count-- kar denge
 if count=0 ho jata hai toh hum candidate ko change kardenge aur naya candidate current element hoga
  ********
+*************
+find all possible subarray and find sum and check==target or not
+**********
+for(s=0;s<=n-1;s++)
+ for(e=s;e<=n-1;e++)
+ {
+}
+if sum==k:
+  count++;
+*******
+it come under the concept of cumulative sum 
+1,4,1,2,6  k=3
+1-3=-2 is it present in the hashmap if not then i put 1->1 in map
+cs=1+4=5 and 5-3=2 is it present in map if not 5->1
+cs=5+1=6 and 6-3=3 not present in the map 6->1
+cs=6+2=8 and 8-3=5  present in map so inc count=1 map-> 8->1
+**
+[1,-1] k=0
+iss wale case ko handle ke liye hum map me pheele hi 0->1 dal denge
+***
+[1,-1,0] if 0 come as key multiple times then we inc it by 1  in value
+****
+Maximum Ascending Subarray Sum 
+10,20,30,5,10,50
+*****
+brute force
+sum=arr[i]
+i=0 to n and  j=i+1 to n
+aur ye bhi check karenge arr[i]<arr[j] then we do sum=sum+arr[j] and max=max(max,sum)
+****
+optimal approach
+but the problem in the brute force approach is agar 30 ke bad 5 smallest hai aur hume agar ye case milta hai toh hum i=i+1 kar dete hai 
+matlab hum i ko i=1 la dete hai but hume i=3 lana chaiye kayde se .
+**********
+Rearrange array element by sign
+Brute force approach 
+[3,1,-2,-5,2,-4]
+ek positive array banuga aur ek negative array banuga
+******
+optimal approach
+********
+hum dekhege toh hum payenge even index par positive element store ho rha hoga aur odd index par negative
+toh hum isilye 2 pointer le lenge
+i=0->positive ke live
+j=1->negative ke liye
+if arr[k]>0
+result[i]=arr[k] aur i=i+2
+else{
+  result[j]=arr[k]
+ j=j+2
+}
+
+**************************************
+Next Permutation
+***************************************
+{1,2,3}->
+lexographically permutation of this
+{1,2,3}
+{1,3,2}
+{2,1,3}
+{2,3,1}
+{3,1,2}
+{3,2,1}
+******************************************************************************************************************
+
