@@ -696,6 +696,37 @@ for item in output:
     print(item)
 ***************************************************************************************************
 
+import copy
+
+# Original list with nested elements
+original_list = [[1, 2, 3], [4, 5, 6]]
+
+# Create a shallow copy
+shallow_copied_list = copy.copy(original_list)
+
+# Modify the nested list
+shallow_copied_list[0][0] = 99
+
+# Both lists reflect the change in the nested list
+print("Original List:", original_list)  
+print("Shallow Copied List:", shallow_copied_list)
+
+*******
+import copy
+
+# Original list with nested elements
+original_list = [[1, 2, 3], [4, 5, 6]]
+
+# Create a deep copy
+deep_copied_list = copy.deepcopy(original_list)
+
+# Modify the nested list
+deep_copied_list[0][0] = 99
+
+# Only the copied list is affected
+print("Original List:", original_list)  
+print("Deep Copied List:", deep_copied_list)
+***************************************************************************************************
 
 
 
