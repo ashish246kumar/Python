@@ -7,7 +7,144 @@ what is blueprint
 priority level of log
 what is rest api?
 how do you implement jwt
-lambda expresion for complex operation
+lambda expresion for complex operation like calculating power of number
+Explain database connection in Python Flask.
+Does Python make use of access specifiers?
+Explain how the join() function in Python?
+How can you identify and deal with missing values in a dataframe?
+What is the use of manage.py in Python?
+What method can be used to generate random numbers in Python?
+What does *args, **kwargs mean in Python?
+Is Flask an MVC model? If true, justify this using the MVC pattern.
+How can we check if all characters in a string are alphanumeric?
+What are some of the most used built-in modules in Python?
+What are the tools for debugging and performing static analysis in Python?
+Write a code to add two integers without using the ‘+’ operator when the numbers are greater than zero.
+Write a code to create a single string from elements in a list.
+Is it possible for a function not to have a return statement and is it valid?
+How do you convert string to lowercase in Python?
+How do you convert string to lowercase in Python?
+What is a Try Block?
+Differentiate between override and new modifiers.
+In Python, what would you do to create an empty class?
+Do you think you can call the parent class without its instance creation?
+In what ways can parent members in a child class be accessed?
+Why is NumPy preferred over Python lists?
+How can you copy an object in Python?
+What is shallow and deep copying in Python?
+What are Pickling?
+How can you define Unpickling in Python?
+What function is used for Pickling and Unpickling?
+What are some types of Type Conversion in Python?
+What is reindexing in Pandas?
+How can you remove values from an array in Python?
+What do you think is the use of dir () function in Python?
+What is Type Conversion in Python?
+What are literals in Python?
+Can you tell us if Python is object-oriented or functional programming?
+What rules govern local and global variables in Python?
+What are ODBC modules in Python?
+What is PEP 8 and its importance?
+What is a scope in Python?
+What built-in types are available in Python?
+How does a function return values in Python?
+What is a Python PATH?
+What is a Package in Python?
+What is a Package in Python?
+What are keywords in Python?
+How can you remove values from an array in Python?
+Beware: Mutable Types and Shallow Copying
+Threading and Python's Global Interpreter Lock
+10: Asynchronous Python Programming with Asyncio
+Mocking External Dependencies in Python Testing
+Q.3. Explain the ternary operator in Python.
+Q.5. Is Python case-sensitive?
+Q.6. How long can an identifier be in Python?
+Q.13. How will you check if all characters in a string are alphanumeric?
+With Python, how do you find out which directory you are currently in?
+limitation of python
+Q.28. How will you convert a list into a string?
+Q.32. Explain the //, %, and ** operators in Python.
+relational operator in python
+Q.35. Explain logical operators in Python.
+Q.36. What are membership operators?
+Q.37. Explain identity operators in Python.
+Q.38. Finally, tell us about bitwise operators in Python.
+Q.41. How would you convert a string into an int in Python?
+Q.45. What does the function zip() do?
+Q.48. How do you get all values from a Python dictionary?
+Q.61. How is Python different from Java?
+Q.60. What is PEP 8?
+Q.62. What is the best code you can write to swap two numbers?
+Q.63. How can you declare multiple assignments in one statement?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**********************************************************************************
+
+
+
+
+
+
+
+
+
+How will you send an email from a Python Script?
+
+
+Can you explain what is unittest in Python?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
