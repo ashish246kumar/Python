@@ -26,7 +26,30 @@ let_it_fly(plane)  # Output: Airplane is flying
 Duck Typing Kaise Kaam Karta Hai?
 Python mein, aapko explicit type declaration ya inheritance ki zarurat nahi hoti. Jab tak object ek certain method ko implement karta hai
 , aap us object ko us type ka samajh sakte hain, chahe wo type uss class ka ho ya nahi.
+**************************************************************************
+operator overloading  :
+Operator Overloading ek powerful feature hai Python ka jo polymorphism ko implement karta hai
+class ComplexNumber:
+    def __init__(self, r, i):
+        self.real = r
+        self.imaginary = i
+
+    def __add__(self, other):
+        
+        return f"{self.real + other.real}+ {self.imaginary + other.imaginary}i"
+
+    def __repr__(self):
+        # String representation of the complex number
+        return f"{self.real} + {self.imaginary}i"
 
 
+c1 = ComplexNumber(1, 2)
+c2 = ComplexNumber(4, 5)
 
-***********************
+
+result = c1 + c2   # This calls the __add__ method
+
+
+print(result)  # Output: 5 + 7i
+********************************************************
+
