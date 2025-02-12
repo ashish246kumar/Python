@@ -93,6 +93,8 @@ Can you explain what is unittest in Python?
 
 
 *******************************************************************************************************************
+what is the use of @property  annotation?
+***********
 The @property decorator is used to define a method as a getter for an attribute.
 class Circle:
     def __init__(self, radius):
