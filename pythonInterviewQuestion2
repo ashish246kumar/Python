@@ -1,0 +1,32 @@
+***************
+Duck Typing ka matlab hai ki aap kisi object ko uski actual type se zyada uske behavior ke basis pe treat karte hain. Python is concept ko dynamically implement karta hai, jo program ko zyada flexible aur modular banaata hai.
+Python ek dynamic language hai, matlab hum types ko runtime pe check karte hain, na ki compile-time pe. Yeh Duck Typing ko asaan banata hai.
+class Bird:
+    def fly(self):
+        print("Bird is flying")
+
+class Airplane:
+    def fly(self):
+        print("Airplane is flying")
+
+def let_it_fly(flyable):
+    flyable.fly()  # Hum yaha par object ka type check nahi kar rahe
+                  # Bas yeh dekh rahe hain ki fly() method hai
+
+# Creating objects
+bird = Bird()
+plane = Airplane()
+
+# Let both objects "fly"
+let_it_fly(bird)   # Output: Bird is flying
+let_it_fly(plane)  # Output: Airplane is flying
+
+
+
+Duck Typing Kaise Kaam Karta Hai?
+Python mein, aapko explicit type declaration ya inheritance ki zarurat nahi hoti. Jab tak object ek certain method ko implement karta hai
+, aap us object ko us type ka samajh sakte hain, chahe wo type uss class ka ho ya nahi.
+
+
+
+***********************
