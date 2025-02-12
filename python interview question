@@ -77,6 +77,9 @@ Q.61. How is Python different from Java?
 Q.60. What is PEP 8?
 Q.62. What is the best code you can write to swap two numbers?
 Q.63. How can you declare multiple assignments in one statement?
+How will you send an email from a Python Script?
+Can you explain what is unittest in Python?
+
 
 
 
@@ -97,21 +100,129 @@ Q.63. How can you declare multiple assignments in one statement?
 
 
 **********************************************************************************
+2. How to use super() in Multiple Inheritance?
 
+Python supports multiple inheritance using a left-to-right method resolution order (MRO), following the C3 Linearization Algorithm.
 
+class A:
+    def show(self):
+        print("A's show")
 
+class B(A):
+    def show(self):
+        print("B's show")
+        super().show()
 
+class C(A):
+    def show(self):
+        print("C's show")
+        super().show()
 
+class D(B, C):  # Inherits from B and C, both inherit from A
+    def show(self):
+        print("D's show")
+        super().show()  # Uses MRO to avoid calling A multiple times
 
+obj = D()
+obj.show()
 
+D's show
+B's show
+C's show
+A's show
 
+*************
+class A:
+    def show(self):
+        print("A's show")
 
-How will you send an email from a Python Script?
+class B(A):
+    def show(self):
+        print("B's show")
+        super().show()  # Calls A's show()
 
+class C(B):
+    def show(self):
+        print("C's show")
+        super().show()  # Calls B's show()
 
-Can you explain what is unittest in Python?
+obj = C()
+obj.show()
 
+C's show
+B's show
+A's show
 
+***********************************************************************************************
+class A:
+    def show(self):
+        print("Show method from A")
+
+class B:
+    def show(self):
+        print("Show method from B")
+
+class C(A, B):  # A comes first, so A's show() is called
+    pass
+
+obj = C()
+obj.show()
+Show method from A
+*******
+class C(A, B):
+    def show(self):
+        B.show(self)  # Explicitly calling B's method
+
+obj = C()
+obj.show()
+*********
+Show method from B
+****************************************************
+class X:
+    def display(self):
+        print("X method")
+
+class Y(X):
+    def display(self):
+        print("Y method")
+        super().display()
+
+class Z(Y):
+    def display(self):
+        print("Z method")
+        super().display()
+
+class W(Z):
+    def display(self):
+        print("W method")
+        super().display()
+
+obj = W()
+obj.display()
+********
+W method
+Z method
+Y method
+X method
+*************************************************************************
+class A:
+    def show(self):
+        print("Show method from A")
+
+class B:
+    def show(self):
+        print("Show method from B")
+
+class C(A, B):   
+    def show(self): 
+        B.show(self)  # Explicitly calling B's method
+
+obj = C()
+obj.show()
+*********
+Show method from B
+
+*****************************
 
 
 
