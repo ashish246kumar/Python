@@ -92,10 +92,45 @@ Can you explain what is unittest in Python?
 
 
 
+*******************************************************************************************************************
+The @property decorator is used to define a method as a getter for an attribute.
+class Circle:
+    def __init__(self, radius):
+        self._radius = radius  # private variable (convention: use underscore)
+    
+    # Getter method using @property
+    @property
+    def radius(self):
+        return self._radius
 
+    # Setter method using @radius.setter
+    @radius.setter
+    def radius(self, value):
+        if value < 0:
+            raise ValueError("Radius cannot be negative")
+        self._radius = value
 
+    # Property method to calculate area, read-only
+    @property
+    def area(self):
+        return 3.14159 * self._radius ** 2
 
+# Create an object of Circle
+circle = Circle(5)
+
+# Accessing radius through property (getter)
+print(circle.radius)  # Output: 5
+
+# Setting radius via setter
+circle.radius = 10
+print(circle.radius)  # Output: 10
+
+# Accessing the area (computed property)
+print(circle.area)  # Output: 314.159
+
+*****************
 why we can not create instanse of abstract class
+
 *********
 we can create instanse of  class only when we have the 100 percent of implementation of any method.
 *************************
