@@ -1,3 +1,18 @@
+Multiple inheritense in python at deep level
+Abstraction in pythn
+polymormphism
+shallow copy vs deep copy
+why tuple is more memory efficient
+what is blueprint
+priority level of log
+what is rest api?
+how do you implement jwt
+
+
+
+
+
+****************************************************************************************************************
 difference between module and package?
                        Module                                                                         package
                  single file with  python code                                      directory with multiple module and __init__.py
