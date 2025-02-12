@@ -51,5 +51,53 @@ result = c1 + c2   # This calls the __add__ method
 
 
 print(result)  # Output: 5 + 7i
+***********************************
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    # Overloading the '>' operator using the __gt__ method
+    def __gt__(self, other):
+        if self.age > other.age:
+            return True
+        else:
+            return False
+
+# Creating Person objects
+p1 = Person("Ram", 32)
+p2 = Person("Shyam", 23)
+
+# Using the overloaded '>' operator
+if p1 > p2:
+    print(f"{p1.name} is older than {p2.name}")
+else:
+    print(f"{p2.name} is older than {p1.name}")
+
+
 ********************************************************
+Method Overriding (Runtime Polymorphism)
+
+class Animal:
+    def sound(self):
+        print("Animal makes a sound")
+
+class Dog(Animal):
+    def sound(self):  # Overriding the sound method
+        print("Dog barks")
+
+class Cat(Animal):
+    def sound(self):  # Overriding the sound method
+        print("Cat meows")
+
+# Instantiate objects
+animal = Animal()
+dog = Dog()
+cat = Cat()
+
+# Polymorphic behavior: the sound method works differently based on the object
+animals = [animal, dog, cat]
+for animal in animals:
+    animal.sound()
+********************************************************************************************
 
