@@ -95,6 +95,68 @@ Can you explain what is unittest in Python?
 
 
 
+why we can not create instanse of abstract class
+*********
+we can create instanse of  class only when we have the 100 percent of implementation of any method.
+*************************
+🔹 What Happens If We Try to Instantiate an Abstract Class?
+✅ Python throws a TypeError because Animal has an abstract method that is not implemented.
+**********
+🔹 Can We Instantiate an Abstract Class That Has No Abstract Methods?
+print(type(obj))   # ✅ Output: <class '__main__.BaseClass'>
+Yes! If an abstract class does not have any abstract methods, Python allows instantiation.
+***********
+Can We Provide a Definition for an Abstract Method in an Abstract Class?
+Yes, we can provide a definition (implementation) for an abstract method in an abstract class. However, the method must still be overridden in the subclass, unless explicitly called using super().
+
+from abc import ABC, abstractmethod
+
+class Animal(ABC):
+    @abstractmethod
+    def make_sound(self):
+        """Providing a default implementation"""
+        print("Some generic animal sound")  # Default behavior
+
+class Dog(Animal):
+    def make_sound(self):
+        super().make_sound()  # Calling abstract method from the base class
+        print("Woof! Woof!")  # Dog's specific sound
+
+dog = Dog()
+dog.make_sound()
+Some generic animal sound
+Woof! Woof!
+*******************************************************************
+since we are providing  defination of abstract method then can we create object
+The abstract class remains uninstantiable as long as it has at least one method decorated with @abstractmethod.
+*******"
+can we create cnstructor inside abstract class
+Yes, we can create a constructor (__init__) inside an abstract class in Python. The constructor of the abstract class will be inherited by its subclasses, and they can use super().__init__() to call it.
+
+
+from abc import ABC, abstractmethod
+
+class Vehicle(ABC):  
+    def __init__(self, brand):
+        self.brand = brand  # Instance variable
+    
+    @abstractmethod
+    def start(self):
+        pass
+
+class Car(Vehicle):
+    def __init__(self, brand, model):
+        super().__init__(brand)  # Calling the constructor of abstract class
+        self.model = model
+
+    def start(self):
+        print(f"{self.brand} {self.model} is starting...")
+
+# Creating an object of the subclass
+car = Car("Tesla", "Model S")
+car.start()  
+print(car.brand)  # ✅ Tesla
+print(car.model)  # ✅ Model S
 
 
 
