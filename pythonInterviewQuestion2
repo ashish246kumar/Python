@@ -117,6 +117,23 @@ original_list[0][1] = 99
 # Output dekhein
 print("Original List:", original_list)  
 print("Shallow Copied List:", shallow_copied_list)  
+*********************************************************************
+import copy
+
+original_list = [1, 2, 3, 4, 5]
+
+# Shallow Copy
+shallow_copied_list = copy.copy(original_list)
+
+# Change original list ka ek element
+original_list[0] = 99  
+
+# Output
+print("Original List:", original_list)
+print("Shallow Copied List:", shallow_copied_list)
+Original List: [99, 2, 3, 4, 5]
+Shallow Copied List: [1, 2, 3, 4, 5]
+Agar aap shallow copy banaoge ek simple list [1,2,3,4,5] ka, to koi farq nahi padega kyunki yeh list sirf integers ka collection hai, aur integers immutable hote hain
 ***************
 Agar object ke andar nested mutable objects hain (jaise lists, dictionaries), to unka reference copy hota hai, na ki naya object banta hai.
 Ek object me change karne se doosre object me bhi reflection hota hai, jo kabhi-kabhi unexpected behavior cause kar sakta hai.
@@ -143,9 +160,123 @@ Feature	Shallow Copy (ऊपरी कॉपी)	Deep Copy (गहरी कॉ�
 Memory Allocation	Sirf outer object naya banta hai	Outer aur andar ke nested objects bhi naye bante hain
 Reference Sharing	Inner (nested) objects ka reference copy hota hai	Pure structure ka naya instance banta hai
 Impact of Change	Ek object me change karne se dusre object me bhi change ho jata hai (agar nested object change ho raha ho)	Ek object me change ka dusre object pe koi effect nahi hota
-Performance	Faster, because sirf reference copy hota hai	Slower, because poora naya object create hota hai
-Use Case	Jab nested objects change nahi honge	Jab humein independent copy chahiye
+Performance	Faster, because sirf reference copy hota hai	   Slower, because poora naya object create hota hai
+Use Case	Jab nested objects change nahi honge	         Jab humein independent copy chahiye
 *************************************
+why tuple is more memory efficient?
+
+Tuple ka size fixed hota hai aur ek baar create hone ke baad usme koi changes nahi ho sakte. Python internally tuple ka memory allocation optimize karta hai, jabki list me extra memory reserve hoti hai future updates ke liye.
+Tuple ka size kam hai because:
+
+List ko modify karne ki flexibility dene ke liye extra memory allocate hoti hai.
+Tuple fixed hota hai, isliye extra memory reserve nahi hoti.
+
+
+3. Tuple ka Memory Layout Zyada Efficient Hota Hai
+Ek pointer array hota hai jo alag-alag memory locations ko point karta hai.
+Koi extra memory overhead nahi hota hai tuple ke case me
+4️⃣ Tuple me garbage collection overhead nahi hota, jo efficiency badhata hai.
+
+
+*********************
+what is blueprint in flask?
+*********
+Flask me Blueprint ek modular approach hai jo large applications ko organize aur manage karne ke liye use hoti hai
+Blueprint ka use karke hum Flask application ke different parts ko alag-alag modules me divide kar sakte hain, jisse code reusable, scalable aur maintainable ho jata hai.
+🔹 Scalability: Jaise-jaise application badhta hai, easily manage kar sake.
+
+Blueprint Ke Fayde:
+1️⃣ Multiple Developers ek saath kaam kar sakte hain bina ek dusre ke code ko touch kiye.
+2️⃣ Modular Approach se hum alag-alag features ko modules me rakh sakte hain.
+3️⃣ Easily Scalable - Agar naye features add karne ho to naye Blueprints bana sakte hain.
+
+Blueprint Flask ka ek powerful feature hai jo large applications me code management ko easy banata hai.
+
+***************************
+different level of log
+*********
+CRITICAL	50 (Highest)	Serious error, app may crash (e.g., database failure)
+ERROR	40	Error that needs attention but app still runs
+WARNING	30	Potential issues (e.g., deprecated function)
+INFO	20	General app events (e.g., request received)
+DEBUG	10	Debugging details for developers
+*************
+REST API ek communication system hai jo web applications aur servers ke beech data exchange karne ke liye use hota hai. 
+Yeh stateless architecture par based hota hai, jisme client aur server independent hote hain.
+ Stateless Communication
+Har request independent hoti hai.
+Server ko pichle request ki history ya state yaad nahi rehti.
+REST API me mostly JSON (JavaScript Object Notation) format ka use hota hai, kyunki yeh lightweight aur readable hota hai.
+Yeh HTTP methods ka use karta hai (GET, POST, PUT, DELETE).
+Yeh JSON format me data exchange karta hai.
+***********************
+Lambda expressions (anonymous functions) Python me ek-line functions likhne ka tareeka hai jo bina def keyword use kiye short aur powerful hoti hain.
+Yeh higher-order functions ke saath use ki jati hain jaise map(), filter(), aur reduce().
+***************
+*************
+square=lambda x:x**2
+print(square(5))
+powered_numbers=list(map(lambda x:x**2,numbers))
+print(powered_numbers)
+ *******
+set1 = {1, 2, 3, 4, 5}
+set2 = {3, 4, 5, 6, 7}
+set(filter(lambda x:x%2==0,set1.union(set2))
+*******
+students = {"Ashish": 85, "Rahul": 92, "Sonia": 78}
+
+sorted(students.items(),key=lambda x:x[1])
+*********
+numbers = [1, 2, 3, 4, 5]
+reduce(lambda x,y:x+y,numbers)
+*********
+names = ["Ashish", "Rahul", "Sonia", "Ankit"]
+sort on the basis of length
+sorted(names,key=lambda x:len(x))
+*******
+data = [(1, 5), (2, 3), (3, 7), (4, 1)]
+sorted(data,key=lambda x:x[1])
+*******
+Explain database connection in Python Flask.
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///foodapp.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+*************************
+Python mein access specifiers ka concept directly nahi hota jaisa ki Java. mein hota hai (like public, private, protected).
+Python mein sab kuch ek convention ke through handle kiya jata hai, jo ki "name mangling" aur "underscore convention" pe based hota hai.
+
+*********
+Public members: Agar aap kisi class ke variables ya methods ko bina kisi underscore ke define karte hain, toh wo by default public hote hain, matlab wo bahar se directly access kiye ja sakte hain
+class MyClass:
+    def __init__(self, name):
+        self.name = name  # Public variable
+
+    def greet(self):
+        return f"Hello, {self.name}!"  # Public method
+
+obj = MyClass("Ashish")
+print(obj.name)  # Directly access the public variable
+print(obj.greet())  # Directly call the public
+*********
+Private members (Single underscore _): Agar aap kisi variable ya method ko single underscore (_) ke saath define karte hain, toh ye suggestion
+hota hai ki ye member private hai aur isse directly bahar se access nahi karna chahiye
+
+class MyClass:
+    def __init__(self, name):
+        self._name = name  # Private variable (convention)
+
+    def _greet(self):  # Private method (convention)
+        return f"Hello, {self._name}!"
+
+obj = MyClass("Ashish")
+print(obj._name)  # Accessing private variable (possible, but not recommended)
+**********************
+Private members (Double underscore __): Agar aap kisi variable ya method ko double underscore (__) ke saath define karte hain, toh Python internally is member ka naam change kar deta hai
+*********
+
+
+
+
 
 
 
