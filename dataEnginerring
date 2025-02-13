@@ -54,6 +54,63 @@ Disadvantages of NoSQL Databases
 NoSQL databases eventual consistency follow karte hain, jo real-time applications ke liye fast hai, lekin banking jaise applications ke liye risk ho sakta hai.
 NoSQL me denormalization hoti hai, iska matlab data duplicate store hota hai, jo zyada storage consume karta hai
 **********************
+Indexing
+Database indexing ek optimization technique hai jo queries ki speed increase karne ke liye use hoti hai
+Agar ek book ke index ka example lein, to usme topics aur page numbers diye hote hain. Isse aap direct page tak pahunch sakte hain bina pura book padhe. Database indexing bhi exactly aise hi kaam karti hai!
+
+Types of Indexing in SQL
+1️⃣ Primary Index – Primary Key ke basis par automatically banta hai.
+2️⃣ Unique Index – Unique columns ke liye use hota hai.
+3️⃣ Composite Index – Multiple columns ko ek saath index karta hai.
+
+✅ Best Practice: Sirf un columns par indexing lagaye jo frequently search hote hain.
+
+Disadvantage of Indexing
+More Storage Required (Index bhi space consume karta hai).
+Insert/Update/Delete Operations Slow Ho Sakte Hain (Index ko update karna padta hai)
+*********
+Stored Procedure
+A Stored Procedure ek predefined SQL code ka collection hota hai jo database me store hota hai aur multiple times execute kiya ja sakta hai.
+Why Use Stored Procedures?
+✅ Code Reusability – Same SQL queries ko baar-baar likhne ki zaroorat nahi hoti.
+✅ Better Performance – Precompiled hoti hain, isliye queries faster execute hoti hain.
+✅ Security – Direct SQL queries ki jagah stored procedures use karne se SQL Injection ka risk kam hota hai.
+✅ Modularity – Alag-alag operations ko procedures me rakh kar code organized kiya ja sakta hai
+*******
+CREATE PROCEDURE GetStudentDetails()
+AS
+BEGIN
+    SELECT * FROM Students;
+END;
+********************
+
+Hadoop ek open-source framework hai jo large-scale data processing ke liye use hota hai. Yeh Big Data ko store aur process karne ke liye distributed computing ka use karta hai
+Hadoop Kyun Use Karte Hain?
+✅ Large Data Handling – Bahut bade data sets ko efficiently store aur process kar sakta hai.
+✅ Distributed Computing – Data ko multiple machines me distribute karke processing fast karta hai.
+✅ Fault Tolerance – Agar ek node fail ho jaye, to data loss nahi hota, kyunki Hadoop automatically backup rakhta hai.
+
+**********
+MapReduce ek data processing model hai jo Big Data ko efficiently process karne ke liye use hota hai.
+Yeh Hadoop framework ka ek important part hai, jo parallel processing ka use karta hai taaki large datasets ko distribute aur analyze kiya ja sake
+
+*********
+MapReduce ek data processing model hai jo Big Data ko efficiently process karne ke liye use hota hai. Yeh Hadoop framework ka ek important part hai,
+ jo parallel processing ka use karta hai taaki large datasets ko distribute aur analyze kiya ja sake
+*******
+MapReduce Ka Real-World Use Kahan Hota Hai?
+🔹 Search Engines (Google, Bing, Yahoo) – Web pages ko index aur rank karne ke liye.
+🔹 E-Commerce (Amazon, Flipkart) – Customer behavior analyze karne ke liye
+*****************
+Apache Spark ek powerful, fast aur distributed computing framework hai jo Big Data processing ke liye use hota hai. Yeh Hadoop se tez hai, 
+aur iska in-memory computation model use karke Machine Learning, Streaming aur SQL workloads efficiently handle kiye ja sakte hain! 🚀
+**********
+Data Modeling ek process hai jisme real-world data ko ek structured format me represent kiya jata hai, taaki usko database me efficiently store, retrieve aur manage kiya ja sake.
+******
+
+
+
+
 
 
 
