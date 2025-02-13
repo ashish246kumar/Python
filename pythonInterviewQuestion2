@@ -263,13 +263,19 @@ hota hai ki ye member private hai aur isse directly bahar se access nahi karna c
 
 class MyClass:
     def __init__(self, name):
-        self._name = name  # Private variable (convention)
+        self._name = name  # Protected variable
 
-    def _greet(self):  # Private method (convention)
+    def _greet(self):  # Protected method
         return f"Hello, {self._name}!"
 
-obj = MyClass("Ashish")
-print(obj._name)  # Accessing private variable (possible, but not recommended)
+class SubClass(MyClass):
+    def show(self):
+        return f"Name from subclass: {self._name}"  # Accessing protected variable in subclass
+
+obj = SubClass("Ashish")
+print(obj.show())  # Accessing protected variable in subclass
+# print(obj._name)  # It's possible to access directly, but discouraged
+
 **********************
 Private members (Double underscore __): Agar aap kisi variable ya method ko double underscore (__) ke saath define karte hain, toh Python internally is member ka naam change kar deta hai
 *********
