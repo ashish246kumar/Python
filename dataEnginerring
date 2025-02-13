@@ -27,8 +27,33 @@ Handling large volumes of data efficiently
 Ensuring data quality and consistency
 Managing real-time data processing
 ************************
-  
+7. What are the main differences between SQL and NoSQL databases?
+ 1)SQL aur NoSQL databases data storage, structure, scalability, aur use cases ke basis par alag-alag hain.
+SQL (Relational Database): Structured tables me rows aur columns ka format follow karta hai. 
+🔹 NoSQL (Non-Relational Database): Flexible structure hota hai, aur different formats me store ho sakta hai:
+✅ Document-based (MongoDB, CouchDB) – JSON-like format
+✅ Key-Value (Redis, DynamoDB) – Key-value pairs
 
+SQL: Vertically Scalable (Large server ya RAM badhakar scale karna hota hai).
+🔹 NoSQL: Horizontally Scalable (Multiple servers add karke easily scale hota hai – distributed
+ SQL: Structured Query Language (SQL) use karta hai – SELECT, INSERT, UPDATE, DELETE.
+🔹 NoSQL: Standardized query language nahi hota, different databases ka apna query syntax hota hai
+
+Use Cases
+Factor	SQL Databases	NoSQL Databases
+Best for	Structured, transactional data	Unstructured, semi-structured, real-time data
+Examples	MySQL, PostgreSQL, Oracle, MS SQL Server	MongoDB, Cassandra, Redis, Neo4j
+Use Cases	Banking, ERP, CRM, E-commerce orders	Social media, IoT, Big Data, Real-time apps
+********
+Fixed Schema (Less Flexibility)-> in sql
+Fixed Schema (Less Flexibility)
+Strict Schema Design hota hai, iska matlab table ka structure pehle define karna padta hai aur dynamic changes difficult hote hain
+Complex Joins hone par performance slow ho jata hai, specially millions of records hone par.
+Disadvantages of NoSQL Databases
+🔹 1. Lack of Standard Query Language (No Standardization)
+NoSQL databases eventual consistency follow karte hain, jo real-time applications ke liye fast hai, lekin banking jaise applications ke liye risk ho sakta hai.
+NoSQL me denormalization hoti hai, iska matlab data duplicate store hota hai, jo zyada storage consume karta hai
+**********************
 
 
 
