@@ -89,7 +89,8 @@ class Solution:
         return l1
  
 ******************************************
-Rotate-image
+Rotate-image   
+thoght process->first transpose the matrix then harek row ko reverse kar denge
 **********************************
 class Solution:
     def rotate(self, matrix: List[List[int]]) -> None:
