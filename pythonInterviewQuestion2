@@ -279,6 +279,195 @@ print(obj.show())  # Accessing protected variable in subclass
 **********************
 Private members (Double underscore __): Agar aap kisi variable ya method ko double underscore (__) ke saath define karte hain, toh Python internally is member ka naam change kar deta hai
 *********
+The join() function in Python is a string method used to concatenate the elements of an iterable (like a list, tuple, or set)
+words = ["Python", "is", "awesome"]
+result = " ".join(words)
+print(result)  
+********
+words = ["apple", "banana", "cherry"]
+result = ", ".join(words)
+print(result)  
+*************
+numbers = [1, 2, 3]
+result = "-".join(map(str, numbers))  # Convert numbers to strings
+print(result)
+*****************
+How can you identify and deal with missing values in a dataframe?  explain in hinenglish  not in hindi and not in english but in hinEnglish
+
+print(df.isnull())  # True waha dikhega jaha value missing hai
+print(df.isnull().sum())
+2️⃣ Missing Values Remove Karna (Drop Karna)
+df_cleaned = df.dropna()
+print(df_cleaned)
+
+*******
+df_cleaned = df.dropna(subset=['Salary'])  # Salary me se missing value hata do
+print(df_cleaned)
+******
+df_filled = df.fillna(0)  # Jaha NaN hai, waha 0 dal do
+print(df_filled)
+*******
+manage.py Django framework ka ek command-line utility script hota hai jo Django projects ko manage karne aur execute karne ke liye use hota hai
+1️⃣ Django Server Start Karna 🚀
+python manage.py runserver
+2️⃣ New App Create Karna 🏗
+python manage.py startapp app_name
+3️⃣ Database Migrations Manage Karna 🗄
+python manage.py makemigrations
+python manage.py migrate
+*********************************************
+manage.py Django projects ka manager hai jo server run karne, database manage karne, aur superuser create karne jaise tasks perform karta hai
+*************
+Python me random numbers generate karne ke liye random aur numpy module ka use hota hai.
+Python ka random module random number generate karne ke liye built-in functions provide karta hai.
+import random
+
+num = random.randint(1, 100)  # 1 se 100 ke beech koi random number dega
+print(num)
+
+numpy Module Ka Use
+Agar large datasets ke liye random numbers chahiye toh NumPy ka numpy.random module use hota hai.
+import numpy as np
+
+num = np.random.randint(1, 100)  # 1 se 100 ke beech integer
+print(num)
+**********************
+What does *args, **kwargs mean in Python?
+Python me *args aur **kwargs ka use functions me variable-length arguments pass karne ke liye hota hai. Yeh dynamic arguments handling ka ek powerful feature hai
+*args ka use multiple positional arguments pass karne ke liye hota hai. Yeh tuple ke form me arguments ko function me store karta hai.
+def add_numbers(*args):
+    total = sum(args)  # args ek tuple hota hai
+    print("Sum:", total)
+
+add_numbers(10, 20, 30)  # Multiple numbers pass kiye
+*********
+**kwargs (Variable-length Keyword Arguments)
+**kwargs ka use multiple keyword arguments pass karne ke liye hota hai. Yeh dictionary ke form me arguments store karta hai.
+def full_details(*args, **kwargs):
+    print("Positional Arguments:", args)  # Tuple
+    print("Keyword Arguments:", kwargs)  # Dictionary
+
+full_details(10, "Python", name="Ashish", age=25)
+
+
+**********************
+Yes, Flask follows the MVC (Model-View-Controller) pattern, but it is not a strict implementation like some other frameworks (e.g., Django). Instead,
+it provides flexibility to structure your application in an MVC-like manner
+
+ Model (M) → Data ko handle karta hai (Database interaction, logic, ORM).
+2️⃣ View (V) → UI aur templates ko manage karta hai (HTML, Jinja2 templates).
+3️⃣ Controller (C) → User requests ko handle karta hai, aur Model aur View ke beech coordination karta hai (Flask routes).
+
+
+
+********
+How can we check if all characters in a string are alphanumeric?
+Python me isalnum() method ka use karke hum easily check kar sakte hain ki ek string ke sabhi characters alphanumeric hain ya nahi.
+# Example 1: Alphanumeric string
+str1 = "Hello123"
+print(str1.isalnum())  # Output: True
+
+# Example 2: String with non-alphanumeric character
+str2 = "Hello 123"
+print(str2.isalnum())  # Output: False
+
+# Example 3: String with special character
+str3 = "Hello@123"
+print(str3.isalnum())  # Output: False
+****************************************************
+What are some of the most used built-in modules in Python?
+math Module
+Purpose: Mathematical operations (like trigonometric functions, logarithms, etc
+os Module
+Purpose: Operating system dependent functionalities, file and directory management
+re Module
+Purpose: Regular expressions for pattern matching.
+collections Module
+Purpose: Specialized container datatypes (like namedtuples, defaultdict, Counter).
+
+************
+What are the tools for debugging and performing static analysis in Python?
+Purpose: Python ka built-in debugger hai jo code ko step-by-step execute karne me help karta hai, taaki aap easily bugs track kar sakein.
+import pdb
+pdb.set_trace()
+
+***********
+How do you convert string to lowercase in Python?
+text = "Hello, World!"
+# Convert string to lowercase
+lowercase_text = text.lower()
+
+print(lowercase_text)  # Output: 'hello, world!'
+*************
+Do you think you can call the parent class without its instance creation? 
+************
+class Parent:
+    @staticmethod
+    def greet():
+        print("Hello from Parent!")
+
+class Child(Parent):
+    @staticmethod
+    def greet():
+        Parent.greet()  # Calling the parent class method without creating an instance
+        print("Hello from Child!")
+
+# No need to create an instance of Parent or Child
+Child.greet()
+***************************************************************
+In what ways can parent members in a child class be accessed?
+1. Using super()
+class Parent:
+    def __init__(self):
+        self.parent_attribute = "Parent attribute"
+    
+    def greet(self):
+        print("Hello from Parent")
+
+class Child(Parent):
+    def __init__(self):
+        super().__init__()  # Calling the parent class constructor
+        self.child_attribute = "Child attribute"
+    
+    def greet(self):
+        super().greet()  # Calling the parent class method
+        print("Hello from Child")
+
+child = Child()
+child.greet()
+print(child.parent_attribute)  # Accessing parent attribute
+**********************************************************
+Why is NumPy preferred over Python lists?
+NumPy ko Python lists ke comparison mein isliye prefer kiya jata hai kyunki:
+
+Efficient Memory Usage: NumPy arrays ka memory allocation Python lists se zyada efficient hota hai. NumPy arrays compact storage use karte hain, 
+jisse zyada data store karna possible hota hai bina memory waste ke.
+Python lists mein har element ke liye ek extra pointer hota hai, jisse memory usage increase hota ha
+
+Built-in Functions: NumPy mein kai useful mathematical and statistical functions hote hain jo Python lists mein nahi hote
+***********************************
+Built-in Functions: NumPy mein kai useful mathematical and statistical functions hote hain jo Python lists mein nahi hote. For example, mean, standard deviation,
+matrix multiplication, etc.,
+NumPy ke functions se bahut easily kiye ja sakte hai
+************
+Multidimensional Arrays: NumPy easily multidimensional arrays (matrices, tensors) ko handle kar sakta hai. 
+********
+How can you copy an object in Python?
+a= [1, 2, 3]
+copied_list =a.copy()
+print(copied_list)
+*********
+import copy
+my_dict = {'a': 1, 'b': 2}
+copied_dict = copy.copy(my_dict)
+print(copied_dict)
+***********
+What are Pickling
+Pickling ek process hai jisme hum Python objects ko byte stream me convert karte hain, taaki unhe file ya network par store ya transfer kiya ja sake. Ye process pickle module ke through hota hai. Jab hum kisi object ko pickle karte hain, toh wo object memory se disk ya kisi aur medium par store ho jata hai.
+Fir hum is object ko baad me wapas unpickle kar ke original form me restore kar sakte hain.
+
+
+
 
 
 
