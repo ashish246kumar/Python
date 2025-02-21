@@ -495,11 +495,30 @@ print("Unpickled Data:", loaded_data)
 Pickling → Python object ko binary format me convert karna.
 Unpickling → Binary data ko wapas Python object me badalna.
 *******************************************************************************************************************************************************
+Type Conversion means changing the data type of a variable or value from one type to another
+ Implicit Type Conversion (Automatic Conversion
+x = 10        # Integer
+y = 5.5       # Float
 
-
-
-
-
+result = x + y  # Python converts int to float automatically
+print(result)   # Output: 15.5
+print(type(result))  # Output: <class 'float'>
+************
+✅ 2. Explicit Type Conversion (Type Casting)
+In this, users manually convert one data type to another using Python’s built-in functions.
+num_str = "100"
+num_int = int(num_str)
+print(num_int, type(num_int))  # Output: 100 <class 'int'>
+**********
+onvert Tuple to List:
+my_tuple = (10, 20, 30)
+my_list = list(my_tuple)
+print(my_list)  # O
+**************
+arr = [10, 20, 30, 40, 30]
+arr.remove(30)  
+print(arr)  # Output: [10, 20, 40, 30]
+**********
 
 
 
