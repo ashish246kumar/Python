@@ -463,8 +463,38 @@ copied_dict = copy.copy(my_dict)
 print(copied_dict)
 ***********
 What are Pickling
-Pickling ek process hai jisme hum Python objects ko byte stream me convert karte hain, taaki unhe file ya network par store ya transfer kiya ja sake. Ye process pickle module ke through hota hai. Jab hum kisi object ko pickle karte hain, toh wo object memory se disk ya kisi aur medium par store ho jata hai.
+Pickling ek process hai jisme hum Python objects ko byte stream me convert karte hain, taaki unhe file ya network par store ya transfer kiya ja sake. Ye process pickle module ke through hota hai. 
+Jab hum kisi object ko pickle karte hain, toh wo object memory se disk ya kisi aur medium par store ho jata hai.
 Fir hum is object ko baad me wapas unpickle kar ke original form me restore kar sakte hain.
+**********
+import pickle
+
+# Python object
+data = {'name': 'Ashish', 'age': 25, 'city': 'Delhi'}
+
+# Pickling - converting object to binary
+with open('data.pkl', 'wb') as file:
+    pickle.dump(data, file)
+
+print("Data Pickled Successfully!")
+pickle.dump() function use hua hai object ko pickle karne ke liye.
+'wb' mode ka use kiya gaya hai kyunki binary format me data store ho raha hai.
+************************************************************************************
+Unpickling in Python
+Unpickling pickled (serialized) data ko dobara original Python object me convert karne ka process hai. 
+Jab hum ek pickled file ko load karte hain, toh uska binary data wapas Python object me badal diya jata hai.
+
+import pickle
+
+# Unpickling - converting binary back to Python object
+with open('data.pkl', 'rb') as file:
+    loaded_data = pickle.load(file)
+
+print("Unpickled Data:", loaded_data)
+************************
+Pickling → Python object ko binary format me convert karna.
+Unpickling → Binary data ko wapas Python object me badalna.
+*******************************************************************************************************************************************************
 
 
 
