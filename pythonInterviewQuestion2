@@ -515,10 +515,84 @@ my_tuple = (10, 20, 30)
 my_list = list(my_tuple)
 print(my_list)  # O
 **************
+How can you remove values from an array in Python?
+
 arr = [10, 20, 30, 40, 30]
 arr.remove(30)  
 print(arr)  # Output: [10, 20, 40, 30]
 **********
+arr = [10, 20, 30, 40]
+arr.pop(2)   
+print(arr)  # Output: [10, 20, 40]
+******
+arr = [10, 20, 30, 40, 50]
+del arr[1]    
+print(arr)  # Output: [10, 30, 40, 50]
+*****
+What is reindexing in Pandas?
+Reindexing in Pandas means changing the row or column indices of a DataFrame or Series. It helps in:
+Changing the order of rows/columns
+Adding or removing rows/columns
+Aligning data based on a new index
+DataFrame.reindex(new_index, axis=0, fill_value=None)
+new_index → List of new row/column indexes
+axis=0 → Rows (default)
+axis=1 → Columns
+fill_value → Value to fill for missing data (default is NaN)
+*****************
+What do you think is the use of dir () function in Python?   
+The dir() function in Python ka use hota hai kisi bhi object, module, ya class ke attributes aur methods ko dekhne ke liye. 
+Ye basically ek list return karta hai jisme wo saare functions aur properties hote hain jo us object ke saath use kiye ja sakte hain.
+✅ Use Cases of dir():
+🔍 Kisi object ke andar kya-kya methods hain, wo dekhne ke liye.
+my_list = [1, 2, 3]
+
+print(dir(my_list))
+['append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+
+*******************
+What are literals in Python?
+Literals in Python wo fixed values hote hain jo directly code me likhe jaate hain. Ye values program ke run hone ke time change nahi hoti.
+Basically, literals are the constant values assigned to variables.
+x = 10      # 10 is an Integer literal  
+name = "Ashish"  # "Ashish" is a String literal  
+pi = 3.14   # 3.14 is a Float literal  
+*************
+Types of Literals in Python:
+1. Numeric Literals
+String Literals
+name = "Ashish"
+greet = 'Hello!'
+para = """This is a 
+multi-line string."""
+***************************************************************************
+Python ek object-oriented aur functional programming dono ko support karne wali language hai.
+✅ Object-Oriented Programming (OOP):
+Python mein classes aur objects ka use karke OOP concepts apply kiye ja sakte hain. Isme inheritance, encapsulation, polymorphism, aur abstraction jaise features milte hain.
+******
+Can you tell us if Python is object-oriented or functional programming?  
+ Functional Programming:
+Python mein functional programming bhi ki ja sakti hai, jisme functions ko first-class citizens ki tarah treat kiya jata hai. Isme map(), filter(), reduce()
+***********************************
+What rules govern local and global variables in Python?  in hinemglish
+Local Variables:
+Jo variables kisi function ke andar define hote hain, wo local variables hote hain.
+Unka scope sirf us function ke andar hi hota hai.
+****
+2. Global Variables:
+Jo variables function ke bahar define hote hain, wo global variables hote hain.
+Ye pura program mein kahin se bhi access kiye ja sakte hain.
+x = 20  # global variable
+
+def my_func():
+    print("Inside function:", x)
+
+my_func()
+print("Outside function:", x)
+
+*************************
+
+
 
 
 
