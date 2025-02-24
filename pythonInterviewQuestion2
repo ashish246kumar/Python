@@ -477,6 +477,15 @@ with open('data.pkl', 'wb') as file:
     pickle.dump(data, file)
 
 print("Data Pickled Successfully!")
+***
+import pickle
+
+# Unpickling - converting binary back to Python object
+with open('data.pkl', 'rb') as file:
+    data = pickle.load(file)
+
+print(data)
+
 pickle.dump() function use hua hai object ko pickle karne ke liye.
 'wb' mode ka use kiya gaya hai kyunki binary format me data store ho raha hai.
 ************************************************************************************
@@ -565,10 +574,34 @@ name = "Ashish"
 greet = 'Hello!'
 para = """This is a 
 multi-line string."""
+**********
+Binary, Octal & Hexadecimal Literals
+
+Binary → 0b1010 (binary format)
+Octal → 0o12 (octal format)
+Hexadecimal → 0xA (hex format)
+*******
+Boolean Literals – Ye True ya False hote hain.
+x = True
+y = False
+*************
+Special Literal – Python me None ek special literal hai, jo empty ya undefined value ko dikhata hai.
+data = None
+*****************
+
+**************************
+Literal Collections – Ye group of items ko store karte hain.
+
+List → [1, 2, 3, 4]
+Tuple → (10, 20, 30)
+Dictionary → {'name': 'Ashish', 'age': 25}
+Set → {1, 2, 3}
+
 ***************************************************************************
 Python ek object-oriented aur functional programming dono ko support karne wali language hai.
 ✅ Object-Oriented Programming (OOP):
 Python mein classes aur objects ka use karke OOP concepts apply kiye ja sakte hain. Isme inheritance, encapsulation, polymorphism, aur abstraction jaise features milte hain.
+
 ******
 Can you tell us if Python is object-oriented or functional programming?  
  Functional Programming:
