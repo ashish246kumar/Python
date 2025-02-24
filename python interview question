@@ -68,8 +68,16 @@ Q.32. Explain the //, %, and ** operators in Python.
 relational operator in python
 Q.35. Explain logical operators in Python.
 Q.36. What are membership operators?
-Q.37. Explain identity operators in Python.
+Q.37. Explain identity operators in Python.|  Identity	is, is not	x is y
+*********************************************
 Q.38. Finally, tell us about bitwise operators in Python.
+print(a & b)   # ➔ 1  (AND)        → 0101 & 0011 = 0001
+print(a | b)   # ➔ 7  (OR)         → 0101 | 0011 = 0111
+print(a ^ b)   # ➔ 6  (XOR)        → 0101 ^ 0011 = 0110
+print(~a)      # ➔ -6 (NOT)        → ~0101 = -(0101+1)
+print(a << 1)  # ➔ 10 (Left Shift) → 0101 << 1 = 1010
+print(a >> 1)  # ➔ 2  (Right Shift)→ 0101 >> 1 = 0010
+*********************************************************************
 Q.41. How would you convert a string into an int in Python?
 Q.45. What does the function zip() do?
 Q.48. How do you get all values from a Python dictionary?
