@@ -1,4 +1,11 @@
 ***************
+Patching
+Patching ka matlab hota hai kisi function, method, ya class ko runtime pe temporarily modify karna. Ye mostly testing me use hota hai,
+jahan hume actual code ko touch kiye bina uska behavior change karna hota hai.
+****************************
+. Monkey Patching
+Monkey Patching ka matlab hai runtime pe existing code ko directly modify karna. Ye permanent hota hai jab tak program chal raha hai
+***************************************
 Duck Typing ka matlab hai ki aap kisi object ko uski actual type se zyada uske behavior ke basis pe treat karte hain. Python is concept ko dynamically implement karta hai, jo program ko zyada flexible aur modular banaata hai.
 Python ek dynamic language hai, matlab hum types ko runtime pe check karte hain, na ki compile-time pe. Yeh Duck Typing ko asaan banata hai.
 class Bird:
@@ -258,8 +265,8 @@ obj = MyClass("Ashish")
 print(obj.name)  # Directly access the public variable
 print(obj.greet())  # Directly call the public
 *********
-Private members (Single underscore _): Agar aap kisi variable ya method ko single underscore (_) ke saath define karte hain, toh ye suggestion
-hota hai ki ye member private hai aur isse directly bahar se access nahi karna chahiye
+Protected members (Single underscore _):
+Use protected variables when you want subclasses to access them but still signal they’re not for general use.
 
 class MyClass:
     def __init__(self, name):
@@ -377,13 +384,21 @@ print(str3.isalnum())  # Output: False
 ****************************************************
 What are some of the most used built-in modules in Python?
 math Module
-Purpose: Mathematical operations (like trigonometric functions, logarithms, etc
+Purpose: Mathematical operations (like trigonometric functions, logarithms, etc||print(math.sqrt(16))  # Output: 4.0
 os Module
 Purpose: Operating system dependent functionalities, file and directory management
+os.mkdir('new_folder')|
 re Module
-Purpose: Regular expressions for pattern matching.
+Purpose: Regular expressions for pattern matching.  
+*********
+text = "My phone number is 9876543210"
+# Find a phone number pattern
+pattern = r'\d{10}'
+match = re.search(pattern, text)
+*********
 collections Module
 Purpose: Specialized container datatypes (like namedtuples, defaultdict, Counter).
+dd = defaultdict(int)
 
 ************
 What are the tools for debugging and performing static analysis in Python?
