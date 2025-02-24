@@ -67,8 +67,15 @@ Q.28. How will you convert a list into a string?
 Q.32. Explain the //, %, and ** operators in Python.
 relational operator in python
 Q.35. Explain logical operators in Python.
+***********************************************
 Q.36. What are membership operators?
-Q.37. Explain identity operators in Python.|  Identity	is, is not	x is y
+my_list = [1, 2, 3, 4, 5]
+print(3 in my_list)    # ➔ True  (3 is in the list)
+print(7 not in my_list) # ➔ True  (7 is NOT in the list)
+
+*********
+Q.37. Explain identity operators in Python.|  Identity	is, is not x is y (Identity Operators (Do variables same object ko refer karte hain ya nahi?)
+
 *********************************************
 Q.38. Finally, tell us about bitwise operators in Python.
 print(a & b)   # ➔ 1  (AND)        → 0101 & 0011 = 0001
