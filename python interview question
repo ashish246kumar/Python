@@ -440,13 +440,26 @@ Show method from B
 
 ****************************************************************************************************************
 difference between module and package?
-                       Module                                                                         package
-                 single file with  python code                                      directory with multiple module and __init__.py
-File Extension   .py file                                                           directory contaning __init__.py
-Usage            Group releated code                                                 Structured organization for large code base
-Example          math_operations.py                                                  'mypackage/' with __init__.py, math_operations.py, string_operation.py
-import example    import math_operations                                              from mypackage  import math_operations
-initilazation     not required                                                       Requires __init__.py
+ 📦 Module vs Package in Python (HinEnglish)
+Aspect	                                      Module	                                                                  Package
+Definition	Ek Python file (.py) jisme functions, classes, aur variables hote hain.  	Ek folder jisme multiple modules ya sub-packages hote hain.
+File Type	Simple .py file	                                                                 Folder with __init__.py file (Python 3.3+ me optional)
+Purpose	        Code ko reuse aur organize karne ke liye.	                                      Badi applications ko structure aur organize karne ke liye.
+Example	            math.py, re.py	                                                           numpy, pandas jisme kai modules hote hain.
+Import Syntax	import math	                                                                import package.module
+Hierarchy	Single level	                                                              Multi-level hierarchy possible (sub-packages)
+**********
+# file: calculator.py
+def add(a, b):
+    return a + b
+
+# Importing:
+import calculator
+print(calculator.add(2, 3))  # ➔ 5
+
+    from math_operations import addition
+print(addition.add(5, 3))  # ➔ 8
+
 **************
 is python compiled language or interpreted language?
 python is interpreted language.That means python code is executed line by line by an interpreter at runtime . rather than being compiled into machine code beforehand like in compile language
@@ -460,8 +473,13 @@ protected attribute are marked with single _underscore while they can still be a
 private variable are marked with double underscore (__ansh) . these can not be modified or accessed directly from outside the class and any such event will result an attribute error
 *****************************************************************************************************************************************
 what is pandas
-pandas is open source python library which support data strcture for data  based operation associated with data analyzing and data manupulation . pandas with reacch set of feature fits in every role of data operation
-whether it is related to implementing a diffefrent algo or solving complex problem
+Pandas ek Python library hai jo data analysis aur data manipulation ke liye use hoti hai. 
+Ye structured data (jaise tables, Excel files, CSVs) ko handle karne ke liye powerful tools provide karti hai.
+ Key Data Structures:
+Series → 1D (Single column data)
+DataFrame → 2D (Rows aur columns wala data, like Excel table)
+
+
 **************************************************************************************************************************
 How exception handling is done in python
 The main keyword for handling exception are try, except, finnaly .
