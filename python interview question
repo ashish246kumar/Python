@@ -489,8 +489,9 @@ self is used to represent instance of the class. with this keyword you can acces
 
 ***************************************************************************************************************************
 How is memory management done in Python?
-python manages memory using a private heap space where all objects and datastrcture stored . Programmers can not directly access this private heap . it is managed by python inter
-preter. Aditionally python has built in grabage collector that automatically recycles unused memory , freeing it up and making it available for future use
+Python apna memory manage karne ke liye private heap space ka use karta hai, jahan saare objects aur data structures store hote hain
+Ye ek private memory area hoti hai jo Python Interpreter ke under aati hai.
+Programmers directly is heap space ko access nahi kar sakte.
 *************************************************************************************************************************************************************
 How to delete a file using Python?
 we can delete a file using python by the following approach 
@@ -499,6 +500,9 @@ os.remove(),os.unlink()
 Which sorting technique is used by sort() and sorted() functions of python?
 python uses Tim sort algorithm for sortig which is stable sorting method with worst case time complexity of O(NlogN). Time sort is a hybrid algorithm derived from merged 
 sort and insertion sort designed to perform efficienty on various type of real data
+Python ke paas ek built-in Garbage Collector hota hai.
+Ye automatically unused ya unreferenced objects ko detect karta hai aur unki memory free kar deta hai.
+
 ***************************************************
 Differentiate between List and Tuple?
 list-> syntax->[],mutability->mutable,Modification-> can change, add,remove, methods->append(),remove(), Access->indexing, usage-> mutuable collection , memory efficiecy->
@@ -544,12 +548,16 @@ Yes, Several arguments can be passed to a function, including objects, variables
 
 *********************************************************************************************************************************************
 19. What is docstring in Python?
-documentation strings (or docstrings) provide a convenient way of associating documentation with Python modules, functions, classes, and methods.
+Docstring ka full form hota hai "Documentation String". Ye Python me use hota hai kisi module, function, class, ya method ko explain karne ke liye, 
+taki samajhne me asani ho ki code kya kar raha hai
+ How to Declare Docstring?
+Triple quotes ka use karte hain:
+''' Triple Single Quotes '''
+""" Triple Double Quotes """
 
+print(greet.__doc__)   # Using __doc__
+help(greet)            # Using help()
 
-Declaring Docstrings: The docstrings are declared using ”’triple single quotes”’ or “””triple double quotes””” just below the class, method, or function declaration.
- All functions should have a docstring
-Accessing Docstrings: The docstrings can be accessed using the __doc__ method of the object or using the help function
 *********************************************************************************************************************************************************
 Dictionary Comprehension? 
 For Example: my_dict = {i:i+7 for i in range(1, 10)}
@@ -643,6 +651,11 @@ Public Access Modifier,Private Access Modifier,Protected Access Modifier
 
 Function Annotation is a feature that allows you to add metadata to function parameters and return values.
  This way you can specify the input type of the function parameters and the return type of the value the function returns.
+**********
+thread.join() ka use thread synchronization ke liye hota hai.
+Jab aap thread.join() likhte ho, toh main program ruk jata hai jab tak wo specific thread apna kaam complete nahi kar leta.
+
+
 
 *************************************************************************************
 differece between list and dict
