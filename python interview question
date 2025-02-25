@@ -959,28 +959,37 @@ child.greet()
 what is casting in python?
 
 type of casting
-implicit :
+implicit :➡️ Small size → Large size type me cast hota hai (like int → float).
 Explicit:
 **************
 if we want to access the keys of dictonary how i can is there any method?
 yes we can using dict.keys()
 
 **********************************************************************
+Namespace ko ek dictionary (key-value pair) ke tarah samjho:
 
-In Python, a namespace is a mapping from names to objects. It's a way to organize code and avoid naming conflicts by associating unique names with specific objects
-Think of a namespace as a dictionary where the keys are the names and the values are the corresponding objects (like variables, functions, classes, etc.)
+Key → Name (jaise variable, function, class ka naam)
+Value → Us name se linked object ya data
 
-Built-in Namespace: This namespace contains all the built-in functions and objects in Python, such as print(), len(), and int.
-Global Namespace: This namespace contains names defined at the level of the main program.
-Local Namespace: The local namespace refers to the scope inside a function or method
-Enclosing Namespace: This namespace refers to variables that are in the outer function's scope, but not global. 
-Namespace Resolution in Python (LEGB Rule)
+Types of Namespace in Python:
+🔗 Built-in Namespace:
+
+Python ke andar by default available hota hai.
+Jaise: print(), len(), int(), str()
+Global Namespace:
+Jo variables ya functions main program me define hote hain, wo global namespace me aate hain.
+ Local Namespace:
+Jab tum function banate ho, toh uske andar ke variables sirf us function ke andar hi kaam karte hain.
 
 *****************
 what is the importance of writing __main__ method in python ?
+Socho tumne ek Python script likha hai. Ab tum chahte ho ki:
+Jab script direct run karo toh kuch specific code chale.
+Lekin jab wahi script ko import karo kisi doosre file me, toh woh code na chale.
+Kaise Kaam Karta Hai?
+Jab tum koi Python file direct run karte ho, toh Python us file ke andar ek special variable __name__ ko "__main__" set karta hai.
+Agar tum same file ko import karte ho kisi doosri file me, toh __name__ file ke naam ke equal ho jata hai, "__main__" nahi hota.
 
-if __name__ == "__main__": construct is not strictly necessary to write code, but it's considered 
-a best practice  
 In Python, the "if name == 'main' " construct is used to control whether a piece of code should run when a script is executed directly as a program or when it is imported as a module into another script;
 essentially, it acts as a guard to ensure that certain code only runs when the script is the main entry point, preventing unintended execution when imported as a module.
 
@@ -1116,28 +1125,52 @@ This client is used to simulate HTTP requests (like GET, POST, etc.) to your Fla
 For example, you can use this client to call your API endpoints in a test.
 **********************************************************************************************************************************************************
 What is an Application Context?
-Think of your Flask app as a big factory. Inside this factory, you have tools and resources (like a database, configuration settings, etc.) that your app uses.
+Socho tumhara Flask app ek factory hai.
 
-The application context is like a "toolbox" that contains these tools for your app. But here's the thing: you need to "open the toolbox" to actually use the tools.
+Is factory ke andar kuch important tools aur resources hain, jaise:
 
-What Does with app.app_context() Do?
-When you write with app.app_context():, you are opening the toolbox temporarily so you can access the resources (like the database or app settings) for the work you're about to do.
+🔑 Configuration settings
+🗄️ Database connections
+🛠️ Helper functions
+Ye sab cheezein tumhare app ko smoothly chalane ke liye chahiye hoti hain.
 
+🧰 Application Context = Toolbox:
+Application Context ko ek toolbox samjho.
+
+Ye toolbox tumhare app ke resources ko rakhta hai.
+Lekin toolbox ko open kiya bina tum tools use nahi kar sakte.
+ with app.app_context() Ka Matlab:
+Jab tum likhte ho:
+
+
+with app.app_context():
+    # Yahan resources use kar sakte ho
+iska matlab hai:
+"Toolbox ko temporarily khola gaya hai, ab tumhare paas sare tools ka access hai."
 ***********************
 @patch('app.models.maintenance_form.MaintenanceForm.query')
-The @patch decorator is used to "fake" the database query.
-It replaces the actual MaintenanceForm.query with a mock object (mock_query) during the test. This way, no real database calls are made, which makes the test faster and more isolated.
+@patch('app.models.maintenance_form.MaintenanceForm.query') ka use hum testing me karte hain taaki real database ko touch na karna pade.
+Iska kaam hai original query ko fake karna (mock banana) during testing
+@patch ka use hota hai testing me fake data use karne ke liye, taaki real database se door raha jaaye aur tests jaldi aur safe ho jayein.
+************
+@patch decorator:
+➔ MaintenanceForm.query ko ek mock object (yaha mock_query) se replace karta hai.
+➔ Real database call nahi hoti, sirf ek dummy call hoti hai.
+*******
 
 mock_query.all.return_value = mock_tickets
 This line tells the mock query to return the mock_tickets list whenever .all() is called.
 *************************************************************************************************
-terms, mock_paginate = MagicMock() creates a fake object that can act like anything you want it to. Think of it as a blank slate or a "dummy helper" you can use to imitate something real.
+MagicMock() ek fake object banata hai jo kisi bhi real object ki tarah behave kar sakta hai — jaise database, API call, function, etc
+Restaurant Analogy:
+Aap ek waiter ho aur customer ko serve karna seekh rahe ho.
+Kya aap har baar real food use karoge? ➔ ❌ Nahi!
+Aap plastic food use karoge practice ke liye. 🍔
+MagicMock() = Plastic food
+Real object (database/API) = Real food
+🟢 Aap pura process test kar sakte ho bina asli cheez use kiye
+**********************
 
-For example:
-
-Imagine you’re practicing how to serve a customer in a restaurant.
-Instead of practicing with real food, you use fake plastic food.
-The MagicMock is like that fake food—it stands in for something real (like a database object) so you can practice or test your process without involving the real thing.
 **************************
 from unittest.mock import patch
 import pytest
