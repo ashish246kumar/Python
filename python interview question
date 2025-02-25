@@ -771,10 +771,13 @@ run_plugin(audio_plugin)
 
 *****************************************************************************************
 what is PYTHON PATH?
-PYTHONPATH is an environment variable in Python that specifies a list of directories the Python interpreter should add to its module search path
-This allows you to import modules from directories not in Python's default locations.
+PYTHONPATH ek environment variable hai jo Python ko batata hai ki kaha-kaha se modules ya packages ko search karna hai jab aap import karte ho.
+PYTHONPATH ka Use Kab Karte Hai?
+Jab custom modules ko import karna ho jo default path me nahi hai
+Large projects me multiple folders se code link karna ho.
 
 export PYTHONPATH=/path/to/my/modules:/another/path
+export PYTHONPATH="/home/ashish/mymodules"
 
 **********
 Try: This block will test the exceptional error to occur.
