@@ -66,7 +66,16 @@ limitation of python
 Q.28. How will you convert a list into a string?
 Q.32. Explain the //, %, and ** operators in Python.
 relational operator in python
+*************
 Q.35. Explain logical operators in Python.
+Multiple conditions check karne ke liye)
+x = 5
+y = 10
+
+print(x < 10 and y > 5)  # ➔ True (Both conditions True)
+print(x > 10 or y > 5)   # ➔ True (One condition True)
+print(not(x < 10))       # ➔ False (Opposite result)
+
 ***********************************************
 Q.36. What are membership operators?
 my_list = [1, 2, 3, 4, 5]
@@ -264,6 +273,10 @@ print(car.model)  # ✅ Model S
 
 
 **********************************************************************************
+        A  →  Parent Class
+       / \
+      B   C → Child Classes  -hirarchial
+
 2. How to use super() in Multiple Inheritance?
 
 Python supports multiple inheritance using a left-to-right method resolution order (MRO), following the C3 Linearization Algorithm.
