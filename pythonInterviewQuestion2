@@ -1,3 +1,8 @@
+continue skips the current loop iteration and moves to the next one.
+ pass – Do Nothing, Just a Placeholder
+pass does nothing; it's just a placeholder
+3️⃣ break – Stop the Loop Immediately
+
 ***************
 Patching
 Patching ka matlab hota hai kisi function, method, ya class ko runtime pe temporarily modify karna. Ye mostly testing me use hota hai,
