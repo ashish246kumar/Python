@@ -1,3 +1,9 @@
+is self should be used as first argument only if we use it as second what will happen 
+
+Yes, self must be the first parameter in instance methods. If you use it as the second argument instead, Python will throw an error.
+TypeError: Test.show() missing 1 required positional argument: 'self'
+
+******************************************************************************************
 continue skips the current loop iteration and moves to the next one.
  pass – Do Nothing, Just a Placeholder
 pass does nothing; it's just a placeholder
