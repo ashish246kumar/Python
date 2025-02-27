@@ -103,7 +103,27 @@ Q.62. What is the best code you can write to swap two numbers?
 Q.63. How can you declare multiple assignments in one statement?
 How will you send an email from a Python Script?
 Can you explain what is unittest in Python?
+****************************************************
+from time import sleep
+from threading import *
+class A(Thread):
+  def run():
+class B(Thread):
+  def run():
+    for i in range(5):
+    print("b")
 
+a=A()
+a.start()
+b.start()
+a.join()
+b.join()
+*****************************************************************
+f=open("mydata","r")
+print(f.readline(),'r')
+print(f.read())
+f1.write("a")
+**************************************************************************************
 
 
 
