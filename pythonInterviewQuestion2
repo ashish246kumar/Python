@@ -1,3 +1,25 @@
+Inner class in python
+
+*********************************************************
+class Car:
+    def __init__(self, brand, engine_type):
+        self.brand = brand
+        self.engine = self.Engine(engine_type)  # Inner class object
+
+    class Engine:
+        def __init__(self, engine_type):
+            self.engine_type = engine_type
+
+        def show(self):
+            print(f"Engine Type: {self.engine_type}")
+
+# Outer class ka object banao
+car1 = Car("Toyota", "Petrol")
+
+# Inner class ka method call karo
+car1.engine.show()
+****************
+*******************************************************************************
 a=10
 def fun():
   global a
