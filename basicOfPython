@@ -39,6 +39,9 @@ self is used to bind the actual object with the value
 class allow to create there own data type with there own attribute and method
 *********************************
 The constructor is defined using the __init__ method
+***************
+__all__ ek special list hoti hai jo control karti hai ki package se kaunse modules ya functions import honge jab hum from package import * use karte hain.
+__all__ = ["module1"]
 **********************************************************************************************************
 What’s the difference between a class and an object? A class is a blueprint or template, 
 while an object is an instance created from that template, with specific attribute values.
@@ -251,8 +254,10 @@ print(even_squares)
 how jwt work?
 Stateless: The server does not need to store session data. Everything is encoded in the token.
 Compact: JWTs are small and can be easily sent via HTTP headers.
+**********
+ Yeh authentication aur information exchange ke liye widely used hota hai.
 
-
+******
 
 JWT (JSON Web Token) is a compact and self-contained way to transmit information between two parties (usually a client and a server) as a JSON object.
  It is widely used for authentication and information exchange . 
@@ -270,11 +275,16 @@ Payload: Contains the claims (data) you want to transmit. This could be user inf
     "role": "admin",
     "iat": 1616239022
 }
-Signature: Used to verify the token’s integrity. It is created by signing the encoded Header and Payload using a secret or private key. For example:
+Signature ka kaam token ki integrity ensure karna hota hai, taaki koi token ko modify na kar sake.
+Signature generate karne ka formula:
 HMACSHA256(
   base64UrlEncode(header) + "." + base64UrlEncode(payload),
   secret
 )
+********
+
+
+
 
 How JWT Works
 1. Authentication
