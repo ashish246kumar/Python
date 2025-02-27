@@ -13,9 +13,38 @@ pass does nothing; it's just a placeholder
 Patching
 Patching ka matlab hota hai kisi function, method, ya class ko runtime pe temporarily modify karna. Ye mostly testing me use hota hai,
 jahan hume actual code ko touch kiye bina uska behavior change karna hota hai.
+from unittest.mock import patch
+
+import requests
+
+def get_data():
+    response = requests.get("https://jsonplaceholder.typicode.com/todos/1")
+    return response.json()
+
+@patch('requests.get')  # requests.get function ko patch kar rahe hain
+def test_get_data(mock_get):
+    mock_get.return_value.json.return_value = {"id": 1, "title": "Mocked Data"}  # Mock response
+    print(get_data())  # Mocked data return hoga
+
+test_get_data()
+
 ****************************
 . Monkey Patching
 Monkey Patching ka matlab hai runtime pe existing code ko directly modify karna. Ye permanent hota hai jab tak program chal raha hai
+
+class Person:
+    def say_hello(self):
+        return "Hello, I am a person!"
+
+# Monkey Patching - say_hello method ko modify kar rahe hain
+def new_say_hello(self):
+    return "Hello, I have been patched!"
+
+Person.say_hello = new_say_hello  # Existing method ko override kar diya
+
+p = Person()
+print(p.say_hello())  # Output: Hello, I have been patched!
+
 ***************************************
 Duck Typing ka matlab hai ki aap kisi object ko uski actual type se zyada uske behavior ke basis pe treat karte hain. Python is concept ko dynamically implement karta hai, jo program ko zyada flexible aur modular banaata hai.
 Python ek dynamic language hai, matlab hum types ko runtime pe check karte hain, na ki compile-time pe. Yeh Duck Typing ko asaan banata hai.
