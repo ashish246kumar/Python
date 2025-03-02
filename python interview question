@@ -135,6 +135,26 @@ from numpy import *;
 arr=array([1,2,4,5])
 print(arr)
 ***********************************************************************
+2xx - Success ✅
+200 - OK → "Sab kuch sahi hai, yeh lo data!"
+201 - Created → "Tera naya resource create ho gaya!"
+204 - No Content → "Sab theek, but reply mein kuch nahi hai
+**************
+3xx - Redirection 🔄
+301 - Moved Permanently → "Naya address hai, purane pe mat aa!"
+************
+4xx - Client Errors 🚫
+400 - Bad Request → "Kya faltu request bheji bhai? Samajh nahi aaya!"
+401 - Unauthorized → "Pehle login kar, phir aana!"
+403 - Forbidden → "Tere paas permission nahi hai, mat aana!"
+404 - Not Found → "Jo tu dhoond raha hai, wo yahan nahi hai!"
+408 - Request Timeout → "Bohot late ho gaya, request cancel!
+**********************************
+5xx - Server Errors 💥
+500 - Internal Server Error → "Server khud confused hai, problem ho gayi!"
+502 - Bad Gateway → "Backend server se sahi response nahi mila!"
+503 - Service Unavailable → "Abhi busy hai, thodi der baad aana!"
+
 
 
 
