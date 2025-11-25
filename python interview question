@@ -69,6 +69,11 @@ Q.28. How will you convert a list into a string?
 Q.32. Explain the //, %, and ** operators in Python.
 relational operator in python
 *************
+“An abstract method in Python is a method declared in an abstract base class using the @abstractmethod decorator, but it has no implementation.
+It forces subclasses to implement that method.
+Python provides this through the abc module.
+It is used when you want to define a common interface for all subclasses.”
+____________________
 Q.35. Explain logical operators in Python.
 Multiple conditions check karne ke liye)
 x = 5
