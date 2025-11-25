@@ -1,5 +1,5 @@
 
-
+_________________________________________
 Multiple inheritense in python at deep level
 Abstraction in pythn
 polymormphism
@@ -156,8 +156,18 @@ print(arr)
 500 - Internal Server Error → "Server khud confused hai, problem ho gayi!"
 502 - Bad Gateway → "Backend server se sahi response nahi mila!"
 503 - Service Unavailable → "Abhi busy hai, thodi der baad aana!"
-
-
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+“A decorator in Python is a function that takes another function as input, adds some additional functionality to it, and returns it—without modifying the original function’s code.”
+It follows the concept of higher-order functions and function wrapping.
+Decorators allow you to extend or modify behavior of functions or methods.
+They use the @decorator_name syntax.
+They help implement cross-cutting concerns like:
+logging
+authentication
+timing
+caching
+input validation
+_____________________________
 
 
 ****************************************************************************************************************************
