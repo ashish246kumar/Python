@@ -1,3 +1,5 @@
+
+
 Multiple inheritense in python at deep level
 Abstraction in pythn
 polymormphism
@@ -1286,5 +1288,47 @@ print("Original List:", original_list)
 print("Deep Copied List:", deep_copied_list)
 ***************************************************************************************************
 
+An iterator in Python is an object that allows you to traverse a sequence one element at a time.
+It implements two methods:
 
+__iter__() → returns the iterator object
+
+__next__() → returns the next value, and raises StopIteration when finished.
+
+Example
+my_list = [1, 2, 3]
+iterator = iter(my_list)
+
+print(next(iterator))  # 1
+print(next(iterator))  # 2
+print(next(iterator))  # 3
+
+Interview Answer (Short):
+
+“An iterator is an object with __iter__() and __next__() methods. It returns items one by one and stops with a StopIteration exception. Any object you can loop over internally uses iterators.”
+
+✅ Generator in Python – Interview Explanation
+Definition
+
+A generator is a special function that returns an iterator using the yield keyword instead of return.
+
+Generators:
+
+Produce values lazily (one at a time)
+
+Save memory
+
+Keep their state between each yield
+
+Example
+def generate_numbers():
+    for i in range(3):
+        yield i
+
+gen = generate_numbers()
+
+print(next(gen))  # 0
+print(next(gen))  # 1
+print(next(gen))  # 2
+____________________________
 
